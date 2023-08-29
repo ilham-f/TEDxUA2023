@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class preevent_question extends Model
 {
     use HasFactory;
+
+    protected $guarded = ['id'];
+
+    public function preevent_answers()
+    {
+        return $this->hasMany(preevent_answer::class);
+    }
 }

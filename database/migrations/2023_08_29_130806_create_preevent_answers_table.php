@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('preevent_answers', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger("id_quest");
+            $table->foreignId('preevent_question_id')->constrained('preevent_questions')->onDelete('cascade');
             $table->string("answer");
             $table->timestamps();
         });
