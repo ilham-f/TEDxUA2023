@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Canopee";
+    src: url("../../public/fonts/CanopeeRegular.otf");
+  }
+
+@font-face {
+    font-family: "LazyMonday";
+    src: url("../../public/fonts/LazyMonday.otf");
+  }
+
+@font-face {
+    font-family: "Pastel";
+    src: url("../../public/fonts/PastelCrayon.ttf");
+  }
+
+@font-face {
+    font-family: "Lastik";
+    src: url("../../public/fonts/LastikRegular.otf");
+  }
