@@ -15,4 +15,11 @@ class preevent_question extends Model
     {
         return $this->hasMany(preevent_answer::class);
     }
+
+    public static function addQuestions(array $questions)
+    {
+        foreach ($questions as $question) {
+            self::create(['questions' => $question]);
+        }
+    }
 }
