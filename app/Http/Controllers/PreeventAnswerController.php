@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\preevent_answer;
+use Illuminate\Http\Request;
+use Inertia\Inertia;
+use Inertia\Response;
+use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\Storepreevent_answerRequest;
 use App\Http\Requests\Updatepreevent_answerRequest;
 
@@ -24,12 +28,16 @@ class PreeventAnswerController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Storepreevent_answerRequest $request)
+    public function store(Request $request): RedirectResponse
     {
-        //
+        $validated = $request->validate([
+            // 'preevent_question_id' => 'required',
+            'answer' => 'required|string|max:255',
+        ]);
+
+        preevent_answer::create($validated);
+
+        return redirect(route('preevent1'));
     }
 
     /**

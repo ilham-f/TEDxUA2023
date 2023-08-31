@@ -14,8 +14,8 @@ export default function Preevent1() {
     console.log(modal);
 
     const { data, setData, post, processing, errors } = useForm({
-        form1: '',
-        form2: '',
+        preevent_question_id: '',
+        answer: '',
     })
 
     // console.log(data);
@@ -41,10 +41,13 @@ export default function Preevent1() {
                 <img src="/assets/TEDxUniversitasAirlangga.png" className=' w-max h-max ' />
               </div>
               <div className='w-[732px] h-[166px] mt-[118px]'>
-                <h1 className=' font-lazymonday text-custom1 text-center text-[#169873] uppercase drop-shadow-custom2'>Kata kata pembuka blablabla lorem ipsum</h1>
+                <h1 className=' font-lazymonday text-custom1 text-center text-[#169873] uppercase drop-shadow-custom2'>THE ENIGMA XPLORATION</h1>
               </div>
-              <div className='mt-2'>
+              <div style={{marginTop: "-100px"}} >
                 <img src="/assets/RedStroke.png" alt="redstroke" />
+              </div>
+              <div className='w-[1000px] h-[166px] mt-[118px]'>
+                <h1 className='text-[50px] font-lazymonday text-custom1 text-center text-[#000] uppercase drop-shadow-custom2'>Find the authentic compass inside you, endure diverse societal currents, flourish and actualize your boundless potential.</h1>
               </div>
               <div className='w-[902px] h-[250px] mt-[68px]'>
                 <h1 className='text-custom2 font-pastel uppercase text-center text-[#104F55] drop-shadow-custom2'>Write down your story</h1>
@@ -73,9 +76,9 @@ export default function Preevent1() {
                     <form onSubmit={submit}>
                         <div className='mt-[140px] flex flex-col ms-[90px]'>
                             <h1 className='font-canopee text-[70px] mr-[72px]'>THE ENIGMA XPLORATION</h1>
-                            <input
-                            onChange={e => setData('form1', e.target.value)}
-                            value={data.form1}
+                            <input disabled
+                            onChange={e => setData('preevent_question_id', e.target.value)}
+                            value={data.preevent_question_id}
                             type="text"
                             className='w-[714px] h-[110px] bg-transparent border-black border rounded-md mb-[19px] font-pastel text-[35px] px-7 py-8 placeholder:text-black'
                             placeholder='“Are you adapting or just reacting?”'
@@ -83,8 +86,8 @@ export default function Preevent1() {
                             <textarea
                             name="answer"
                             id="answer"
-                            onChange={e => setData('form2', e.target.value)}
-                            value={data.form2}
+                            onChange={e => setData('answer', e.target.value)}
+                            value={data.answer}
                             className='bg-transparent border-black border rounded-md p-7 w-[714px] h-[250px] font-pastel placeholder:text-black text-[35px] mb-[27px]'
                             placeholder='Answer'
                             ></textarea>
