@@ -11,25 +11,6 @@ class PreeventQuestionController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function addQuestions()
-    {
-        $questions = [
-            'Apa itu TedX',
-            'Siapa pencetus Tedx',
-            'Apa perbedaan Ted dan Tedx',
-            'Tahun ini Tedx Uner yang ke berapa',
-            'Apa saja divisi yang ada di TedxUner',
-            'Bagaimana struktur organisasinya',
-            'Siapa manager Webdev',
-            'Siapa co-manager Webdev',
-            'Webdev masuk ke PL berapa',
-            'Webdev hoa hoe',
-        ];
-
-        preevent_question::addQuestions($questions);
-
-        return response()->json(['message' => 'Success']);
-    }
     public function index()
     {
         //
