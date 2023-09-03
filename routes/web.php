@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\PreeventAnswerController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +17,11 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Preevent1', [
+    return Inertia::render('Preevent1', []);
+})->name('preevent1');
 
-    ]);
-});
+Route::get('/after', function () {
+    return Inertia::render('Preevent1After', []);
+})->name('preevent1After');
+
+Route::post('/preevent1', [PreeventAnswerController::class, 'store']);
