@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('answers', function (Blueprint $table) {
+        Schema::create('preevent_answers', function (Blueprint $table) {
             $table->id();
-            $table->string('form1');
-            $table->string('form2');
+            $table->foreignId('preevent_question_id')->constrained('preevent_questions')->onDelete('cascade');
+            $table->string("answer");
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('answer');
+        Schema::dropIfExists('preevent_answers');
     }
 };
