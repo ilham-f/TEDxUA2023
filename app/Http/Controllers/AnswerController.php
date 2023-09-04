@@ -35,7 +35,6 @@ class AnswerController extends Controller
         //
         $validated = $request->validate([
             'form1' => 'required|string|max:255',
-            'form2' => 'required|string|max:255',
         ]);
 
         Answer::create($validated);

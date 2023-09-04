@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('answers', function (Blueprint $table) {
             $table->id();
             $table->string('form1');
-            $table->string('form2');
             $table->timestamps();
         });
     }
