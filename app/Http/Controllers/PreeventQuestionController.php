@@ -13,17 +13,18 @@ class PreeventQuestionController extends Controller
      * Display a listing of the resource.
      */
     public function showQuestion($questionNumber)
-{
-    $question = preevent_question::find($questionNumber);
-    if (!$question) {
-        return response()->json(['error' => 'Nomor pertanyaan tidak valid'], 400);
-    }
-    dd($question);
+    {
+        $question = preevent_question::find($questionNumber);
+        if (!$question) {
+            return response()->json(['error' => 'Nomor pertanyaan tidak valid'], 400);
+        }
+        // dd($question);
 
-    return Inertia::render('Preevent1', [
-        'question' => $question,
-    ]);
-}
+        return Inertia::render('Preevent1', [
+            'question' => $question,
+        ]);
+    }
+
     public function index()
     {
         //

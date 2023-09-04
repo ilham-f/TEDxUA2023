@@ -25,6 +25,7 @@ class PreeventQuestionSeeder extends Seeder
             "Webdev masuk ke PL berapa?",
             "Webdev keren?"
         ];
+
         foreach ($questions as $question) {
             DB::table('preevent_questions')->insert([
                 'questions' => $question,
