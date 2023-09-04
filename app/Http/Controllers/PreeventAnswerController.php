@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\preevent_answer;
 use Illuminate\Http\Request;
-use App\Models\Answer;
 use Inertia\Inertia;
 use Inertia\Response;
 use Illuminate\Http\RedirectResponse;
+use App\Http\Requests\Storepreevent_answerRequest;
+use App\Http\Requests\Updatepreevent_answerRequest;
 
-class AnswerController extends Controller
+class PreeventAnswerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -26,18 +28,14 @@ class AnswerController extends Controller
         //
     }
 
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request): RedirectResponse
     {
-        //
         $validated = $request->validate([
-            'form1' => 'required|string|max:255',
+            // 'preevent_question_id' => 'required',
+            'answer' => 'required|string|max:255',
         ]);
 
-        Answer::create($validated);
+        preevent_answer::create($validated);
 
         return redirect(route('preevent1'));
     }
@@ -45,7 +43,7 @@ class AnswerController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(preevent_answer $preevent_answer)
     {
         //
     }
@@ -53,7 +51,7 @@ class AnswerController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(preevent_answer $preevent_answer)
     {
         //
     }
@@ -61,7 +59,7 @@ class AnswerController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Updatepreevent_answerRequest $request, preevent_answer $preevent_answer)
     {
         //
     }
@@ -69,7 +67,7 @@ class AnswerController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(preevent_answer $preevent_answer)
     {
         //
     }

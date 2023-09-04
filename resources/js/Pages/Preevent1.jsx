@@ -15,7 +15,8 @@ export default function Preevent1() {
     console.log(modal);
 
     const { data, setData, post, processing, errors } = useForm({
-        form1: '',
+        preevent_question_id: '',
+        answer: '',
     })
 
     // console.log(data);
