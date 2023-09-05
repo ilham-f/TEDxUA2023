@@ -6,7 +6,7 @@ import * as Dialog from '@radix-ui/react-dialog';
 import { motion, AnimatePresence } from "framer-motion"
 
 
-export default function Preevent1() {
+export default function Preevent1({question}) {
 
     const [hover, setHover] = useState(false);
     const [opened, setOpened] = useState(false);
@@ -15,7 +15,7 @@ export default function Preevent1() {
     console.log(modal);
 
     const { data, setData, post, processing, errors } = useForm({
-        preevent_question_id: '',
+        preevent_question_id: question.id,
         answer: '',
     })
 
@@ -80,16 +80,14 @@ export default function Preevent1() {
                             <form onSubmit={submit}>
                                 <div className='lg:mt-[140px] mt-[34px] flex flex-col lg:ms-[90px] ms-[24px]'>
                                     <h1 className='font-canopee lg:text-[70px] text-[15px]'>THE ENIGMA XPLORATION</h1>
-                                    <div
-                                    className='lg:w-[714px] w-[168px] lg:h-[110px] h-[16px] bg-transparent border-black border lg:rounded-md rounded-sm lg:mb-[19px] mb-[9px] lg:px-7 lg:py-8 px-[4px] py-[2px]'
-                                    >
-                                        <p className='font-pastel lg:text-[35px] text-[8px]'>“Are you adapting or just reacting?”</p>
+                                    <div className='lg:w-[714px] w-[168px] lg:h-[110px] h-[16px] bg-transparent border-black border lg:rounded-md rounded-sm lg:mb-[19px] mb-[9px] lg:px-7 lg:py-7 px-[4px] py-[2px]'>
+                                        <p className='font-pastel lg:text-[20px] text-[4px]'>{question.questions}</p>
                                     </div>
                                     <textarea
                                     name="answer"
                                     id="answer"
-                                    onChange={e => setData('form1', e.target.value)}
-                                    value={data.form1}
+                                    onChange={e => setData('answer', e.target.value)}
+                                    value={data.answer}
                                     className='bg-transparent border-black border lg:rounded-md rounded-sm lg:p-7 p-[5px] lg:w-[714px] lg:h-[250px] w-[168px] h-[63px] font-pastel placeholder:text-black lg:text-[35px] text-[8px] lg:mb-[27px] mb-[10px]'
                                     placeholder='Answer'
                                     ></textarea>

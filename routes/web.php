@@ -27,4 +27,4 @@ Route::get('/after', function () {
 
 Route::post('/preevent1', [PreeventAnswerController::class, 'store']);
 
-Route::get('pre-event/{questionNumber}', [PreeventQuestionController::class, 'showQuestion']);
+Route::get('pre-event-1/{questionNumber}', [PreeventQuestionController::class, 'showQuestion']);
