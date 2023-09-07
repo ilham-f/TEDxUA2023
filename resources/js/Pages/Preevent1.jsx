@@ -41,13 +41,13 @@ export default function Preevent1({question}) {
         <div className="bg-cover bg-no-repeat min-h-screen lg:bg-[url('../../../public/assets/bg1.jpg')] bg-[url('../../../public/assets/bg2.jpg')]">
             <div className='grid grid-cols-1 place-items-center'>
               {/* Logo Tedx */}
-              <div className='flex justify-center content-center w-[163px] lg:w-[452px] rounded-full bg-[#104F55] px-4 lg:px-7 lg:py-3 py-1 border-white border-2 drop-shadow-custom1 mt-[50px] lg:mt-[67px]'>
-                <img src="/assets/TEDxUniversitasAirlangga.png" className=' w-max h-max ' />
+              <div className='w-[163px] lg:w-[452px] rounded-full bg-[#104F55] px-4 lg:px-7 lg:py-3 py-1 border-white border-2 drop-shadow-custom1 mt-[50px] lg:mt-[67px]'>
+                <img src="/assets/TEDxUniversitasAirlangga.png"/>
               </div>
               <div className='lg:w-[924px] w-[228px] lg:h-[110px] h-[56px] lg:mt-[113px] mt-[30px]'>
                 <h1 className=' font-lazymonday lg:text-custom1 text-custom11 text-center text-[#169873] uppercase drop-shadow-custom2'>THE ENIGMA XPLORATION</h1>
               </div>
-              <div className='mt-2 lg:w-[936px] lg:h-[52px] w-[230px] h-[11px]'>
+              <div className='mt-2 lg:w-[936px] lg:h-[52px] w-[230px] h-[11px] flex justify-center'>
                 <img src="/assets/RedStroke.png" alt="redstroke" />
               </div>
               <div className='mt-[25px] lg:mt-[76px] w-[264px] h-[51px] lg:w-[1017px] lg:h-[208px]'>
@@ -72,27 +72,28 @@ export default function Preevent1({question}) {
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.2 }}
                 >
-                    <div className={"lg:bg-[url('../../../public/assets/formbgdesk.png')] bg-[url('../../../public/assets/formbgandro.png')] lg:mt-[104px] mt-[150px] lg:mb-[132px] mb-[78px] bg-cover lg:w-[1405px] lg:h-[843px] w-[331px] h-[198px] drop-shadow-xl"}>
-                        <div className='flex'>
-                            <div className='lg:ms-[104px] lg:mt-[103px] lg:mb-[171px] mt-[36px] ms-[24px] mb-[37px] hover:-rotate-6 transition-all duration-300 lg:w-[415px] lg:h-[569px] w-[85px] h-[119px]'>
-                                <img src="/assets/xgrassdesk.png" alt="" className=''/>
+                    <div className={"lg:bg-[url('../../../public/assets/formbgdesk.png')] bg-[url('../../../public/assets/formbgandro.png')] lg:mt-[104px] mt-[36px] lg:mb-[132px] mb-[33px] bg-cover lg:w-[1405px] lg:h-[843px] w-[280px] xs:w-[331px] drop-shadow-xl"}>
+                        <div className='flex flex-col lg:flex-row'>
+                            <h1 className='font-canopee text-[20px] lg:hidden self-center mt-4'>THE ENIGMA XPLORATION</h1>
+                            <div className='lg:ms-[104px] lg:mt-[103px] lg:mb-[171px] hover:-rotate-6 transition-all duration-300 lg:w-[415px] lg:h-[569px] w-[85px] h-[119px] self-center flex items-center'>
+                                <img src="/assets/xgrassdesk.png" alt="xform"/>
                             </div>
                             <form onSubmit={submit}>
-                                <div className='lg:mt-[140px] mt-[34px] flex flex-col lg:ms-[90px] ms-[24px]'>
-                                    <h1 className='font-canopee lg:text-[70px] text-[15px]'>THE ENIGMA XPLORATION</h1>
-                                    <div className='lg:w-[714px] w-[168px] lg:h-[110px] h-[16px] bg-transparent border-black border lg:rounded-md rounded-sm lg:mb-[19px] mb-[9px] lg:px-7 lg:py-7 px-[4px] py-[2px]'>
-                                        <p className='font-pastel lg:text-[20px] text-[4px]'>{question.questions}</p>
+                                <div className='lg:mt-[140px] flex flex-col lg:ms-[90px] items-center lg:items-start'>
+                                    <h1 className='font-canopee text-[70px] hidden lg:block'>THE ENIGMA XPLORATION</h1>
+                                    <div className='lg:w-[714px] w-[75%] lg:h-[110px] h-[66px] flex items-center bg-transparent border-black border lg:rounded-md rounded-sm lg:mb-[19px] mb-[9px] lg:px-7 lg:py-7 px-[5px] py-[4px]'>
+                                        <p className='font-pastel lg:text-[20px] xs:text-[13px] text-[11px] text-justify'>{question.questions}</p>
                                     </div>
                                     <textarea
                                     name="answer"
                                     id="answer"
                                     onChange={e => setData('answer', e.target.value)}
                                     value={data.answer}
-                                    className='bg-transparent border-black border lg:rounded-md rounded-sm lg:p-7 p-[5px] lg:w-[714px] lg:h-[250px] w-[168px] h-[63px] font-pastel placeholder:text-black lg:text-[35px] text-[8px] lg:mb-[27px] mb-[10px]'
+                                    className='bg-transparent border-black border lg:rounded-md rounded-sm lg:p-7 p-[5px] lg:w-[714px] lg:h-[250px] w-[75%] h-[93px] font-pastel placeholder:text-black lg:text-[35px] text-[13px] lg:mb-[27px] mb-[10px]'
                                     placeholder='Answer'
                                     ></textarea>
                                     <button
-                                    className='lg:w-[663px] lg:h-[70px] w-[141px] h-[14px] bg-[#104F55] font-pastel text-white lg:text-[35px] text-[8px] lg:rounded-md rounded-sm self-center p-[2px]'
+                                    className='lg:w-[663px] lg:h-[70px] w-[141px] h-[22px] bg-[#104F55] font-pastel text-white lg:text-[35px] text-[10px] lg:rounded-md rounded-sm self-center p-[2px] mb-[50px] lg:mb-0'
                                     disabled={processing}
                                     >
                                         Send my Answer!
@@ -110,15 +111,15 @@ export default function Preevent1({question}) {
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.2 }}
                 >
-                    <div className={'lg:mt-[152px] mt-[145px] mb-[81px] lg:mb-[130px] relative'}>
+                    <div className={'lg:mt-[152px] mt-[145px] mb-[139px] relative'}>
                         <div
-                            className={"lg:bg-[url('../../../public/assets/envelope-desktop.png')] bg-[url('../../../public/assets/envelope-android.png')] bg-cover duration-300 transition-all w-[357px] h-[200px] lg:w-[1249px] lg:h-[797px] drop-shadow-xl " + ((hover) ? '-rotate-6' : "")}
+                            className={"lg:bg-[url('../../../public/assets/envelope-desktop.png')] bg-[url('../../../public/assets/envelope-android.png')] bg-contain bg-no-repeat xs:bg-cover duration-300 transition-all w-[270px] xs:w-[357px] h-[200px] lg:w-[1249px] lg:h-[797px] drop-shadow-xl " + ((hover) ? '-rotate-6' : "")}
                             onClick={() => setOpened(true)}
                             onMouseEnter={() => setHover(true)}
                             onMouseLeave={() => setHover(false)}
                         >
                             {/* <img src="/assets/envelope-desktop.png" alt="" className={ "duration-300 transition-all " + ((hover) ? '-rotate-6' : "")}/> */}
-                            <h1 className={"font-lazymonday absolute text-sm lg:text-[35px] text-black top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-300" + ((hover) ? " lg:opacity-100" : " lg:opacity-0")}>tap to open!</h1>
+                            <h1 className={"font-lazymonday absolute text-sm lg:text-[35px] text-black top-[40%] xs:top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-300" + ((hover) ? " lg:opacity-100" : " lg:opacity-0")}>tap to open!</h1>
                         </div>
                     </div>
                 </motion.div>
@@ -133,7 +134,7 @@ export default function Preevent1({question}) {
         <Dialog.Root open={modal}>
             <Dialog.Portal>
             <Dialog.Overlay className=' bg-zinc-900/75 fixed inset-0' />
-            <Dialog.Content className="lg:w-[1123px] lg:h-[586px] w-[313px] h-[188px] lg:bg-[url('../../../public/assets/modal.png')] bg-[url('../../../public/assets/modaland.png')] rounded-xl fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] flex justify-center items-center"
+            <Dialog.Content className="lg:w-[1123px] lg:h-[586px] w-[313px] h-[188px] lg:bg-[url('../../../public/assets/modal.jpg')] bg-[url('../../../public/assets/modal.jpg')] bg-cover rounded-3xl fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] flex justify-center items-center"
             onInteractOutside={(e) => router.visit('/after')}
             >
                 <Dialog.Description>
@@ -144,7 +145,7 @@ export default function Preevent1({question}) {
                 </Dialog.Description>
                 <Dialog.Close>
                     <button
-                        className="absolute top-[24px] right-[24px] inline-flex items-center justify-center lg:block hidden"
+                        className="absolute top-[24px] right-[24px] items-center justify-center lg:block hidden"
                         aria-label="Close"
                         onClick={() => router.visit('/after')}
                     >

@@ -33,6 +33,9 @@ export default {
             custom12: ['15px', '1.05'],
          }
     },
+    screens: {
+        'xs': '281px'
+      },
   },
   plugins: [],
 }
