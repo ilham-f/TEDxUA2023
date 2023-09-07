@@ -41,8 +41,8 @@ export default function Preevent1({question}) {
         <div className="bg-cover bg-no-repeat min-h-screen lg:bg-[url('../../../public/assets/bg1.jpg')] bg-[url('../../../public/assets/bg2.jpg')]">
             <div className='grid grid-cols-1 place-items-center'>
               {/* Logo Tedx */}
-              <div className='w-[163px] lg:w-[452px] rounded-full bg-[#104F55] px-4 lg:px-7 lg:py-3 py-1 border-white border-2 drop-shadow-custom1 mt-[50px] lg:mt-[67px]'>
-                <img src="/assets/TEDxUniversitasAirlangga.png"/>
+              <div className='flex justify-center content-center w-[163px] lg:w-[452px] rounded-full bg-[#104F55] px-4 lg:px-7 lg:py-3 py-1 border-white border-2 drop-shadow-custom1 mt-[50px] lg:mt-[67px]'>
+                <img src="/assets/TEDxUniversitasAirlangga.png" className=' w-max h-max ' />
               </div>
               <div className='lg:w-[924px] w-[228px] lg:h-[110px] h-[56px] lg:mt-[113px] mt-[30px]'>
                 <h1 className=' font-lazymonday lg:text-custom1 text-custom11 text-center text-[#169873] uppercase drop-shadow-custom2'>THE ENIGMA XPLORATION</h1>
@@ -72,23 +72,23 @@ export default function Preevent1({question}) {
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.2 }}
                 >
-                    <div className={"lg:bg-[url('../../../public/assets/formbgdesk.png')] bg-[url('../../../public/assets/frame5.png')] lg:mt-[104px] mt-[60px] lg:mb-[132px] mb-[78px] bg-cover lg:w-[1405px] lg:h-[843px] w-[328.8px] h-[310px] drop-shadow-xl"}>
-                        <div className='lg:flex flex-col'>
-                            <h1 className='lg:text-left pt-3 text-center font-canopee lg:text-[70px] text-[15px]'>THE ENIGMA XPLORATION</h1>
-                            <div className='lg:ms-[104px] lg:mt-[103px] lg:mb-[171px] mx-auto mt-3 mb-3 hover:-rotate-6 transition-all duration-300 lg:w-[415px] lg:h-[569px] w-[70px] h-[90px]'>
+                    <div className={"lg:bg-[url('../../../public/assets/formbgdesk.png')] bg-[url('../../../public/assets/formbgandro.png')] lg:mt-[104px] mt-[150px] lg:mb-[132px] mb-[78px] bg-cover lg:w-[1405px] lg:h-[843px] w-[331px] h-[198px] drop-shadow-xl"}>
+                        <div className='flex'>
+                            <div className='lg:ms-[104px] lg:mt-[103px] lg:mb-[171px] mt-[36px] ms-[24px] mb-[37px] hover:-rotate-6 transition-all duration-300 lg:w-[415px] lg:h-[569px] w-[85px] h-[119px]'>
                                 <img src="/assets/xgrassdesk.png" alt="" className=''/>
                             </div>
                             <form onSubmit={submit}>
-                                <div className='lg:mt-[140px] mt-[10px] flex flex-col lg:ms-[90px]'>
-                                    <div className='lg:w-[714px] w-[250px] lg:h-[110px] h-[50px] bg-transparent border-black border lg:rounded-md rounded-sm lg:mb-[19px] mb-[9px] lg:px-7 lg:py-7 px-[5px] py-[3px] mx-auto'>
-                                        <p className='font-pastel lg:text-[20px] text-[10px] my-auto'>{question.questions}</p>
+                                <div className='lg:mt-[140px] mt-[34px] flex flex-col lg:ms-[90px] ms-[24px]'>
+                                    <h1 className='font-canopee lg:text-[70px] text-[15px]'>THE ENIGMA XPLORATION</h1>
+                                    <div className='lg:w-[714px] w-[168px] lg:h-[110px] h-[16px] bg-transparent border-black border lg:rounded-md rounded-sm lg:mb-[19px] mb-[9px] lg:px-7 lg:py-7 px-[4px] py-[2px]'>
+                                        <p className='font-pastel lg:text-[20px] text-[4px]'>{question.questions}</p>
                                     </div>
                                     <textarea
                                     name="answer"
                                     id="answer"
                                     onChange={e => setData('answer', e.target.value)}
                                     value={data.answer}
-                                    className='mx-auto bg-transparent border-black border lg:rounded-md rounded-sm lg:p-7 p-[5px] lg:w-[714px] lg:h-[250px] w-[250px] h-[65px] font-pastel placeholder:text-black lg:text-[35px] text-[10px] lg:mb-[27px] mb-[10px]'
+                                    className='bg-transparent border-black border lg:rounded-md rounded-sm lg:p-7 p-[5px] lg:w-[714px] lg:h-[250px] w-[168px] h-[63px] font-pastel placeholder:text-black lg:text-[35px] text-[8px] lg:mb-[27px] mb-[10px]'
                                     placeholder='Answer'
                                     ></textarea>
                                     <button
@@ -110,7 +110,7 @@ export default function Preevent1({question}) {
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.2 }}
                 >
-                    <div className={'lg:mt-[152px] mt-[65px] mb-[81px] lg:mb-[130px] relative'}>
+                    <div className={'lg:mt-[152px] mt-[145px] mb-[81px] lg:mb-[130px] relative'}>
                         <div
                             className={"lg:bg-[url('../../../public/assets/envelope-desktop.png')] bg-[url('../../../public/assets/envelope-android.png')] bg-cover duration-300 transition-all w-[357px] h-[200px] lg:w-[1249px] lg:h-[797px] drop-shadow-xl " + ((hover) ? '-rotate-6' : "")}
                             onClick={() => setOpened(true)}
