@@ -111,7 +111,7 @@ export default function Preevent1({question}) {
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.2 }}
                 >
-                    <div className={'xl:mt-[152px] md:mt-[220px] md:mb-[205px] mt-[145px] mb-[139px] relative'}>
+                    <div className={'xl:mt-[152px] md:mt-[220px] md:mb-[205px] mt-[147px] mb-[139px] relative'}>
                         <div
                             className={"md:bg-[url('../../../public/assets/envelope-desktop.png')] bg-[url('../../../public/assets/envelope-android.png')] bg-contain bg-no-repeat xs:bg-cover duration-300 transition-all w-[270px] xs:w-[357px] h-[200px] md:w-[694px] md:h-[440px] xl:w-[1249px] xl:h-[797px] drop-shadow-xl " + ((hover) ? '-rotate-6' : "")}
                             onClick={() => setOpened(true)}
