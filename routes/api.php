@@ -17,5 +17,3 @@ use App\Http\Controllers\PreeventQuestionController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-Route::get('/add-questions', [PreeventQuestionController::class, 'addQuestions']);

@@ -31,13 +31,13 @@ class PreeventAnswerController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $validated = $request->validate([
-            // 'preevent_question_id' => 'required',
+            'preevent_question_id' => 'required',
             'answer' => 'required|string|max:255',
         ]);
 
         preevent_answer::create($validated);
 
-        return redirect(route('preevent1'));
+        return redirect('pre-event-1/'.$request->preevent_question_id);
     }
 
     /**

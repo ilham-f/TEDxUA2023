@@ -1,6 +1,7 @@
 // import './bootstrap';
 import { createInertiaApp } from '@inertiajs/react';
 import { createRoot } from 'react-dom/client';
+import Typewriter from "typewriter-effect";
 import React from 'react';
 
 createInertiaApp({
