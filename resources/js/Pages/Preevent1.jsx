@@ -47,7 +47,7 @@ export default function Preevent1() {
                 <img src="/assets/RedStroke.png" alt="redstroke" />
               </div>
               <div className='w-[1000px] h-[166px] mt-[118px]'>
-                <h1 className='text-[50px] font-lazymonday text-custom1 text-center text-[#000] uppercase drop-shadow-custom2'>Find the authentic compass inside you, endure diverse societal currents, flourish and actualize your boundless potential.</h1>
+                <h1 className='text-[30px] font-lazymonday text-custom1 text-center text-[#000] uppercase drop-shadow-custom2'>Find the authentic compass inside you, endure diverse societal currents, flourish and actualize your boundless potential.</h1>
               </div>
               <div className='w-[902px] h-[250px] mt-[68px]'>
                 <h1 className='text-custom2 font-pastel uppercase text-center text-[#104F55] drop-shadow-custom2'>Write down your story</h1>
