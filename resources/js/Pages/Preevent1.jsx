@@ -133,26 +133,36 @@ export default function Preevent1({question}) {
 
         <Dialog.Root open={modal}>
             <Dialog.Portal>
-            <Dialog.Overlay className=' bg-zinc-900/75 fixed inset-0' />
-            <Dialog.Content className="xl:w-[1123px] xl:h-[586px] md:w-[640px] md:h-[370px] xs:w-[313px] w-[280px] h-[188px] xl:bg-[url('../../../public/assets/modal.jpg')] bg-[url('../../../public/assets/modal.jpg')] bg-cover rounded-3xl fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] flex justify-center items-center"
-            onInteractOutside={(e) => router.visit('/after')}
-            >
-                <Dialog.Description>
-                    <p className='text-[#E79B08] font-pastel xl:text-[125px] md:text-[70px] text-[25px] text-center'>thank you :&#41;</p>
-                    <div className='xl:w-[785px] w-[191px] md:w-[390px] md:h-[70px] xl:h-[141px] h-[25px]'>
-                        <p className='text-[#E79B08] font-pastel xl:text-custom3 md:text-custom10 text-custom7 text-center'>for becoming a part of our success by sharing your thoughts! Each and every answer matters to us</p>
-                    </div>
-                </Dialog.Description>
-                <Dialog.Close>
-                    <button
-                        className="absolute top-[24px] md:right-[24px] items-center justify-center block"
-                        aria-label="Close"
-                        onClick={() => router.visit('/after')}
+            <AnimatePresence>
+                {modal && (
+                    <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
                     >
-                        <img src="/assets/x.png" alt="" className='w-2/3 h-2/3 md:w-full md:h-full'/>
-                    </button>
-                </Dialog.Close>
-            </Dialog.Content>
+                    <Dialog.Overlay className=' bg-zinc-900/75 fixed inset-0' />
+                    <Dialog.Content className="xl:w-[1123px] xl:h-[586px] md:w-[640px] md:h-[370px] xs:w-[313px] w-[280px] h-[188px] xl:bg-[url('../../../public/assets/modal.jpg')] bg-[url('../../../public/assets/modal.jpg')] bg-cover rounded-3xl fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] flex justify-center items-center"
+                    onInteractOutside={(e) => router.visit('/after')}
+                    >
+                        <Dialog.Description>
+                            <p className='text-[#E79B08] font-pastel xl:text-[125px] md:text-[70px] text-[25px] text-center'>thank you :&#41;</p>
+                            <div className='xl:w-[785px] w-[191px] md:w-[390px] md:h-[70px] xl:h-[141px] h-[25px]'>
+                                <p className='text-[#E79B08] font-pastel xl:text-custom3 md:text-custom10 text-custom7 text-center'>for becoming a part of our success by sharing your thoughts! Each and every answer matters to us</p>
+                            </div>
+                        </Dialog.Description>
+                        <Dialog.Close>
+                            <button
+                                className="absolute top-[24px] md:right-[24px] items-center justify-center block"
+                                aria-label="Close"
+                                onClick={() => router.visit('/after')}
+                            >
+                                <img src="/assets/x.png" alt="" className='w-2/3 h-2/3 md:w-full md:h-full'/>
+                            </button>
+                        </Dialog.Close>
+                    </Dialog.Content>
+                </motion.div>
+                )}
+            </AnimatePresence>
             </Dialog.Portal>
         </Dialog.Root>
     </>
