@@ -1,5 +1,6 @@
 import React from 'react';
-import { Head, router } from '@inertiajs/react'
+import { Head, router } from '@inertiajs/react';
+import Typewriter from "typewriter-effect";
 
 export default function Preevent1After() {
   return (
@@ -11,7 +12,19 @@ export default function Preevent1After() {
                 <div className='grid grid-cols-1 lg:grid-cols-2 justify-items-center lg:justify-items-start lg:ms-[63px]'>
                     <div className='mt-[86px] lg:mt-[302px]'>
                         <p className='font-canopee text-[47px] lg:text-custom5 text-[#E79B08] text-center lg:text-left'>THE ENIGMA</p>
-                        <p className='font-canopee text-[47px] lg:text-custom5 text-[#E79B08] text-center mt-[4px] lg:mt-[18px]'>XPLORATION</p>
+                        <div className="font-canopee text-[47px] lg:text-custom5 text-[#E79B08] text-center lg:text-left">
+                            <Typewriter
+                                options={{ loop:true }}
+                                onInit={(typewriter) => {
+                                    typewriter
+                                        .typeString("XPLORATION")
+                                        .start()
+                                        .pauseFor(1000)
+                                        .deleteAll()
+                                }}
+                            />
+                        </div>
+                        {/* <p className='font-canopee text-[47px] lg:text-custom5 text-[#E79B08] text-center mt-[4px] lg:mt-[18px]'>XPLORATION</p> */}
                     </div>
                     <div className="lg:mt-[80px] lg:ms-[10px] mt-[50px] lg:w-[640px] lg:h-[679px] w-[315px] h-[210px] bg-cover lg:bg-[url('../../../public/assets/Deskripsi1.png')] bg-[url('../../../public/assets/Deskripsi.png')] flex flex-col items-center">
                         <div className='w-[216px] lg:w-[536px] h-[56px] lg:h-[155px] lg:mt-[112px] mt-[35px] mx-[40px]'>
