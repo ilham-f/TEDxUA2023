@@ -3,7 +3,7 @@ import { Head, router } from '@inertiajs/react';
 import { useState } from 'react';
 import { useForm } from '@inertiajs/react';
 import * as Dialog from '@radix-ui/react-dialog';
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion";
 
 
 export default function Preevent1({question}) {
@@ -38,7 +38,7 @@ export default function Preevent1({question}) {
     <>
         <Head title="Pre Event" />
 
-        <div className="bg-cover bg-no-repeat min-h-screen md:bg-[url('../../../public/assets/bg1.jpg')] bg-[url('../../../public/assets/bg2.jpg')]">
+        <div className="bg-cover bg-no-repeat min-h-screen md:bg-[url('../../../assets/bg1.jpg')] bg-[url('../../../public/assets/bg2.jpg')]">
             <div className='grid grid-cols-1 place-items-center'>
               {/* Logo Tedx */}
               <div className='w-[163px] md:w-[232px] xl:w-[452px] rounded-full bg-[#104F55] px-4 xl:px-7 xl:py-3 py-1 border-white border-2 drop-shadow-custom1 mt-[50px] xl:mt-[67px]'>
