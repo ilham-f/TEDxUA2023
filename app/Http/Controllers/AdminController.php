@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\preevent_answer;
+use App\Models\preevent_question;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -12,7 +13,9 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard');
+        return view('admin.dashboard',[
+            'title' => 'Pre-Event 1 | Dashboard'
+        ]);
     }
 
     /**
@@ -21,7 +24,16 @@ class AdminController extends Controller
     public function answerstable()
     {
         return view('admin.answers-table',[
-            'answers' => preevent_answer::all()
+            'answers' => preevent_answer::all(),
+            'title' => 'Pre-Event 1 | Jawaban'
+        ]);
+    }
+
+    public function questionstable()
+    {
+        return view('admin.questions-table',[
+            'questions' => preevent_question::all(),
+            'title' => 'Pre-Event 1 | Pertanyaan'
         ]);
     }
 
