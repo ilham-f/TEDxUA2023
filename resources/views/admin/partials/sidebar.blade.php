@@ -2,7 +2,7 @@
     <div class="app-brand demo">
       <a href="/admin" class="d-flex">
         <img style="max-width: 50px" src="{{ asset('assets/xgrassdesk.png') }}" alt="">
-        <span class="app-brand-text demo menu-text fw-bolder ms-2 text-danger">TEDx Admin</span>
+        <span class="app-brand-text demo menu-text fw-bolder ms-2 text-danger">admin</span>
       </a>
 
       <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
