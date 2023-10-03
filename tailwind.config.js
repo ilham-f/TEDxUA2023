@@ -15,11 +15,14 @@ export default {
             canopee: ["Canopee", "display"],
             lazymonday: ["LazyMonday", "script"],
             pastel: ["Pastel", "script"],
-            lastik: ["Lastik", "serif"]
+            lastik: ["Lastik", "serif"],
+            helvetica: ["Helvetica", "script"],
+            capuchetrial: ["CapucheTrial", "black"],
+            migra: ["MigraExtralight", "script"],
         },
         dropShadow: {
             'custom1' : '0 4px 3px rgba(0, 0, 0, 0.69)',
-            'custom2' : '0 4px 3px rgba(0, 0, 0, 0.24)'
+            'custom2' : '0 4px 3px rgba(0, 0, 0, 0.24)',
         },
         fontSize: {
             custom1: ['100px', '1'],
@@ -46,4 +49,3 @@ export default {
   },
   plugins: [],
 }
-
