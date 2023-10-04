@@ -1,0 +1,84 @@
+.navigation {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    right: 0;
+    bottom: 40px; /* Mengatur elemen ke bagian bawah halaman */
+    z-index: 1000;
+}
+
+.menuToggle{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: #ffffff;
+    border: 2px solid #DD3B3C;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    transform: translateY(-20px);
+}
+.menuToggle::before {
+    content: ''; /* Menghapus isi teks */
+    background-image: url('/public/assets/xgrassdesk.png'); /* Mengatur gambar latar belakang */
+    background-size: cover; /* Menyesuaikan gambar sesuai ukuran elemen */
+    width: 25px; /* Lebar gambar */
+    height: 25px; /* Tinggi gambar */
+    transition: 1.5s;
+}
+
+.menuToggle.active:before{
+    transform: rotate(360deg);
+}
+.menu {
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    background: #000;
+    border-radius: 70px;
+    border: 1px solid #ffffff;
+    display: flex; /* Menjadikan elemen .menu flex container */
+    align-items: center; /* Tengahkan secara vertikal */
+    justify-content: center; /* Tengahkan secara horizontal */
+}
+
+.menu ul {
+    font-size: 5px;
+    position: relative;
+    display: flex;
+    gap: 10px;
+    line-height: 70px;
+}
+.menu ul li {
+    position: relative;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 20px;
+    padding: 5px;
+    background: #DD3B3C;
+    border: 1px solid #ffffff;
+    border-radius: 3px;
+    text-align: center; /* Teks ditengah secara horizontal */
+    line-height: 20px; /* Teks ditengah secara vertikal */
+}
+
+.menu ul li a{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: block;
+    font-size: 2em;
+    text-decoration: none;
+    color: #ffffff;
+}
+.menu ul li:hover a{
+    color: #888888;
+}

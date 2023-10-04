@@ -22,6 +22,21 @@
     src: url("../../public/fonts/LastikRegular.otf");
   }
 
+@font-face {
+  font-family: "Helvetica";
+  src: url("../../public/fonts/HelveticaMedExt.ttf")
+}
+
+@font-face {
+  font-family: "CapucheTrial";
+  src: url("../../public/fonts/CapucheTrial.otf")
+}
+
+@font-face {
+  font-family: "MigraExtralight";
+  src: url("../../public/fonts/Migra-Extralight.otf");
+}
+
   /* body {
     overflow: hidden;
   } */

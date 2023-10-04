@@ -21,8 +21,8 @@ use App\Http\Controllers\RegisterController;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Preevent1', []);
-})->name('preevent1');
+    return Inertia::render('main', []);
+})->name('main');
 
 Route::get('/after', function () {
     return Inertia::render('Preevent1After', []);

@@ -1,0 +1,13 @@
+.slide-track {
+  animation: scroll 15s infinite;
+  /* Ganti ease-in-out menjadi linear */
+}
+
+@keyframes scroll {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(calc(-250px * 3)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
+  }
+}
