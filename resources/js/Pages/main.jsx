@@ -1,22 +1,29 @@
+import '../../css/app.css';
+
+import Dropdown from '@/Components/Dropdown';
+import NavLink from '@/Components/NavLink';
+import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import React, { useEffect, useState } from "react";
 import SwiperAnimation from '../../components/swiperAnimaiton';
 import CircularTextAnimation from '../../components/circularTextAnimation';
 import '/resources/css/circleTextAnimation.css';
 import '/resources/css/customScrollbar.css';
 import '/resources/css/bottomNavBar.css'
-import { initTE, Dropdown } from "tw-elements";
+import { initTE } from "tw-elements";
 import '/resources/components/speakersCarousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import SpeakersCarousel from "../../components/speakersCarousel";
 import { Carousel } from "react-responsive-carousel";
 
-import { Head, router } from '@inertiajs/react';
+import { Link, Head, router } from '@inertiajs/react';
 import { useForm } from '@inertiajs/react';
 import * as Dialog from '@radix-ui/react-dialog';
 
-export default function mainevent() {
+export default function mainevent({ auth }) {
     const [showNavbar, setShowNavbar] = useState(true);
   const [showCarousel, setShowCarousel] = useState(false);
+  const isLoggedIn = auth.user; // Check if a user is logged in
+  const userName = isLoggedIn ? auth.user.name : null;
 
   // carousel ditampilkan
   useEffect(() => {
@@ -64,8 +71,8 @@ export default function mainevent() {
         <>
             <head title='TEDxUniversitasAirlangga2023' />
             {/*Banner*/}
-                <section>
-                <div className="bg-cover bg-no-repeat min-h-full xl:bg-[url('../../../public/assets/bg-main1.jpg')] md:bg-[url('../../../public/assets/bg-main1-lg.jpg')] xs:bg-[url('../../../public/assets/bg-main1-xs.jpg')]">
+            <section>
+                <div className="bg-cover bg-no-repeat min-h-full xl:bg-[url('/assets/bg-main1.jpg')] md:bg-[url('/assets/bg-main1-lg.jpg')] xs:bg-[url('/assets/bg-main1-xs.jpg')]">
       {showNavbar ? (
         <div className='grid bg-[#1A1A1A] opacity-75 border-b-4 border-[#b93021]'>
           {/* ...Isi navbar Anda di sini */}
@@ -108,8 +115,25 @@ export default function mainevent() {
                     </li>
                     </ul>
                     </li>
-                    <li><a href="#" className="text-white text-center border-[2px] border-[#b93021] hover:bg-[#b93021] rounded-md p-[10px] md:p-[5px] xs:p-[3px]">LOGIN</a></li>
+                    {/* Login */}
+                    {auth.user ? (
+                      <Link
+                      href={route('dashboard')}
+                      className="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
+                    >
+                      Dashboard
+                    </Link>
+                    ) : (
+                    <Link
+                      href={route('login')}
+                      className="text-white text-center border-[2px] border-[#b93021] hover:bg-[#b93021] rounded-md p-[10px] md:p-[5px] xs:p-[3px]"
+                    >
+                      LOGIN
+                    </Link>
+                    )}
                     </ul>
+
+                    
                 </nav>
             </div>
         </div>
@@ -127,7 +151,7 @@ export default function mainevent() {
             </div>
         </div>
       )}
-      <div className="bg-cover bg-no-repeat min-h-full xl:bg-[url('../../../public/assets/bg-main1.jpg')] md:bg-[url('../../../public/assets/bg-main1-lg.jpg')] xs:bg-[url('../../../public/assets/bg-main1-xs.jpg')]">
+      <div className="bg-cover bg-no-repeat min-h-full xl:bg-[url('/assets/bg-main1.jpg')] md:bg-[url('/public/assets/bg-main1-lg.jpg')] xs:bg-[url('/public/assets/bg-main1-xs.jpg')]">
             <div className='mx-auto xl:w-[924px] md:w-[768px] xs:w-[300px] xl:pt-[100px] md:pt-[100px] xs:pt-[25px]'>
                 <h1 className="font-canopee xl:text-[150px] md:text-[130px] xs:text-[40px] text-custom11 text-center text-white uppercase">
                     <span className='block'>IDEAS WORTH</span>
@@ -142,10 +166,11 @@ export default function mainevent() {
     </div>
 
                 <CircularTextAnimation />
-                </section>
+            </section>
+            
             {/*Main Event*/}
             <section>
-                    <div className="bg-cover bg-[#F0EFE5] bg-no-repeat min-h-full xl:py-[50px] md:py-[30px] xs:py-[15px] xl:bg-[url('../../../public/assets/bg-main-ev.jpg')] md:bg-[url('../../../public/assets/bg-main-ev-md.jpg')] xs:bg-[url('../../../public/assets/bg-main-ev-md.jpg')]">
+                    <div className="bg-cover bg-[#F0EFE5] bg-no-repeat min-h-full xl:py-[50px] md:py-[30px] xs:py-[15px] xl:bg-[url('/assets/bg-main-ev.jpg')] md:bg-[url('/assets/bg-main-ev-md.jpg')] xs:bg-[url('/assets/bg-main-ev-md.jpg')]">
                         <div className='text-center'>
                             <h1 className='xl:text-[75px] md:text-[50px] xs:text-[25px] font-capuchetrial'>MAIN EVENT : <br/> <span className='text-[#A4161A]'> TEDx</span>Universitas Airlangga </h1>
                             <p className='xl:text-[28px] md:text-[25px] xs:text-[10px] xl:px-[250px] md:px-[50px] xs:px-[40px] font-migra'>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
@@ -159,7 +184,7 @@ export default function mainevent() {
 
             {/*SubEvent*/}
             <section>
-                <div className="bg-cover bg-no-repeat min-h-full xl:py-[50px] md:py-[30px] xs:py-[15px] xl:bg-[url('../../../public/assets/bg-sub-event.jpg')] md:bg-[url('../../../public/assets/bg-sub-event.jpg')] xs:bg-[url('../../../public/assets/bg-sub-event.jpg')]">
+                <div className="bg-cover bg-no-repeat min-h-full xl:py-[50px] md:py-[30px] xs:py-[15px] xl:bg-[url('/assets/bg-sub-event.jpg')] md:bg-[url('/assets/bg-sub-event.jpg')] xs:bg-[url('/public/assets/bg-sub-event.jpg')]">
                     <div className='text-center text-[#FFFFFF] '>
                         <h1 className='xl:text-[75px] md:text-[50px] xs:text-[25px] font-capuchetrial'>SUB EVENT LINE UP</h1>
                     </div>
@@ -285,7 +310,7 @@ export default function mainevent() {
 
             {/*Ticktets*/}
             <section>
-                    <div className="bg-cover bg-[#F0EFE5] bg-no-repeat min-h-full xl:py-[50px] md:py-[30px] xs:py-[40px] xl:bg-[url('../../../public/assets/bg-main-ev.jpg')] md:bg-[url('../../../public/assets/bg-main-ev-md.jpg')] xs:bg-[url('../../../public/assets/bg-main-ev-md.jpg')]">
+                    <div className="bg-cover bg-[#F0EFE5] bg-no-repeat min-h-full xl:py-[50px] md:py-[30px] xs:py-[40px] xl:bg-[url('/assets/bg-main-ev.jpg')] md:bg-[url('/assets/bg-main-ev-md.jpg')] xs:bg-[url('/assets/bg-main-ev-md.jpg')]">
                         <div className='text-center'>
                             <h1 className='xl:text-[75px] md:text-[50px] xs:text-[25px] font-canopee text-[#A4161A]'>GRAB YOUR TICKET</h1>
                         </div>
