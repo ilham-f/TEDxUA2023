@@ -37,6 +37,11 @@
   src: url("../../public/fonts/Migra-Extralight.otf");
 }
 
+@font-face {
+  font-family: "Gooddog";
+  src: url("../../public/fonts/Gooddog.TTF");
+}
+
   /* body {
     overflow: hidden;
   } */

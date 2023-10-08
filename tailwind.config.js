@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme')
 export default {
   content: [
     "./resources/**/*.blade.php",
@@ -19,6 +20,7 @@ export default {
             helvetica: ["Helvetica", "script"],
             capuchetrial: ["CapucheTrial", "black"],
             migra: ["MigraExtralight", "script"],
+            gooddog: ["Gooddog", "script"]
         },
         dropShadow: {
             'custom1' : '0 4px 3px rgba(0, 0, 0, 0.69)',
@@ -41,10 +43,8 @@ export default {
     },
     screens: {
         xs: '281px',
-        sm: '640px',
-        md: '768px',
-        lg: '1024px',
-        xl: '1430px'
+        w450: '450px',
+        ...defaultTheme.screens,
       },
   },
   plugins: [],

@@ -24,6 +24,14 @@ Route::get('/', function () {
     return Inertia::render('main', []);
 })->name('main');
 
+Route::get('/login', function () {
+    return Inertia::render('Login', []);
+})->name('login');
+
+Route::get('/register', function () {
+    return Inertia::render('Register', []);
+})->name('register');
+
 Route::get('/after', function () {
     return Inertia::render('Preevent1After', []);
 })->name('preevent1After');
