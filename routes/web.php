@@ -8,6 +8,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PartnershipController;
 use App\Http\Controllers\Auth\RedirectAuthenticatedUsersController;
 
 /*
@@ -65,5 +66,9 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+//Partnership email
+Route::get('/partnership', [PartnershipController::class, 'showForm'])->name('partnership.form');
+Route::post('/send-partnership-email', [PartnershipController::class, 'sendEmail']);
 
 require __DIR__.'/auth.php';
