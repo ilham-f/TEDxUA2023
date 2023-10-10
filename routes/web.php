@@ -32,4 +32,5 @@ Route::get('pre-event-1/{questionNumber}', [PreeventQuestionController::class, '
 
 Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/answers-table', [AdminController::class, 'answerstable']);
+Route::get('/questions-table', [AdminController::class, 'questionstable']);
 
