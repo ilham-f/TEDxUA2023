@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { Carousel } from "react-responsive-carousel";
+import { initTE, Dropdown } from "tw-elements";
 import SwiperAnimation from '../../components/swiperAnimaiton';
 import CircularTextAnimation from '../../components/circularTextAnimation';
 import '/resources/css/circleTextAnimation.css';
 import '/resources/css/customScrollbar.css';
 import '/resources/css/bottomNavBar.css'
-import { initTE, Dropdown } from "tw-elements";
-import '/resources/components/speakersCarousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import SpeakersCarousel from "../../components/speakersCarousel";
-import { Carousel } from "react-responsive-carousel";
 
 import { Head, router } from '@inertiajs/react';
 import { useForm } from '@inertiajs/react';
@@ -68,7 +66,6 @@ export default function mainevent() {
                 <div className="bg-cover bg-no-repeat min-h-full xl:bg-[url('../../../public/assets/bg-main1.jpg')] md:bg-[url('../../../public/assets/bg-main1-lg.jpg')] xs:bg-[url('../../../public/assets/bg-main1-xs.jpg')]">
       {showNavbar ? (
         <div className='grid bg-[#1A1A1A] opacity-75 border-b-4 border-[#b93021]'>
-          {/* ...Isi navbar Anda di sini */}
           <div className='flex xl:h-[50px] md:h-[25px] xs:h-[10px] xl:mx-[100px] md:mx-[20px] xs:mx-[10px] xl:my-[40px] md:my-[30px] xs:my-[15px] content-center'>
             {/* Logo Tedx */}
             <img src="/assets/TEDxUniversitasAirlangga.png" alt='' />
@@ -141,14 +138,23 @@ export default function mainevent() {
         </div>
     </div>
 
+                <div className="relative">
+                <button className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
                 <CircularTextAnimation />
+                </button>
+                </div>
+
                 </section>
             {/*Main Event*/}
             <section>
                     <div className="bg-cover bg-[#F0EFE5] bg-no-repeat min-h-full xl:py-[50px] md:py-[30px] xs:py-[15px] xl:bg-[url('../../../public/assets/bg-main-ev.jpg')] md:bg-[url('../../../public/assets/bg-main-ev-md.jpg')] xs:bg-[url('../../../public/assets/bg-main-ev-md.jpg')]">
                         <div className='text-center'>
                             <h1 className='xl:text-[75px] md:text-[50px] xs:text-[25px] font-capuchetrial'>MAIN EVENT : <br/> <span className='text-[#A4161A]'> TEDx</span>Universitas Airlangga </h1>
-                            <p className='xl:text-[28px] md:text-[25px] xs:text-[10px] xl:px-[250px] md:px-[50px] xs:px-[40px] font-migra'>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                            <p className='xl:text-[28px] md:text-[25px] xs:text-[10px] xl:px-[250px] md:px-[50px] xs:px-[40px] font-migra'>"Mastering the <span className='font-bold'>'Upheaval Maze'</span> in Today's World; Adapting to Change and Achieving Success" 
+                            <span className="block">In our complex era, akin to a labyrinth of challenges, navigating change and making wise decisions is essential. The 'Upheaval Maze' concept highlights the need to adapt, overcome obstacles, and find success amidst turmoil.</span>
+                            <span className="block">Rapid technological advances have accelerated change, impacting how we live and work. This transformation, driven by our innate desire for progress, challenges us to develop competitive advantages.</span> 
+                            <span className="block">Join our talkshow to explore these themes of change and adaptation in the modern world.</span>
+                        </p>
                         </div>
                         <div class="flex gap-[20px] justify-center font-helvetica xl:py-[30px] md:py-[20px] xs:py-[10px]">
                             <button class="xl:px-[4px] xl:py-[2px] md:px-[5px] md:py-[1px] md:text-[15px] xs:px-[2px] xs:py-[0px] xs:text-[8px] bg-[#F5F3F4] text-[#A3161A] border-2 border-[#A3161A] rounded-md">RESERVE SPOT</button>
@@ -220,13 +226,13 @@ export default function mainevent() {
         />
         <p className="font-canopee text-white py-2 text-center">ELENA</p>
       </div>
-      <div className="w-1/2 ml-2">
+      <div className="w-1/2 ml-2 relative">
         <img
           className="w-full h-full object-cover bg-[#D9D9D9]"
           src="/assets/speaker.png"
           alt="Pembicara 2"
         />
-        <p className="font-canopee text-white py-2 text-center">Speaker 2</p>
+        <p className="absolute font-canopee text-white py-2 text-center">Speaker 2</p>
       </div>
     </div>
   </Carousel>
@@ -284,7 +290,7 @@ export default function mainevent() {
             </section>
 
             {/*Ticktets*/}
-            <section>
+            <section id="tickets">
                     <div className="bg-cover bg-[#F0EFE5] bg-no-repeat min-h-full xl:py-[50px] md:py-[30px] xs:py-[40px] xl:bg-[url('../../../public/assets/bg-main-ev.jpg')] md:bg-[url('../../../public/assets/bg-main-ev-md.jpg')] xs:bg-[url('../../../public/assets/bg-main-ev-md.jpg')]">
                         <div className='text-center'>
                             <h1 className='xl:text-[75px] md:text-[50px] xs:text-[25px] font-canopee text-[#A4161A]'>GRAB YOUR TICKET</h1>
