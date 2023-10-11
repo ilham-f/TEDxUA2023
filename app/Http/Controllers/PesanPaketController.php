@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\pendaftaran;
-use App\Http\Requests\StorependaftaranRequest;
-use App\Http\Requests\UpdatependaftaranRequest;
+use App\Models\PesanPaket;
+use App\Http\Requests\StorePesanPaketRequest;
+use App\Http\Requests\UpdatePesanPaketRequest;
 
-class PendaftaranController extends Controller
+class PesanPaketController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class PendaftaranController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorependaftaranRequest $request)
+    public function store(StorePesanPaketRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class PendaftaranController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(pendaftaran $pendaftaran)
+    public function show(PesanPaket $pesanPaket)
     {
         //
     }
@@ -43,7 +43,7 @@ class PendaftaranController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(pendaftaran $pendaftaran)
+    public function edit(PesanPaket $pesanPaket)
     {
         //
     }
@@ -51,7 +51,7 @@ class PendaftaranController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatependaftaranRequest $request, pendaftaran $pendaftaran)
+    public function update(UpdatePesanPaketRequest $request, PesanPaket $pesanPaket)
     {
         //
     }
@@ -59,7 +59,7 @@ class PendaftaranController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(pendaftaran $pendaftaran)
+    public function destroy(PesanPaket $pesanPaket)
     {
         //
     }

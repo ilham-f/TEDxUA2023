@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\pembayaran;
-use App\Http\Requests\StorepembayaranRequest;
-use App\Http\Requests\UpdatepembayaranRequest;
+use App\Models\Pemesanan;
+use App\Http\Requests\StorePemesananRequest;
+use App\Http\Requests\UpdatePemesananRequest;
 
-class PembayaranController extends Controller
+class PemesananController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class PembayaranController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorepembayaranRequest $request)
+    public function store(StorePemesananRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class PembayaranController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(pembayaran $pembayaran)
+    public function show(Pemesanan $pemesanan)
     {
         //
     }
@@ -43,7 +43,7 @@ class PembayaranController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(pembayaran $pembayaran)
+    public function edit(Pemesanan $pemesanan)
     {
         //
     }
@@ -51,7 +51,7 @@ class PembayaranController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatepembayaranRequest $request, pembayaran $pembayaran)
+    public function update(UpdatePemesananRequest $request, Pemesanan $pemesanan)
     {
         //
     }
@@ -59,7 +59,7 @@ class PembayaranController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(pembayaran $pembayaran)
+    public function destroy(Pemesanan $pemesanan)
     {
         //
     }
