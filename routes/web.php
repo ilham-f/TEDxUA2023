@@ -4,11 +4,9 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\PreeventAnswerController;
 use App\Http\Controllers\PreeventQuestionController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PartnershipController;
+use App\Http\Controllers\MerchQuizController;
 use App\Http\Controllers\Auth\RedirectAuthenticatedUsersController;
 
 /*
@@ -70,5 +68,11 @@ Route::middleware('auth')->group(function () {
 //Partnership email
 Route::get('/partnership', [PartnershipController::class, 'showForm'])->name('partnership.form');
 Route::post('/send-partnership-email', [PartnershipController::class, 'sendEmail']);
+
+//Quiz Merch
+Route::get('/quiz-merch', function () {
+    return Inertia::render('QuizMerch');
+});
+Route::post('/quiz-merch/after', [MerchQuizController::class, 'submitQuiz']);
 
 require __DIR__.'/auth.php';
