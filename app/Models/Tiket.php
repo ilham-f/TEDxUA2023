@@ -19,11 +19,11 @@ class Tiket extends Model
     public function pakets()
 
     {
-        return $this->belongsToMany(Paket::class, 'pesan_pakets');
+        return $this->belongsTo(Paket::class, 'id_paket', 'id');
     }
 
-    public function payments(): HasOne
+    public function payments()
     {
-        return $this->hasOne(Payment::class, 'id_tiket', 'id');
+        return $this->hasMany(Payment::class);
     }
 }

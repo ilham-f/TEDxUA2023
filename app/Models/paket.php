@@ -11,6 +11,6 @@ class Paket extends Model
 
     public function tikets()
     {
-        return $this->belongsToMany(Tiket::class, 'pesan_pakets');
+        return $this->hasMany(Tiket::class);
     }
 }

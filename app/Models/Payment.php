@@ -10,7 +10,7 @@ class Payment extends Model
 {
     use HasFactory;
 
-    public function tikets(): BelongsTo
+    public function tikets()
     {
         return $this->belongsTo(Tiket::class, 'id_tiket', 'id');
     }

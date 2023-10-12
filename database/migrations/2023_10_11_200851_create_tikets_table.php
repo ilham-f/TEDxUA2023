@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('tikets', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('id_user');
-            $table->bigInteger('id_pesan_paket');
+            $table->foreignId('id_user');
+            $table->foreignId('id_paket');
             $table->integer('total_harga');
-            $table->boolean('status');
+            $table->integer('status');
             $table->timestamps();
         });
     }
