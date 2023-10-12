@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\peserta;
-use App\Http\Requests\StorepesertaRequest;
-use App\Http\Requests\UpdatepesertaRequest;
+use App\Models\Tiket;
+use App\Http\Requests\StoreTiketRequest;
+use App\Http\Requests\UpdateTiketRequest;
 
-class PesertaController extends Controller
+class TiketController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class PesertaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorepesertaRequest $request)
+    public function store(StoreTiketRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class PesertaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(peserta $peserta)
+    public function show(Tiket $tiket)
     {
         //
     }
@@ -43,7 +43,7 @@ class PesertaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(peserta $peserta)
+    public function edit(Tiket $tiket)
     {
         //
     }
@@ -51,7 +51,7 @@ class PesertaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatepesertaRequest $request, peserta $peserta)
+    public function update(UpdateTiketRequest $request, Tiket $tiket)
     {
         //
     }
@@ -59,7 +59,7 @@ class PesertaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(peserta $peserta)
+    public function destroy(Tiket $tiket)
     {
         //
     }

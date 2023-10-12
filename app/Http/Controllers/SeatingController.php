@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Paket;
-use App\Http\Requests\StorePaketRequest;
-use App\Http\Requests\UpdatePaketRequest;
+use App\Models\Seating;
+use App\Http\Requests\StoreSeatingRequest;
+use App\Http\Requests\UpdateSeatingRequest;
 
-class PaketController extends Controller
+class SeatingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class PaketController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorePaketRequest $request)
+    public function store(StoreSeatingRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class PaketController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Paket $paket)
+    public function show(Seating $seating)
     {
         //
     }
@@ -43,7 +43,7 @@ class PaketController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Paket $paket)
+    public function edit(Seating $seating)
     {
         //
     }
@@ -51,7 +51,7 @@ class PaketController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePaketRequest $request, Paket $paket)
+    public function update(UpdateSeatingRequest $request, Seating $seating)
     {
         //
     }
@@ -59,7 +59,7 @@ class PaketController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Paket $paket)
+    public function destroy(Seating $seating)
     {
         //
     }
