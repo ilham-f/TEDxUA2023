@@ -129,14 +129,14 @@ export default function mainevent({ auth }) {
                 </div>
             </div>
         </div>
-    </div>
+     </div>
 
                 <CircularTextAnimation />
             </section>
 
             {/*Main Event*/}
             <section>
-                    <div className="bg-cover bg-[#F0EFE5] bg-no-repeat min-h-full xl:py-[50px] md:py-[30px] xs:py-[15px] xl:bg-[url('/assets/bg-main-ev.jpg')] md:bg-[url('/assets/bg-main-ev-md.jpg')] xs:bg-[url('/assets/bg-main-ev-md.jpg')]">
+                <div className="bg-cover bg-[#F0EFE5] bg-no-repeat min-h-full xl:py-[50px] md:py-[30px] xs:py-[15px] xl:bg-[url('/assets/bg-main-ev.jpg')] md:bg-[url('/assets/bg-main-ev-md.jpg')] xs:bg-[url('/assets/bg-main-ev-md.jpg')]">
                         <div className='text-center'>
                             <h1 className='xl:text-[75px] md:text-[50px] xs:text-[25px] font-capuchetrial'>MAIN EVENT : <br/> <span className='text-[#A4161A]'> TEDx</span>Universitas Airlangga </h1>
                             <p className='xl:text-[28px] md:text-[25px] xs:text-[10px] xl:px-[250px] md:px-[50px] xs:px-[40px] font-migra'>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
@@ -145,7 +145,6 @@ export default function mainevent({ auth }) {
                             <button class="xl:px-[4px] xl:py-[2px] md:px-[5px] md:py-[1px] md:text-[15px] xs:px-[2px] xs:py-[0px] xs:text-[8px] bg-[#F5F3F4] text-[#A3161A] border-2 border-[#A3161A] rounded-md">RESERVE SPOT</button>
                             <button class="xl:px-[4px] xl:py-[2px] md:px-[5px] md:py-[1px] md:text-[15px] xs:px-[2px] xs:py-[0px] xs:text-[8px] bg-[#981B1F] rounded-md text-[#F5F3F4]">LEARN MORE</button>
                         </div>
-                    </div>
                 </div>
 
                 <CircularTextAnimation />
@@ -374,11 +373,9 @@ export default function mainevent({ auth }) {
                             GRAB YOUR TICKET
                         </button>
                     </div>
-                </div>
             </section>
             <Footer />
             <Navbar />
-
         </>
     );
 }
