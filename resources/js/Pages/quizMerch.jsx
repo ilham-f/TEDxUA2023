@@ -1,18 +1,53 @@
-import React from "react";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
+import React, { useState } from 'react';
+import { router } from '@inertiajs/react'
+import quizQuestions from '../quizData'
 
-export default function QuizMerch(){
-    return(
-        <>
-        <div className="bg-cover bg-no-repeat min-h-full relative xl:bg-[url('../../../public/assets/bg-merch.jpg')] md:bg-[url('../../../public/assets/bg-merch.jpg')] xs:bg-[url('../../../public/assets/bg-merch.jpg')]">
-            <div className="bg-white mx-auto rounded-lg w-[1200px] jsutify-center items-center text-center">
-                <h1 className="text-[80px] font-capuchetrial text-[#A4161A]">"Find Your True Self"</h1>
-            </div>
+const MerchQuiz = () => {
+    const [answers, setAnswers] = useState(Array(quizQuestions.length).fill(''));
 
-          <Navbar />
-          <Footer />
+    const handleOptionChange = (questionIndex, optionIndex) => {
+        const newAnswers = [...answers];
+        newAnswers[questionIndex] = optionIndex;
+        setAnswers(newAnswers);
+    };
+
+    const isAllAnswered = () => {
+        return answers.every(answer => answer !== '');
+    };
+
+    const handleSubmit = () => {
+    if (!isAllAnswered()) {
+        alert('Silakan lengkapi semua pertanyaan sebelum mengirim.');
+        return;
+    }
+        router.post('/quiz-merch/after', { answers });
+    };
+
+    return (
+        <div>
+            <h1>Quiz Merch</h1>
+            <form onSubmit={handleSubmit}>
+                {quizQuestions.map((question, questionIndex) => (
+                    <div key={questionIndex}>
+                        <p>{question.text}</p>
+                        {question.options.map((option, optionIndex) => (
+                            <div key={optionIndex}>
+                                <input
+                                    type="radio"
+                                    id={`q${questionIndex}_opt${optionIndex}`}
+                                    name={`q${questionIndex}`}
+                                    value={optionIndex} // Mengirim indeks opsi sebagai value (0, 1, 2)
+                                    checked={answers[questionIndex] === optionIndex}
+                                    onChange={() => handleOptionChange(questionIndex, optionIndex)}
+                                />
+                                <label htmlFor={`q${questionIndex}_opt${optionIndex}`}>{option}</label>
+                            </div>
+                        ))}
+                    </div>
+                ))}
+                <button type="button" disabled={!isAllAnswered()} onClick={handleSubmit}>Submit</button>
+            </form>
         </div>
-        </>
-    )
-}
+    );
+};
+export default MerchQuiz;
