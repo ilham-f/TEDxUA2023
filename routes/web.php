@@ -49,6 +49,22 @@ Route::get('/after', function () {
     return Inertia::render('Preevent1After', []);
 })->name('preevent1After');
 
+Route::get('/merch', function () {
+    return Inertia::render('merch', []);
+})->name('merch');
+
+Route::get('/quizMerch', function () {
+    return Inertia::render('quizMerch', []);
+})->name('quizMerch');
+
+Route::get('/gallery', function () {
+    return Inertia::render('gallery', []);
+})->name('gallery');
+
+Route::get('/detailProduk', function () {
+    return Inertia::render('detailProduk', []);
+})->name('detailProduk');
+
 Route::post('/preevent1', [PreeventAnswerController::class, 'store']);
 Route::get('pre-event-1/{questionNumber}', [PreeventQuestionController::class, 'showQuestion']);
 

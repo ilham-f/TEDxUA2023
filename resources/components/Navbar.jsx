@@ -2,6 +2,10 @@ import React from "react";
 import { initTE, Dropdown } from "tw-elements";
 import { useState, useEffect } from "react";
 
+import { Link, Head, router } from '@inertiajs/react';
+import { useForm } from '@inertiajs/react';
+import * as Dialog from '@radix-ui/react-dialog';
+
 export default function Navbar() {
 
     const [showNavbar, setShowNavbar] = useState(true);
@@ -35,7 +39,7 @@ export default function Navbar() {
     return (
         <>
             {showNavbar ? (
-                <div className="grid bg-[#1A1A1A] opacity-75 border-b-4 border-[#b93021] fixed left-0 right-0 top-0">
+                <div className="z-50 grid bg-[#1A1A1A] opacity-75 border-b-4 border-[#b93021] fixed left-0 right-0 top-0">
                     {/* ...Isi navbar Anda di sini */}
                     <div className="flex xl:h-[50px] md:h-[25px] xs:h-[10px] xl:mx-[100px] md:mx-[20px] xs:mx-[10px] my-[20px] content-center">
                         {/* Logo Tedx */}
@@ -112,7 +116,7 @@ export default function Navbar() {
                                         <li>
                                             <a
                                                 class="block w-full whitespace-nowrap bg-transparent px-4 py-2 font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
-                                                href="#"
+                                                href='#'
                                                 data-te-dropdown-item-ref
                                             >
                                                 Merch
