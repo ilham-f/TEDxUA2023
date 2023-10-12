@@ -172,7 +172,7 @@ display: none;
   display: inline-flex;
   align-items: center;
   background-color: #ffeba7;
-  color: #000000;
+  color: #000000; 
 }
 .btn:hover{
   background-color: #000000;
