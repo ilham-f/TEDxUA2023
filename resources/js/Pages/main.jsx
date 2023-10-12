@@ -4,7 +4,6 @@ import CircularTextAnimation from "../../components/circularTextAnimation";
 import "/resources/css/circleTextAnimation.css";
 import "/resources/css/customScrollbar.css";
 import "/resources/css/bottomNavBar.css";
-import "/resources/components/speakersCarousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import { Head, router } from "@inertiajs/react";
@@ -52,6 +51,8 @@ export default function mainevent() {
                 <div className="relative">
                 <button className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
                 <CircularTextAnimation />
+                </button>
+                </div>
             </section>
             {/*Main Event*/}
             <section>
@@ -216,7 +217,7 @@ export default function mainevent() {
                             </div>
                             <div className="flex justify-end">
                                 <img
-                                    className="absolute xl:w-[500px] md:w-[300px]"
+                                    className="absolute xl:w-[500px] md:w-[300px] xs:w-[125px]"
                                     src="/assets/x-right.png"
                                     alt=""
                                 />
@@ -281,7 +282,6 @@ export default function mainevent() {
             </section>
             <Footer />
             <Navbar />
-
-        </>
+          </>
     );
 }
