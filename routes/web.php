@@ -92,7 +92,7 @@ Route::post('/send-partnership-email', [PartnershipController::class, 'sendEmail
 
 //Quiz Merch
 Route::get('/quiz-merch', function () {
-    return Inertia::render('QuizMerch');
+    return Inertia::render('quizMerch');
 });
 Route::post('/quiz-merch/after', [MerchQuizController::class, 'submitQuiz']);
 
