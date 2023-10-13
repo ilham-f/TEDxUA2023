@@ -27,21 +27,15 @@ const MerchQuiz = () => {
 
     const [answers, setAnswers] = useState(Array(quizQuestions.length).fill(''));
 
-    // const handleOptionChange = (questionIndex, optionIndex) => {
-    //     const newAnswers = [...answers];
-    //     newAnswers[questionIndex] = optionIndex;
-    //     setAnswers(newAnswers);
-    // };
-
     const isAllAnswered = () => {
         return answers.every(answer => answer !== '');
     };
 
     const handleSubmit = () => {
-    // if (!isAllAnswered()) {
-    //     alert('Silakan lengkapi semua pertanyaan sebelum mengirim.');
-    //     return;
-    // }
+    if (!isAllAnswered()) {
+    alert('Silakan lengkapi semua pertanyaan sebelum mengirim.');
+    return;
+    }
         router.post('/quiz-merch/after', { answers });
     };
 
@@ -133,7 +127,7 @@ const MerchQuiz = () => {
                         <button
                         type="button"
                         className="font-capuchetrial xl:text-[35px] lg:text-[25px] xs:text-[10px] md:px-[50px] xs:px-[25px] md:py-[10px] xs:py-[5px]"
-                        // disabled={!isAllAnswered()}
+                        disabled={!isAllAnswered()}
                         onClick={handleSubmit}>
                             Submit
                         </button>
