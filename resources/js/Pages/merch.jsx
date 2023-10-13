@@ -10,7 +10,7 @@ import ProductMerch from "../../components/produkMerch";
 export default function Merch() {
     return (
         <>
-        <div className="bg-cover bg-no-repeat min-h-full relative xl:bg-[url('../../../public/assets/bg-merch.jpg')] md:bg-[url('../../../public/assets/bg-merch.jpg')] xs:bg-[url('../../../public/assets/bg-merch.jpg')]">
+        <div className="bg-cover bg-no-repeat min-h-full relative xl:bg-[url('../../../assets/bg-merch.jpg')] md:bg-[url('../../../public/assets/bg-merch.jpg')] xs:bg-[url('../../../public/assets/bg-merch.jpg')]">
           <div className="flex">
             <div className="absolute flex">
               <img
@@ -47,9 +47,11 @@ export default function Merch() {
         </p>
         <div className="text-center md:py-[30px] xs:py-[15px]">
         <span className="inline-block bg-[#A4161A] rounded-xl text-[#FFFFFF]">
-          <button type="button" className="font-capuchetrial xl:text-[35px] lg:text-[25px] xs:text-[10px] md:px-[50px] xs:px-[25px] md:py-[10px] xs:py-[5px]">
-            Take Quiz
-          </button>
+          <a href="/quizMerch">
+            <button type="button" className="font-capuchetrial xl:text-[35px] lg:text-[25px] xs:text-[10px] md:px-[50px] xs:px-[25px] md:py-[10px] xs:py-[5px]">
+                Take Quiz
+            </button>
+          </a>
         </span>
       </div>
 

@@ -7,6 +7,7 @@ use App\Http\Controllers\PreeventQuestionController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PartnershipController;
 use App\Http\Controllers\MerchQuizController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\RedirectAuthenticatedUsersController;
 
 /*
@@ -74,9 +75,16 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::get("/redirectAuthenticatedUsers", [RedirectAuthenticatedUsersController::class, "home"]);
 
+    // Route::group(['middleware' => 'role:admin'], function() {
+    //     Route::inertia('/admin', 'AdminDashboard')->name('adminDashboard');
+    // });
+
     Route::group(['middleware' => 'role:admin'], function() {
-        Route::inertia('/admin', 'AdminDashboard')->name('adminDashboard');
+        Route::get('/admin', [AdminController::class, 'index']);
+        Route::get('/answers-table', [AdminController::class, 'answer']);
+        Route::get('/questions-table', [AdminController::class, 'question']);
     });
+
     Route::group(['middleware' => 'role:user'], function() {
         Route::inertia('/home', 'main');
     });

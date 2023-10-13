@@ -60,7 +60,7 @@ export default function Navbar() {
                                 </li>
                                 <li className="flex items-center">
                                     <a
-                                        href="#"
+                                        href="/gallery"
                                         className="text-white hover:text-neutral-500"
                                     >
                                         GALLERY
@@ -116,7 +116,7 @@ export default function Navbar() {
                                         <li>
                                             <a
                                                 class="block w-full whitespace-nowrap bg-transparent px-4 py-2 font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
-                                                href='#'
+                                                href='/merch'
                                                 data-te-dropdown-item-ref
                                             >
                                                 Merch
@@ -126,7 +126,7 @@ export default function Navbar() {
                                 </li>
                                 <li className="flex items-center">
                                     <a
-                                        href="#"
+                                        href="/login"
                                         className="text-white text-center border-[2px] border-[#b93021] hover:bg-[#b93021] rounded-md p-[10px] md:p-[5px] xs:p-[3px]"
                                     >
                                         LOGIN
