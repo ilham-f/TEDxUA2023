@@ -46,17 +46,9 @@ Route::get('/register', function () {
     return Inertia::render('Register', []);
 })->name('register');
 
-Route::get('/after', function () {
-    return Inertia::render('Preevent1After', []);
-})->name('preevent1After');
-
 Route::get('/merch', function () {
     return Inertia::render('merch', []);
 })->name('merch');
-
-Route::get('/quizMerch', function () {
-    return Inertia::render('quizMerch', []);
-})->name('quizMerch');
 
 Route::get('/gallery', function () {
     return Inertia::render('gallery', []);
@@ -65,6 +57,11 @@ Route::get('/gallery', function () {
 Route::get('/detailProduk', function () {
     return Inertia::render('detailProduk', []);
 })->name('detailProduk');
+
+//Pre-Event-1
+Route::get('/after', function () {
+    return Inertia::render('Preevent1After', []);
+})->name('preevent1After');
 
 Route::post('/preevent1', [PreeventAnswerController::class, 'store']);
 Route::get('pre-event-1/{questionNumber}', [PreeventQuestionController::class, 'showQuestion']);
@@ -103,7 +100,7 @@ Route::post('/send-partnership-email', [PartnershipController::class, 'sendEmail
 
 //Quiz Merch
 Route::get('/quiz-merch', function () {
-    return Inertia::render('QuizMerch');
+    return Inertia::render('quizMerch');
 });
 Route::post('/quiz-merch/after', [MerchQuizController::class, 'submitQuiz']);
 

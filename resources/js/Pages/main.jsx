@@ -1,8 +1,5 @@
 import '../../css/app.css';
 
-import Dropdown from '@/Components/Dropdown';
-import NavLink from '@/Components/NavLink';
-import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import React, { useEffect, useState } from "react";
 import SwiperAnimation from '../../components/swiperAnimaiton';
 import CircularTextAnimation from '../../components/circularTextAnimation';
@@ -37,11 +34,12 @@ export default function mainevent({ auth }) {
 
     return (
         <>
+
             {/*Banner*/}
             <section>
                 <div className="bg-cover bg-no-repeat min-h-full xl:bg-[url('/assets/bg-main1.jpg')] md:bg-[url('/assets/bg-main1-lg.jpg')] xs:bg-[url('/assets/bg-main1-xs.jpg')]">
-
-      <div className="bg-cover bg-no-repeat min-h-full xl:bg-[url('/assets/bg-main1.jpg')] md:bg-[url('/public/assets/bg-main1-lg.jpg')] xs:bg-[url('/public/assets/bg-main1-xs.jpg')]">
+            <Navbar/>
+            <div className="bg-cover bg-no-repeat min-h-full xl:bg-[url('/assets/bg-main1.jpg')] md:bg-[url('/public/assets/bg-main1-lg.jpg')] xs:bg-[url('/public/assets/bg-main1-xs.jpg')]">
             <div className='mx-auto xl:w-[924px] md:w-[768px] xs:w-[300px] xl:pt-[100px] md:pt-[100px] xs:pt-[25px]'>
                 <h1 className="font-canopee xl:text-[150px] md:text-[130px] xs:text-[40px] text-custom11 text-center text-white uppercase">
                     <span className='block'>IDEAS WORTH</span>
@@ -260,8 +258,6 @@ export default function mainevent({ auth }) {
                         </div>
                     </div>
             </section>
-            <Footer />
-            <Navbar />
-        </>
+            </>
     );
 }

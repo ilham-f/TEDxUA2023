@@ -10,7 +10,8 @@ import ProductMerch from "../../components/produkMerch";
 export default function Merch() {
     return (
         <>
-        <div className="bg-cover bg-no-repeat min-h-full relative xl:bg-[url('../../../assets/bg-merch.jpg')] md:bg-[url('../../../public/assets/bg-merch.jpg')] xs:bg-[url('../../../public/assets/bg-merch.jpg')]">
+        <div className="bg-cover bg-no-repeat min-h-full relative xl:bg-[url('/assets/bg-merch.jpg')] md:bg-[url('/assets/bg-merch.jpg')] xs:bg-[url('/assets/bg-merch.jpg')]">
+        <Navbar />
           <div className="flex">
             <div className="absolute flex">
               <img
@@ -87,11 +88,14 @@ export default function Merch() {
           <li>• 1 Car</li>
           <li>• 1 Helicopter</li>
         </ul>
-        <div className="text-center py-[30px]">
+        <div className="text-center items-center justify-center py-[30px]">
           <span className="inline-block bg-[#A4161A] rounded-full text-[#FFFFFF]">
-            <button className="font-capuchetrial lg:text-[30px] md:text-[20px] xs:text-[10px] md:px-[100px] xs:px-[40px] md:py-[10px] xs:py-[5px]">
+            <a
+            href="https://forms.gle/6WCS4dZCFL3MJf729"
+            className="font-capuchetrial lg:text-[30px] md:text-[20px] xs:text-[10px] md:px-[100px] xs:px-[30px]"
+            target="_blank">
               ORDER NOW
-            </button>
+            </a>
           </span>
         </div>
       </div>
@@ -99,10 +103,7 @@ export default function Merch() {
       <ProductMerch />
 
   </div>
-
-
         <Footer />
-        <Navbar />
         </>
     );
 }
