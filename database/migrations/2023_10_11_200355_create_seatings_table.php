@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('seatings', function (Blueprint $table) {
             $table->id();
-            $table->string('no_seating', 5);
+            $table->integer('no_seating');
             $table->timestamps();
         });
     }

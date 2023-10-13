@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('bukti_bayar');
-            $table->bigInteger('id_tiket');
+            $table->foreignId('id_tiket');
         });
     }
 

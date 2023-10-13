@@ -36,9 +36,11 @@ class MerchQuizController extends Controller
 
         $this->mostSelectedBundle = $bundles[$mostSelectedAnswer];
 
-        return Inertia::render('QuizMerchAfter', [
-            'mostSelectedBundle' => $this->mostSelectedBundle,
-        ],
+        return Inertia::render(
+            'QuizMerchAfter',
+            [
+                'mostSelectedBundle' => $this->mostSelectedBundle,
+            ],
         );
     }
 }
