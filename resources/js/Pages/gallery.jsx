@@ -5,7 +5,8 @@ import Footer from "../../components/Footer";
 export default function Gallery(){
     return (
         <>
-        <div className="bg-cover bg-no-repeat min-h-full bg-[url('../../../public/assets/bg-gallery.jpg')]">
+        <div className="bg-cover bg-no-repeat min-h-full bg-[url('/assets/bg-gallery.jpg')]">
+        <Navbar/>
             <section>
                 <div className="relative">
                         <div className="absolute z-20 xl:top-[300px] xl:left-[-50px] lg:top-[300px] lg:left-[20px] md:top-[150px] md:left-[0px] w450:top-[90px] w450:left-[-20px] xs:top-[100px] xs:left-[-15px]">
@@ -73,8 +74,6 @@ export default function Gallery(){
             </section>
                 </div>
         </div>
-
-        <Navbar/>
         <Footer/>
         </>
     );

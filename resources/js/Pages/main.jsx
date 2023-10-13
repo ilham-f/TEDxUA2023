@@ -1,18 +1,12 @@
 import '../../css/app.css';
 
-import Dropdown from '@/Components/Dropdown';
-import NavLink from '@/Components/NavLink';
-import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import React, { useEffect, useState } from "react";
 import SwiperAnimation from '../../components/swiperAnimaiton';
 import CircularTextAnimation from '../../components/circularTextAnimation';
-import '/resources/css/circleTextAnimation.css';
-import '/resources/css/customScrollbar.css';
-import '/resources/css/bottomNavBar.css'
-import { initTE } from "tw-elements";
-import '/resources/components/speakersCarousel';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
+
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import SpeakersCarousel from "../../components/speakersCarousel";
 import { Carousel } from "react-responsive-carousel";
 
 import { Link, Head, router } from '@inertiajs/react';
@@ -21,9 +15,7 @@ import * as Dialog from '@radix-ui/react-dialog';
 
 export default function mainevent({ auth }) {
     const [showNavbar, setShowNavbar] = useState(true);
-  const [showCarousel, setShowCarousel] = useState(false);
-  const isLoggedIn = auth.user; // Check if a user is logged in
-  const userName = isLoggedIn ? auth.user.name : null;
+    const [showCarousel, setShowCarousel] = useState(false);
 
     // carousel ditampilkan
     useEffect(() => {
@@ -36,88 +28,12 @@ export default function mainevent({ auth }) {
 
     return (
         <>
+
             {/*Banner*/}
             <section>
                 <div className="bg-cover bg-no-repeat min-h-full xl:bg-[url('/assets/bg-main1.jpg')] md:bg-[url('/assets/bg-main1-lg.jpg')] xs:bg-[url('/assets/bg-main1-xs.jpg')]">
-      {showNavbar ? (
-        <div className='grid bg-[#1A1A1A] opacity-75 border-b-4 border-[#b93021]'>
-          {/* ...Isi navbar Anda di sini */}
-          <div className='flex xl:h-[50px] md:h-[25px] xs:h-[10px] xl:mx-[100px] md:mx-[20px] xs:mx-[10px] xl:my-[40px] md:my-[30px] xs:my-[15px] content-center'>
-            {/* Logo Tedx */}
-            <img src="/assets/TEDxUniversitasAirlangga.png" alt='' />
-            <nav className="flex ml-auto items-center">
-                <ul className="flex xl:flex-row md:flex-row xs:flex-row font-helvetica xl:gap-[30px] md:gap-[25px] xs:gap-[10px] xl:text-[20px] md:text-[12px] xs:text-[5px] font-bold">
-                    <li><a href="#" className="text-white hover:text-neutral-500">HOME</a></li>
-                    <li><a href="#" className="text-white hover:text-neutral-500">GALLERY</a></li>
-                    <li><a href="#" className="text-white hover:text-neutral-500">PARTNERSHIP</a></li>
-                    <li><a class="flex items-center text-white hover:text-neutral-500 hover:ease-in-out focus:text-neutral-700"
-                        href="#"
-                        type="button"
-                        id="dropdownMenuButton2"
-                        data-te-dropdown-toggle-ref
-                        aria-expanded="false">
-                        ORDER NOW
-                        <span class="ml-2 w-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
-                            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-                        </svg>
-                        </span>
-                        </a>
-                    <ul
-                        class="absolute z-[1000] float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block"
-                        aria-labelledby="dropdownMenuButton2"
-                        data-te-dropdown-menu-ref>
-                    <li>
-                    <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
-                        href="#"
-                        data-te-dropdown-item-ref
-                        >Ticketing</a>
-                    </li>
-                    <li>
-                    <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
-                        href="#"
-                        data-te-dropdown-item-ref
-                        >Merch</a>
-                    </li>
-                    </ul>
-                    </li>
-                    {/* Login */}
-                    {auth.user ? (
-                      <Link
-                      href={route('dashboard')}
-                      className="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                    >
-                      Dashboard
-                    </Link>
-                    ) : (
-                    <Link
-                      href={route('login')}
-                      className="text-white text-center border-[2px] border-[#b93021] hover:bg-[#b93021] rounded-md p-[10px] md:p-[5px] xs:p-[3px]"
-                    >
-                      LOGIN
-                    </Link>
-                    )}
-                    </ul>
-
-
-                </nav>
-            </div>
-        </div>
-      ) : (
-        <div class="navigation">
-            <div class="menuToggle"><i></i></div>
-            <div class="menu">
-                <ul>
-                    <li><a href="#">ORDER</a></li>
-                    <li><a href="#">PARTNER</a></li>
-                    <li className="mx-[20px] invisible"></li>
-                    <li><a href="#">GALLERY</a></li>
-                    <li><a href="#">LOGIN</a></li>
-                </ul>
-            </div>
-        </div>
-      )}
-      <div className="bg-cover bg-no-repeat min-h-full xl:bg-[url('/assets/bg-main1.jpg')] md:bg-[url('/public/assets/bg-main1-lg.jpg')] xs:bg-[url('/public/assets/bg-main1-xs.jpg')]">
+            <Navbar/>
+            <div className="bg-cover bg-no-repeat min-h-full xl:bg-[url('/assets/bg-main1.jpg')] md:bg-[url('/public/assets/bg-main1-lg.jpg')] xs:bg-[url('/public/assets/bg-main1-xs.jpg')]">
             <div className='mx-auto xl:w-[924px] md:w-[768px] xs:w-[300px] xl:pt-[100px] md:pt-[100px] xs:pt-[25px]'>
                 <h1 className="font-canopee xl:text-[150px] md:text-[130px] xs:text-[40px] text-custom11 text-center text-white uppercase">
                     <span className='block'>IDEAS WORTH</span>
@@ -148,57 +64,6 @@ export default function mainevent({ auth }) {
                 </div>
 
                 <CircularTextAnimation />
-            </section>
-
-            {/*Main Event*/}
-            <section>
-                <div className="bg-cover bg-[#F0EFE5] bg-no-repeat min-h-full xl:py-[50px] md:py-[30px] xs:py-[15px] xl:bg-[url('/assets/bg-main-ev.jpg')] md:bg-[url('/assets/bg-main-ev-md.jpg')] xs:bg-[url('/assets/bg-main-ev-md.jpg')]">
-                        <div className='text-center'>
-                            <h1 className='xl:text-[75px] md:text-[50px] xs:text-[25px] font-capuchetrial'>MAIN EVENT : <br/> <span className='text-[#A4161A]'> TEDx</span>Universitas Airlangga </h1>
-                            <p className='xl:text-[28px] md:text-[25px] xs:text-[10px] xl:px-[250px] md:px-[50px] xs:px-[40px] font-migra'>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                        </div>
-                        <div class="flex gap-[20px] justify-center font-helvetica xl:py-[30px] md:py-[20px] xs:py-[10px]">
-                            <button class="xl:px-[4px] xl:py-[2px] md:px-[5px] md:py-[1px] md:text-[15px] xs:px-[2px] xs:py-[0px] xs:text-[8px] bg-[#F5F3F4] text-[#A3161A] border-2 border-[#A3161A] rounded-md">RESERVE SPOT</button>
-                            <button class="xl:px-[4px] xl:py-[2px] md:px-[5px] md:py-[1px] md:text-[15px] xs:px-[2px] xs:py-[0px] xs:text-[8px] bg-[#981B1F] rounded-md text-[#F5F3F4]">LEARN MORE</button>
-                        </div>
-                </div>
-
-                <div className="relative">
-                <button className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <CircularTextAnimation />
-                </button>
-                </div>
-            </section>
-            {/*Main Event*/}
-            <section>
-                <div className="bg-cover bg-[#F0EFE5] bg-no-repeat min-h-full xl:py-[50px] md:py-[30px] xs:py-[15px] xl:bg-[url('../../../public/assets/bg-main-ev.jpg')] md:bg-[url('../../../public/assets/bg-main-ev-md.jpg')] xs:bg-[url('../../../public/assets/bg-main-ev-md.jpg')]">
-                    <div className="text-center">
-                        <h1 className="xl:text-[75px] md:text-[50px] xs:text-[25px] font-capuchetrial">
-                            MAIN EVENT : <br />{" "}
-                            <span className="text-[#A4161A]"> TEDx</span>
-                            Universitas Airlangga{" "}
-                        </h1>
-                        <p className="xl:text-[28px] md:text-[25px] xs:text-[10px] xl:px-[250px] md:px-[50px] xs:px-[40px] font-migra">
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat. Duis aute irure dolor in
-                            reprehenderit in voluptate velit esse cillum dolore
-                            eu fugiat nulla pariatur. Excepteur sint occaecat
-                            cupidatat non proident, sunt in culpa qui officia
-                            deserunt mollit anim id est laborum."
-                        </p>
-                    </div>
-                    <div class="flex gap-[20px] justify-center font-helvetica xl:py-[30px] md:py-[20px] xs:py-[10px]">
-                        <button class="xl:px-[4px] xl:py-[2px] md:px-[5px] md:py-[1px] md:text-[15px] xs:px-[2px] xs:py-[0px] xs:text-[8px] bg-[#F5F3F4] text-[#A3161A] border-2 border-[#A3161A] rounded-md">
-                            RESERVE SPOT
-                        </button>
-                        {/* <button class="xl:px-[4px] xl:py-[2px] md:px-[5px] md:py-[1px] md:text-[15px] xs:px-[2px] xs:py-[0px] xs:text-[8px] bg-[#981B1F] rounded-md text-[#F5F3F4]">
-                            LEARN MORE
-                        </button> */}
-                    </div>
-                </div>
             </section>
 
             {/*SubEvent*/}
@@ -388,14 +253,7 @@ export default function mainevent({ auth }) {
                             <button class="px-4 py-2 bg-[#981B1F] rounded-md text-[#F5F3F4] xs:text-[10px]">GRAB YOUR TICKET</button>
                         </div>
                     </div>
-                    <div class="flex justify-center font-helvetica md:mt-[20px] xs:mt-[10px]">
-                        <button class="px-4 py-2 bg-[#981B1F] rounded-md text-[#F5F3F4] xs:text-[10px]">
-                            GRAB YOUR TICKET
-                        </button>
-                    </div>
             </section>
-            <Footer />
-            <Navbar />
-        </>
+            </>
     );
 }
