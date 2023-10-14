@@ -8,7 +8,7 @@ function swiperAnimaiton() {
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
     <div className='flex flex-nowrap overflow-x-auto p-[50px] gap-4'>
-          <div className='slide-track gap-4 flex'>
+          <div className='gap-4 flex'>
           <div className=''>
             <button className='bg-black/60 xl:w-[675px] lg:w-[550px] md:w-[450px] xs:w-[325px] xl:h-[350px] md:h-[200px] xs:h-[165px] text-left p-4 border-2 border-[#A4161A] rounded-xl hover:bg-white/50'>
               <div>

@@ -7,7 +7,7 @@ import Input from './Input';
 export default function Login() {
   return (
     <>
-        <div className="bg-[url('../../../public/assets/bg-grass.jpg')] bg-no-repeat bg-cover pt-10 pb-24 md:pt-44 md:pb-44 grid justify-center px-8 w-full">
+        <div className="bg-[url('../../../public/assets/bg-grass.jpg')] bg-no-repeat bg-cover pt-10 pb-24 w450:pt-44 w450:pb-44 grid justify-center px-8 w-full">
             <div className='mb-2 md:mb-8 relative w-full text-center text-[45px] xs:text-[60px] md:text-[100px] lg:text-[150px]'>
                 <span className='text-[#A4161A] font-capuchetrial'>LOG</span>
                 <span className='text-[#fff] font-capuchetrial'>IN</span>

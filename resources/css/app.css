@@ -28,13 +28,18 @@
 }
 
 @font-face {
-  font-family: "CapucheTrial";
-  src: url("../../public/fonts/CapucheTrial.otf")
+  font-family: "Capuche";
+  src: url("../../public/fonts/Capuche.otf")
 }
 
 @font-face {
   font-family: "MigraExtralight";
   src: url("../../public/fonts/Migra-Extralight.otf");
+}
+
+@font-face {
+  font-family: "MigraExtraBold";
+  src: url("../../public/fonts/Migra-Extrabold.otf");
 }
 
 @font-face {
