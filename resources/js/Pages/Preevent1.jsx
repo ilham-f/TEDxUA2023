@@ -3,7 +3,7 @@ import { Head, router } from '@inertiajs/react';
 import { useState } from 'react';
 import { useForm } from '@inertiajs/react';
 import * as Dialog from '@radix-ui/react-dialog';
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion";
 
 
 export default function Preevent1({question}) {
