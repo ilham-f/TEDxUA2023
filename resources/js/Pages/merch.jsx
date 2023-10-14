@@ -48,7 +48,7 @@ export default function Merch() {
         </p>
         <div className="text-center md:py-[30px] xs:py-[15px]">
         <span className="inline-block bg-[#A4161A] rounded-xl text-[#FFFFFF]">
-          <a href="/quizMerch">
+          <a href="/quiz-merch">
             <button type="button" className="font-capuchetrial xl:text-[35px] lg:text-[25px] xs:text-[10px] md:px-[50px] xs:px-[25px] md:py-[10px] xs:py-[5px]">
                 Take Quiz
             </button>
@@ -101,8 +101,7 @@ export default function Merch() {
       </div>
     </div>
       <ProductMerch />
-
-  </div>
+    </div>
         <Footer />
         </>
     );

@@ -100,8 +100,9 @@ Route::post('/send-partnership-email', [PartnershipController::class, 'sendEmail
 
 //Quiz Merch
 Route::get('/quiz-merch', function () {
-    return Inertia::render('quizMerch');
+    return Inertia::render('QuizMerch');
 });
+
 Route::post('/quiz-merch/after', [MerchQuizController::class, 'submitQuiz']);
 
 require __DIR__.'/auth.php';

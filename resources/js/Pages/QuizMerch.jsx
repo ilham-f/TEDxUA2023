@@ -10,13 +10,13 @@ const MerchQuiz = () => {
     const handleOptionChange = (questionIndex, selectedOption) => {
         const newAnswers = [...answers];
         newAnswers[questionIndex] = selectedOption;
-      
+
         // Update showOverlay based on the selected question and option
         setShowOverlay({ ...showOverlay, [questionIndex]: selectedOption });
-      
+
         setAnswers(newAnswers);
       };
-      
+
       const handleImageClick = (questionIndex, selectedOption) => {
         // Handle image click, toggle showOverlay for the selected question
         setShowOverlay((prevShowOverlay) => ({
@@ -145,4 +145,5 @@ const MerchQuiz = () => {
         </>
     );
 };
+
 export default MerchQuiz;
