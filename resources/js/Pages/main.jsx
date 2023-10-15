@@ -12,7 +12,6 @@ import Navbar from "../../components/Navbar";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 // import SpeakersCarousel from "../../components/speakersCarousel";
 import { Carousel } from "react-responsive-carousel";
-
 import { Link, Head, router } from '@inertiajs/react';
 import { useForm } from '@inertiajs/react';
 import * as Dialog from '@radix-ui/react-dialog';
@@ -38,7 +37,6 @@ export default function mainevent({ auth }) {
             {/*Banner*/}
             <section>
                 <div className="bg-cover bg-no-repeat min-h-full xl:bg-[url('/assets/bg-main1.jpg')] md:bg-[url('/assets/bg-main1-lg.jpg')] xs:bg-[url('/assets/bg-main1-xs.jpg')]">
-            <Navbar/>
             <div className="bg-cover bg-no-repeat min-h-full xl:bg-[url('/assets/bg-main1.jpg')] md:bg-[url('/public/assets/bg-main1-lg.jpg')] xs:bg-[url('/public/assets/bg-main1-xs.jpg')]">
             <div className='mx-auto xl:w-[924px] md:w-[768px] xs:w-[300px] xl:pt-[100px] md:pt-[100px] xs:pt-[25px]'>
                 <h1 className="font-canopee xl:text-[150px] md:text-[130px] xs:text-[40px] text-custom11 text-center text-white uppercase">
@@ -258,6 +256,8 @@ export default function mainevent({ auth }) {
                         </div>
                     </div>
             </section>
+            <Navbar/>
+            <Footer />
             </>
     );
 }
