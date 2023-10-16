@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\paket;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class PaketSeeder extends Seeder
 {
@@ -12,6 +13,17 @@ class PaketSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $pakets = [
+            ['nama_paket'=>'Testing',
+            'detail_paket'=>'bismillah'
+            ],
+            ['nama_paket'=>'big',
+            'detail_paket'=>'plis',
+            ],
+        ];
+        foreach ($pakets as $paket)
+        {
+            paket::create($paket);
+        }
     }
 }

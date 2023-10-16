@@ -3,13 +3,16 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Tiket extends Model
 {
     use HasFactory;
+    
+    protected $table = 'tikets';
 
     public function users(): BelongsTo
     {
@@ -17,13 +20,45 @@ class Tiket extends Model
     }
 
     public function pakets()
-
     {
         return $this->belongsTo(Paket::class, 'id_paket', 'id');
     }
 
-    public function payments()
+    public static function alldata()
     {
-        return $this->hasMany(Payment::class);
+        return DB::table('tikets')
+        ->leftjoin('pakets', 'pakets.id', '=', 'tikets.id_paket')
+        ->leftjoin('users', 'users.id', '=', 'tikets.id_user')
+        ->get();
     }
 }
+
+// <?php
+
+// namespace App\Models;
+
+// use Illuminate\Database\Eloquent\Model;
+// use Illuminate\Database\Eloquent\Relations\BelongsTo;
+
+// class Tiket extends Model
+// {
+//     protected $fillable = [
+//         'id_user',
+//         'id_tiket',
+//         'id_paket',
+//         'total_harga',
+//         'status',
+//         'bukti_bayar',
+//         'slug',
+//     ];
+
+//     protected $casts = [
+//         'total_harga' => 'integer',
+//         'status' => 'boolean',
+//     ];
+
+//     public function user(): BelongsTo
+//     {
+//         return $this->belongsTo(User::class);
+//     }
+// }

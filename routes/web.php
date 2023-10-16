@@ -1,13 +1,15 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\TiketController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\MerchQuizController;
+use App\Http\Controllers\PartnershipController;
 use App\Http\Controllers\PreeventAnswerController;
 use App\Http\Controllers\PreeventQuestionController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\PartnershipController;
-use App\Http\Controllers\MerchQuizController;
-use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\RedirectAuthenticatedUsersController;
 
 /*
@@ -80,6 +82,24 @@ Route::group(['middleware' => 'auth'], function() {
         Route::get('/admin', [AdminController::class, 'index']);
         Route::get('/answers-table', [AdminController::class, 'answer']);
         Route::get('/questions-table', [AdminController::class, 'question']);
+        Route::get('/tiket', [TiketController::class, 'index']);
+
+      // Menampilkan semua pembayaran
+Route::get('/payments', [PaymentController::class, 'index'])->name('payments-index');
+// Menampilkan formulir pembuatan pembayaran
+Route::get('/payments/create', [PaymentController::class, 'create'])->name('payments-create');
+// Menyimpan pembayaran baru
+Route::post('/payments', [PaymentController::class, 'store'])->name('payments-store');
+// Menampilkan pembayaran berdasarkan ID
+Route::get('/payments/{id}', [PaymentController::class, 'show'])->name('payments-show');
+// Menampilkan formulir pembaharuan pembayaran
+Route::get('/payments/{id}/edit', [PaymentController::class, 'edit'])->name('payments-edit');
+// Menyimpan pembaharuan pembayaran
+Route::put('/payments/{id}', [PaymentController::class, 'update'])->name('payments-update');
+// Menghapus pembayaran
+Route::delete('/payments/{id}', [PaymentController::class, 'destroy'])->name('payments-destroy');
+
+
     });
 
     Route::group(['middleware' => 'role:user'], function() {
