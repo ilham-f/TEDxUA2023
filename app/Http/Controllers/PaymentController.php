@@ -14,17 +14,13 @@ class PaymentController extends Controller
 {
     public function index()
     {
-        $payments = Payment::all();
-
-        return view('payments.payments-table', compact('payments'));
+        $payments = Payment::with('tiket')->get();
+        return view('tiket.payment', compact('payments'));
     }
 
     public function create()
     {
         $users = User::all();
-        // $tikets = Tiket::all();
-        // $pakets = Paket::all();
-
         return view('payments.payments-create', compact('users'));
     }
 

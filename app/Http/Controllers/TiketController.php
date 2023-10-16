@@ -23,7 +23,7 @@ class TiketController extends Controller
 
         return view('admin.tiket', compact('tikets'));
             }
-    
+
 
     // public function __construct()
     // {

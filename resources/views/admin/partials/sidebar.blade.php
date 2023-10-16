@@ -37,6 +37,11 @@
         <span class="menu-header-text">Main Event</span>
       </li>
       <li class="menu-item">
+        <a href="/tiket" class="menu-link">
+            <div data-i18n="Account">Tickets</div>
+        </a>
+      </li>
+      <li class="menu-item">
         <a href="/payments" class="menu-link">
             <div data-i18n="Account">Payments</div>
         </a>
