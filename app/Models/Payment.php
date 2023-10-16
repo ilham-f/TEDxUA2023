@@ -10,8 +10,12 @@ class Payment extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'tiket_id',
+    ];
+
     public function tikets()
     {
-        return $this->belongsTo(Tiket::class, 'id_tiket', 'id');
+        return $this->belongsTo(Tiket::class, 'tiket_id', 'id');
     }
 }

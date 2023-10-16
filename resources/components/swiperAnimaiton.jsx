@@ -4,9 +4,9 @@ function swiperAnimaiton() {
 
   return (
     <>
-    <head>
+    {/* <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    </head>
+    </head> */}
     <div className='flex flex-nowrap overflow-x-auto p-[50px] gap-4'>
           <div className='gap-4 flex'>
           <div className=''>
