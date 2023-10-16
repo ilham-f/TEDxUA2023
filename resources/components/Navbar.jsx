@@ -1,10 +1,16 @@
 import React from "react";
 import { initTE, Dropdown } from "tw-elements";
 import { useState, useEffect } from "react";
+import { Link, usePage } from "@inertiajs/react";
+import * as Dialog from "@radix-ui/react-dialog";
+import { motion, AnimatePresence } from "framer-motion";
+
 
 export default function Navbar() {
-
+    const { auth } = usePage().props;
     const [showNavbar, setShowNavbar] = useState(true);
+    const isLoggedIn = auth.user;
+    const [modal, setModal] = useState(false);
 
     useEffect(() => {
         // Inisialisasi Dropdown
@@ -29,26 +35,25 @@ export default function Navbar() {
         return () => {
             window.removeEventListener("resize", handleResize);
         };
-
     }, []);
 
     return (
         <>
             {showNavbar ? (
-                <div className="grid bg-[#1A1A1A] opacity-75 border-b-4 border-[#b93021] fixed left-0 right-0 top-0">
+                <div className="grid bg-[#1A1A1A] opacity-75 border-b-4 border-[#b93021] fixed left-0 right-0 top-0 z-50">
                     {/* ...Isi navbar Anda di sini */}
                     <div className="flex xl:h-[50px] md:h-[25px] xs:h-[10px] xl:mx-[100px] md:mx-[20px] xs:mx-[10px] my-[20px] content-center">
                         {/* Logo Tedx */}
-                            <img
-                                src="/assets/TEDxUniversitasAirlangga.png"
-                                alt=""
-                                className=" xl:max-w-[250px] max-w-[150px] h-max self-center"
-                            />
+                        <img
+                            src="/assets/TEDxUniversitasAirlangga.png"
+                            alt=""
+                            className=" xl:max-w-[250px] max-w-[150px] h-max self-center"
+                        />
                         <nav className="flex ml-auto items-center">
                             <ul className="flex xl:flex-row md:flex-row xs:flex-row font-helvetica xl:gap-[30px] md:gap-[25px] xs:gap-[10px] md:text-[12px] xs:text-[5px] font-bold">
                                 <li className="flex items-center">
                                     <a
-                                        href="#"
+                                        href="/"
                                         className="text-white hover:text-neutral-500"
                                     >
                                         HOME
@@ -56,7 +61,7 @@ export default function Navbar() {
                                 </li>
                                 <li className="flex items-center">
                                     <a
-                                        href="#"
+                                        href="/gallery"
                                         className="text-white hover:text-neutral-500"
                                     >
                                         GALLERY
@@ -64,7 +69,7 @@ export default function Navbar() {
                                 </li>
                                 <li className="flex items-center">
                                     <a
-                                        href="#"
+                                        href="/partnership"
                                         className="text-white hover:text-neutral-500"
                                     >
                                         PARTNERSHIP
@@ -103,7 +108,7 @@ export default function Navbar() {
                                         <li>
                                             <a
                                                 className="block w-full whitespace-nowrap bg-transparent px-4 py-2 font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
-                                                href="#"
+                                                href="/ticketing"
                                                 data-te-dropdown-item-ref
                                             >
                                                 Ticketing
@@ -112,7 +117,7 @@ export default function Navbar() {
                                         <li>
                                             <a
                                                 className="block w-full whitespace-nowrap bg-transparent px-4 py-2 font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
-                                                href="#"
+                                                href="/merch"
                                                 data-te-dropdown-item-ref
                                             >
                                                 Merch
@@ -121,12 +126,35 @@ export default function Navbar() {
                                     </ul>
                                 </li>
                                 <li className="flex items-center">
-                                    <a
-                                        href="#"
+                                    {auth.user ? (
+                                        <Link
+                                            href={route("dashboard")}
+                                            className="text-white text-center border-[2px] border-[#b93021] hover:bg-[#b93021] rounded-md p-[10px] md:p-[5px] xs:p-[3px]"
+                                        >
+                                            Profile
+                                        </Link>
+                                    ) : (
+                                        <>
+                                            <Link
+                                                href={route("login")}
+                                                className="text-white text-center border-[2px] border-[#b93021] hover:bg-[#b93021] rounded-md p-[10px] md:p-[5px] xs:p-[3px] mr-2"
+                                            >
+                                                Login
+                                            </Link>
+                                            <Link
+                                                href={route("register")}
+                                                className="text-white text-center border-[2px] border-[#b93021] hover:bg-[#b93021] rounded-md p-[10px] md:p-[5px] xs:p-[3px]"
+                                            >
+                                                Register
+                                            </Link>
+                                        </>
+                                    )}
+                                    {/* <a
+                                        href="/login"
                                         className="text-white text-center border-[2px] border-[#b93021] hover:bg-[#b93021] rounded-md p-[10px] md:p-[5px] xs:p-[3px]"
                                     >
                                         LOGIN
-                                    </a>
+                                    </a> */}
                                 </li>
                             </ul>
                         </nav>
@@ -134,28 +162,113 @@ export default function Navbar() {
                 </div>
             ) : (
                 <div className="navigation">
-                    <div className="menuToggle">
-                        <i></i>
-                    </div>
+                    <a href="/">
+                        <div className="menuToggle">
+                            <i></i>
+                        </div>
+                    </a>
                     <div className="menu">
                         <ul>
                             <li>
-                                <a href="#" className="font-helvetica">ORDER</a>
+                                {/* <a href="" className="font-helvetica">
+                                    ORDER
+                                </a> */}
+                                <button className="font-helvetica" onClick={() => setModal(!modal)}>
+                                   ORDER
+                                </button>
                             </li>
                             <li>
-                                <a href="#" className="font-helvetica">PARTNER</a>
+                                <a
+                                    href="/partnership"
+                                    className="font-helvetica"
+                                >
+                                    PARTNER
+                                </a>
                             </li>
-                            <li className="mx-[20px] invisible"></li>
+                            {/* <li className="mx-[20px] invisible"></li> */}
                             <li>
-                                <a href="#" className="font-helvetica">GALLERY</a>
+                                <a href="/gallery" className="font-helvetica">
+                                    GALLERY
+                                </a>
                             </li>
-                            <li>
-                                <a href="#" className="font-helvetica">LOGIN</a>
-                            </li>
+                            {auth.user ? (
+                                <li>
+                                    <a
+                                        href="/dashboard"
+                                        className="font-helvetica"
+                                    >
+                                        PROFILE
+                                    </a>
+                                </li>
+                            ) : (
+                                <>
+                                    <li>
+                                        <a
+                                            href="/login"
+                                            className="font-helvetica"
+                                        >
+                                            LOGIN
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a
+                                            href="/register"
+                                            className="font-helvetica"
+                                        >
+                                            REGISTER
+                                        </a>
+                                    </li>
+                                </>
+                            )}
                         </ul>
                     </div>
                 </div>
             )}
+
+            <Dialog.Root open={modal}>
+                <Dialog.Portal>
+                    <AnimatePresence>
+                        {modal && (
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                            >
+                                <Dialog.Overlay className=" bg-zinc-900/75 fixed inset-0 sm:hidden" />
+                                <Dialog.Content
+                                    className="xl:w-[1123px] xl:h-[586px] md:w-[640px] md:h-[370px] xs:w-[300px] w-[280px] h-[188px] bg-[#A4161A] bg-cover rounded-3xl fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] flex justify-center items-center z-50 sm:hidden"
+                                    onInteractOutside={(e) =>
+                                        setModal(!modal)
+                                    }
+                                >
+                                    <Dialog.Description className="flex flex-col gap-5">
+                                        <a className="text-[#A4161A] bg-white font-canopee xl:text-[125px] md:text-[70px] text-[25px] text-center px-4 py-1 border border-white rounded-lg focus:bg-gray-300"
+                                        href="/ticketing">
+                                            Ticket
+                                        </a>
+                                        <a className="text-[#A4161A] bg-white font-canopee xl:text-[125px] md:text-[70px] text-[25px] text-center px-4 py-1 border border-white rounded-lg focus:bg-gray-300"
+                                        href="/merch">
+                                            Merch
+                                        </a>
+
+                                    </Dialog.Description>
+                                    <Dialog.Close>
+                                        <button
+                                            className="absolute top-[12px] right-[20px] items-center justify-center block text-white font-migraXB text-[30px]"
+                                            aria-label="Close"
+                                            onClick={() =>
+                                                setModal(!modal)
+                                            }
+                                        >
+                                            X
+                                        </button>
+                                    </Dialog.Close>
+                                </Dialog.Content>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+                </Dialog.Portal>
+            </Dialog.Root>
         </>
     );
 }

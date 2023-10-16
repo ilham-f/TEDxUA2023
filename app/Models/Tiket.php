@@ -11,19 +11,26 @@ class Tiket extends Model
 {
     use HasFactory;
 
-    public function users(): BelongsTo
+    protected $fillable = [
+        'user_id',
+        'paket_id',
+        'line',
+        'phone'
+    ];
+
+    public function user(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'id_users', 'id');
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 
-    public function pakets()
+    public function paket()
 
     {
-        return $this->belongsTo(Paket::class, 'id_paket', 'id');
+        return $this->belongsTo(Paket::class, 'paket_id', 'id');
     }
 
     public function payments()
     {
-        return $this->hasMany(Payment::class);
+        return $this->hasMany(Payment::class, 'tiket_id', 'id');
     }
 }

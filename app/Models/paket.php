@@ -11,6 +11,6 @@ class Paket extends Model
 
     public function tikets()
     {
-        return $this->hasMany(Tiket::class);
+        return $this->hasMany(Tiket::class, 'tiket_id', 'id');
     }
 }

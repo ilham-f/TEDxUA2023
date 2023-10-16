@@ -23,10 +23,10 @@ export default function Register() {
                     <input id='password' type="password" className='mb-3 p-4 rounded-md'/> */}
                     {/* <label htmlFor="confirmpassowrd" className='mb-3 font-gooddog text-white text-[40px]'>Confirm Passowrd</label>
                     <input id='confirmpassowrd' type="password" className='mb-3 p-4 rounded-md'/> */}
-                    <Input label={"Nama"} placeholder={"Nama"} id={"nama"} type={"text"}/>
-                    <Input label={"Email"} placeholder={"Email"} id={"email"} type={"email"}/>
-                    <PasswordInput label={"Password"} placeholder={"Password"} id={"password"}/>
-                    <PasswordInput label={"Confirm Password"} placeholder={"Confirm Password"} id={"confirmpassword"}/>
+                    <Input label={"Nama"} placeholder={"Nama"} id={"nama"} type={"text"} name={"nama"}/>
+                    <Input label={"Email"} placeholder={"Email"} id={"email"} type={"email"} name={"email"}/>
+                    <PasswordInput label={"Password"} placeholder={"Password"} id={"password"} name={"password"}/>
+                    <PasswordInput label={"Confirm Password"} placeholder={"Confirm Password"} id={"confirmpassword"} name={"confirmpassword"}/>
                     <button className='bg-[#A4161A] mt-10 p-1 font-gooddog text-[25px] md:text-[40px] rounded-full text-white hover:bg-white hover:text-[#A4161A] transition-all mx-4'>
                         REGISTER
                     </button>

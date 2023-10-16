@@ -5,7 +5,7 @@ import Footer from '../../components/Footer';
 export default function Partnership() {
   return (
     <>
-        <div className="bg-[url('../../../public/assets/bg-partnership.jpg')] bg-cover bg-no-repeat pt-12 pb-24 w450:pt-32 w450:pb-32 grid justify-center">
+        <div className="bg-[url('/assets/bg-partnership.jpg')] bg-cover bg-no-repeat pt-12 pb-24 w450:pt-32 w450:pb-32 grid justify-center">
             <div className='grid justify-center mb-5'>
                 <h1 className='font-capuchetrial text-white text-[40px] sm:text-[50px] md:text-[100px] lg:text-[150px] mx-auto drop-shadow-custom1'>PARTNERSHIP</h1>
             </div>

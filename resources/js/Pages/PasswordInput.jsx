@@ -1,7 +1,7 @@
 import { useState } from "react";
 import React from "react";
 
-export default function PasswordInput({label, id, placeholder}) {
+export default function PasswordInput({label, id, placeholder, name, onChange, value}) {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   function togglePasswordVisibility() {
@@ -10,18 +10,21 @@ export default function PasswordInput({label, id, placeholder}) {
 
   return (
     <>
-        <div className="relative w-full container">
+        <div className="relative w-full">
             <label htmlFor={id}
             className="mb-3 font-gooddog text-white text-[30px] md:text-[40px]"
             >
                 {label}
             </label>
         </div>
-        <div className="relative w-full container mb-3">
+        <div className="relative w-full mb-3">
         <input
             type={isPasswordVisible ? "text" : "password"}
             placeholder={placeholder}
             id={id}
+            onChange={onChange}
+            value={value}
+            name={name}
             className="w-full
             p-3
             rounded-md

@@ -21,23 +21,25 @@
     justify-content: center;
     align-items: center;
     z-index: 10;
-    transform: translateY(-20px);
+    transform: translateY(-33px);
 }
+
 .menuToggle::before {
-    content: ''; /* Menghapus isi teks */
-    background-image: url('/public/assets/xgrassdesk.png'); /* Mengatur gambar latar belakang */
-    background-size: cover; /* Menyesuaikan gambar sesuai ukuran elemen */
-    width: 25px; /* Lebar gambar */
-    height: 25px; /* Tinggi gambar */
+    content: '';
+    background-image: url('/public/assets/xgrassdesk.png');
+    background-size: cover;
+    width: 25px;
+    height: 25px;
     transition: 1.5s;
 }
 
 .menuToggle.active:before{
     transform: rotate(360deg);
 }
+
 .menu {
     position: absolute;
-    width: 280px;
+    width: 340px;
     height: 50px;
     background: #000;
     border-radius: 70px;
@@ -76,10 +78,25 @@
     align-items: center;
     text-align: center;
     display: block;
-    font-size: 8px;
+    font-size: 10px;
     text-decoration: none;
     color: #ffffff;
 }
+
+.menu ul li button{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: block;
+    font-size: 10px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
 .menu ul li:hover a{
+    color: #888888;
+}
+
+.menu ul li:hover button{
     color: #888888;
 }

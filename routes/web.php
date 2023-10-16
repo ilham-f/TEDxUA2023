@@ -8,6 +8,9 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PartnershipController;
 use App\Http\Controllers\MerchQuizController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\TiketController;
+use App\Models\Paket;
+use App\Models\Payment;
 use App\Http\Controllers\Auth\RedirectAuthenticatedUsersController;
 
 /*
@@ -42,25 +45,13 @@ Route::get('/partnership', function () {
     return Inertia::render('Partnership', []);
 })->name('partnership');
 
-Route::get('/ticketing', function () {
-    return Inertia::render('Ticketing3', [
-        'tickets' => [
-            ['id' => 1, 'name' => 'Bundling Ticket 1'],
-            ['id' => 2, 'name' => 'Bundling Ticket 2'],
-            ['id' => 3, 'name' => 'Bundling Ticket 3'],
-            ['id' => 4, 'name' => 'Bundling Ticket 4'],
-            ['id' => 5, 'name' => 'Bundling Ticket 5'],
-        ]
-    ]);
-})->name('ticketing');
+// Route::get('/login', function () {
+//     return Inertia::render('Login', []);
+// })->name('login');
 
-Route::get('/login', function () {
-    return Inertia::render('Login', []);
-})->name('login');
-
-Route::get('/register', function () {
-    return Inertia::render('Register', []);
-})->name('register');
+// Route::get('/register', function () {
+//     return Inertia::render('Register', []);
+// })->name('register');
 
 Route::get('/merch', function () {
     return Inertia::render('merch', []);
@@ -108,6 +99,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/ticketing', [TiketController::class, 'create'])->name('ticketing');
+    Route::post('/ticketing', [TiketController::class, 'store']);
+    Route::post('/payment', [TiketController::class, 'storeBukti'])->name('store.bukti');
 });
 
 //Partnership email

@@ -19,8 +19,8 @@ import * as Dialog from '@radix-ui/react-dialog';
 export default function mainevent({ auth }) {
   const [showNavbar, setShowNavbar] = useState(true);
   const [showCarousel, setShowCarousel] = useState(false);
-  const isLoggedIn = auth.user; // Check if a user is logged in
-  const userName = isLoggedIn ? auth.user.name : null;
+//   const isLoggedIn = auth.user; // Check if a user is logged in
+//   const userName = isLoggedIn ? auth.user.name : null;
 
     // carousel ditampilkan
     useEffect(() => {
@@ -38,7 +38,7 @@ export default function mainevent({ auth }) {
             <section>
                 <div className="bg-cover bg-no-repeat min-h-full xl:bg-[url('/assets/bg-main1.jpg')] md:bg-[url('/assets/bg-main1-lg.jpg')] xs:bg-[url('/assets/bg-main1-xs.jpg')]">
             <div className="bg-cover bg-no-repeat min-h-full xl:bg-[url('/assets/bg-main1.jpg')] md:bg-[url('/public/assets/bg-main1-lg.jpg')] xs:bg-[url('/public/assets/bg-main1-xs.jpg')]">
-            <div className='mx-auto xl:w-[924px] md:w-[768px] xs:w-[300px] xl:pt-[100px] md:pt-[100px] xs:pt-[25px]'>
+            <div className='mx-auto xl:w-[924px] md:w-[768px] xs:w-[300px] xl:pt-[130px] md:pt-[100px] xs:pt-[25px]'>
                 <h1 className="font-canopee xl:text-[150px] md:text-[130px] xs:text-[40px] text-custom11 text-center text-white uppercase">
                     <span className='block'>IDEAS WORTH</span>
                     <span className="text-[#b93021]"> SPREAD</span>
@@ -61,9 +61,9 @@ export default function mainevent({ auth }) {
                             <h1 className='xl:text-[75px] md:text-[50px] xs:text-[25px] font-capuchetrial'>MAIN EVENT : <br/> <span className='text-[#A4161A]'>TEDx</span>UniversitasAirlangga</h1>
                             <p className='xl:text-[28px] md:text-[25px] xs:text-[10px] xl:px-[250px] md:px-[50px] xs:px-[40px] font-migra'>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
                         </div>
-                        <div class="flex gap-[20px] justify-center font-helvetica xl:py-[30px] md:py-[20px] xs:py-[10px]">
-                            <button class="xl:px-[4px] xl:py-[2px] md:px-[5px] md:py-[1px] md:text-[15px] xs:px-[2px] xs:py-[0px] xs:text-[8px] bg-[#F5F3F4] text-[#A3161A] border-2 border-[#A3161A] rounded-md">RESERVE SPOT</button>
-                            <button class="xl:px-[4px] xl:py-[2px] md:px-[5px] md:py-[1px] md:text-[15px] xs:px-[2px] xs:py-[0px] xs:text-[8px] bg-[#981B1F] rounded-md text-[#F5F3F4]">LEARN MORE</button>
+                        <div className="flex gap-[20px] justify-center font-helvetica xl:py-[30px] md:py-[20px] xs:py-[10px]">
+                            <button className="xl:px-[4px] xl:py-[2px] md:px-[5px] md:py-[1px] md:text-[15px] xs:px-[2px] xs:py-[0px] xs:text-[8px] bg-[#F5F3F4] text-[#A3161A] border-2 border-[#A3161A] rounded-md" onClick={() => router.visit('ticketing')}>RESERVE SPOT</button>
+                            {/* <button className="xl:px-[4px] xl:py-[2px] md:px-[5px] md:py-[1px] md:text-[15px] xs:px-[2px] xs:py-[0px] xs:text-[8px] bg-[#981B1F] rounded-md text-[#F5F3F4]">LEARN MORE</button> */}
                         </div>
                 </div>
             </section>
@@ -158,38 +158,38 @@ export default function mainevent({ auth }) {
                     ) : (
                         <>
                             <div className="grid grid-cols-3 gap-4 xl:px-[200px] md:px-[100px] xs:px-[50px] xl:text-[50px] md:text-[35px] xs:text-[15px]">
-                                <div class="text-center ">
-                                    <div class="relative">
+                                <div className="text-center ">
+                                    <div className="relative">
                                         <img
                                             src="/assets/speaker.png"
                                             alt="Pembicara 1"
-                                            class="w-full h-full object-cover bg-[#D9D9D9]"
+                                            className="w-full h-full object-cover bg-[#D9D9D9]"
                                         />
-                                        <p class="absolute bottom-0 left-0 right-0 font-canopee text-white py-2">
+                                        <p className="absolute bottom-0 left-0 right-0 font-canopee text-white py-2">
                                             ELENA
                                         </p>
                                     </div>
                                 </div>
-                                <div class="text-center ">
-                                    <div class="relative">
+                                <div className="text-center ">
+                                    <div className="relative">
                                         <img
                                             src="/assets/speaker.png"
                                             alt="Pembicara 1"
-                                            class="w-full h-full object-cover bg-[#D9D9D9]"
+                                            className="w-full h-full object-cover bg-[#D9D9D9]"
                                         />
-                                        <p class="absolute bottom-0 left-0 right-0 font-canopee text-white py-2">
+                                        <p className="absolute bottom-0 left-0 right-0 font-canopee text-white py-2">
                                             ELENA
                                         </p>
                                     </div>
                                 </div>
-                                <div class="text-center ">
-                                    <div class="relative">
+                                <div className="text-center ">
+                                    <div className="relative">
                                         <img
                                             src="/assets/speaker.png"
                                             alt="Pembicara 1"
-                                            class="w-full h-full object-cover bg-[#D9D9D9]"
+                                            className="w-full h-full object-cover bg-[#D9D9D9]"
                                         />
-                                        <p class="absolute bottom-0 left-0 right-0 font-canopee text-white py-2">
+                                        <p className="absolute bottom-0 left-0 right-0 font-canopee text-white py-2">
                                             ELENA
                                         </p>
                                     </div>
@@ -202,39 +202,39 @@ export default function mainevent({ auth }) {
                                     alt=""
                                 />
                             </div>
-                            <div class="grid grid-cols-3 pt-[15px] gap-4 xl:px-[200px] md:px-[100px] xs:px-[50px] xl:text-[50px] md:text-[35px] xs:text-[15px]">
-                                <div class="text-center ">
-                                    <div class="relative">
+                            <div className="grid grid-cols-3 pt-[15px] gap-4 xl:px-[200px] md:px-[100px] xs:px-[50px] xl:text-[50px] md:text-[35px] xs:text-[15px]">
+                                <div className="text-center ">
+                                    <div className="relative">
                                         <img
                                             src="/assets/speaker.png"
                                             alt="Pembicara 1"
-                                            class="w-full h-full object-cover bg-[#D9D9D9]"
+                                            className="w-full h-full object-cover bg-[#D9D9D9]"
                                         />
-                                        <p class="absolute bottom-0 left-0 right-0 font-canopee text-white py-2">
+                                        <p className="absolute bottom-0 left-0 right-0 font-canopee text-white py-2">
                                             ELENA
                                         </p>
                                     </div>
                                 </div>
-                                <div class="text-center ">
-                                    <div class="relative">
+                                <div className="text-center ">
+                                    <div className="relative">
                                         <img
                                             src="/assets/speaker.png"
                                             alt="Pembicara 1"
-                                            class="w-full h-full object-cover bg-[#D9D9D9]"
+                                            className="w-full h-full object-cover bg-[#D9D9D9]"
                                         />
-                                        <p class="absolute bottom-0 left-0 right-0 font-canopee text-white py-2">
+                                        <p className="absolute bottom-0 left-0 right-0 font-canopee text-white py-2">
                                             ELENA
                                         </p>
                                     </div>
                                 </div>
-                                <div class="text-center ">
-                                    <div class="relative">
+                                <div className="text-center ">
+                                    <div className="relative">
                                         <img
                                             src="/assets/speaker.png"
                                             alt="Pembicara 1"
-                                            class="w-full h-full object-cover bg-[#D9D9D9]"
+                                            className="w-full h-full object-cover bg-[#D9D9D9]"
                                         />
-                                        <p class="absolute bottom-0 left-0 right-0 font-canopee text-white py-2">
+                                        <p className="absolute bottom-0 left-0 right-0 font-canopee text-white py-2">
                                             ELENA
                                         </p>
                                     </div>
@@ -247,16 +247,16 @@ export default function mainevent({ auth }) {
 
             {/*Ticktets*/}
             <section>
-                    <div className="bg-cover bg-[#F0EFE5] bg-no-repeat min-h-full xl:py-[50px] md:py-[30px] xs:py-[40px] xl:bg-[url('/assets/bg-main-ev.jpg')] md:bg-[url('/assets/bg-main-ev-md.jpg')] xs:bg-[url('/assets/bg-main-ev-md.jpg')]">
+                    <div className="bg-cover bg-[#F0EFE5] bg-no-repeat min-h-full xl:py-[50px] md:py-[30px] pt-[40px] pb-[90px] xl:bg-[url('/assets/bg-main-ev.jpg')] md:bg-[url('/assets/bg-main-ev-md.jpg')] xs:bg-[url('/assets/bg-main-ev-md.jpg')]">
                         <div className='text-center'>
                             <h1 className='xl:text-[75px] md:text-[50px] xs:text-[25px] font-canopee text-[#A4161A]'>GRAB YOUR TICKET</h1>
                         </div>
-                        <div class="flex justify-center font-helvetica md:mt-[20px] xs:mt-[10px]">
-                            <button class="px-4 py-2 bg-[#981B1F] rounded-md text-[#F5F3F4] xs:text-[10px]">GRAB YOUR TICKET</button>
+                        <div className="flex justify-center font-helvetica md:mt-[20px] xs:mt-[10px]">
+                            <button className="px-4 py-2 bg-[#981B1F] rounded-md text-[#F5F3F4] xs:text-[10px]" onClick={() => router.visit('ticketing')}>GRAB YOUR TICKET</button>
                         </div>
                     </div>
             </section>
-            <Navbar/>
+            <Navbar />
             <Footer />
             </>
     );
