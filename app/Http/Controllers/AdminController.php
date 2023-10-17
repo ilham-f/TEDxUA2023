@@ -30,6 +30,20 @@ class AdminController extends Controller
             'questions' => preevent_question::all()
         ]);
     }
+    public function payments_create()
+    {
+        return view('payments.payments-create',[
+            'title' => 'Main Event | Pembayaran',
+            // 'questions' => preevent_question::all()
+        ]);
+    }
+    // public function payments()
+    // {
+    //     return view('payments.payments-table',[
+    //         'title' => 'Main Event | Pembayaran',
+    //         // 'questions' => preevent_question::all()
+    //     ]);
+    // }
 
     /**
      * Show the form for creating a new resource.

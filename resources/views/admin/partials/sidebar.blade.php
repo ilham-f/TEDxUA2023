@@ -14,7 +14,7 @@
 
     <ul class="menu-inner py-1">
       <!-- Dashboard -->
-      <li class="menu-item {{ ($title === 'Pre-Event 1 | Dashboard') ? 'active' : '' }}">
+      <li class="menu-header text-uppercase}">
         <a href="/admin" class="menu-link">
           <div data-i18n="Analytics">Dashboard</div>
         </a>
@@ -36,7 +36,12 @@
       <li class="menu-header small text-uppercase">
         <span class="menu-header-text">Main Event</span>
       </li>
-      <li class="menu-item {{ ($title === 'Main Event | Payments') ? 'active' : '' }}">
+      <li class="menu-item">
+        <a href="/tiket" class="menu-link">
+            <div data-i18n="Account">Tickets</div>
+        </a>
+      </li>
+      <li class="menu-item">
         <a href="/payments" class="menu-link">
             <div data-i18n="Account">Payments</div>
         </a>

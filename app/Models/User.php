@@ -45,8 +45,4 @@ class User extends Authenticatable
     {
         return $this->hasOne(Tiket::class, 'user_id', 'id');
     }
-    // public function payments()
-    // {
-    //     return $this->hasMany(Payment::class);
-    // }
 }

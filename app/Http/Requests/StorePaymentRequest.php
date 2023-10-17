@@ -11,7 +11,7 @@ class StorePaymentRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,12 @@ class StorePaymentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'id_user' => 'required',
+            'id_tiket' => 'required',
+            'id_paket' => 'required',
+            'total_harga' => 'required',
+            'bukti_bayar' => 'file',
+            'status' => 'required',
         ];
     }
 }
