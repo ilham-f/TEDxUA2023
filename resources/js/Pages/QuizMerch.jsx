@@ -89,7 +89,7 @@ const MerchQuiz = () => {
                                         <img
                                         src="/assets/xhover.png"
                                         alt="Overlay Image"
-                                        className="absolute h-fit xl:w-[200px] h-fit z-0"
+                                        className="absolute xl:w-[200px] lg:w-[200px] md:w-[150px] xs:w-[50px] z-0"
                                         />
                                     )}
                                     </div>
@@ -128,11 +128,11 @@ const MerchQuiz = () => {
                         </div>
                     </div>
                 ))}
-                <div className="text-center md:py-[30px] xs:py-[15px]">
+                <div className="text-center md:py-[30px] xs:pb-[70px] xs:pt-[5px]">
                     <span className="inline-block bg-[#A4161A] rounded-xl text-[#FFFFFF]">
                         <button
                         type="button"
-                        className="font-capuchetrial xl:text-[35px] lg:text-[25px] xs:text-[10px] md:px-[50px] xs:px-[25px] md:py-[10px] xs:py-[5px]"
+                        className="font-capuchetrial xl:text-[35px] lg:text-[25px] xs:text-[15px] md:px-[50px] xs:px-[25px] md:py-[10px] xs:py-[5px]"
                         disabled={!isAllAnswered()}
                         onClick={handleSubmit}>
                             Submit

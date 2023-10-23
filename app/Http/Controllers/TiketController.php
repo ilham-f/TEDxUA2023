@@ -14,47 +14,30 @@ use Inertia\Inertia;
 
 class TiketController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
 
-      public function index()
-        {
-            $tikets = Tiket::select('tikets.*', 'users.id as user_id', 'pakets.id as paket_id')
-            ->leftJoin('users', 'tikets.id_user', '=', 'users.id')
-            ->leftJoin('pakets', 'tikets.id_paket', '=', 'pakets.id')
-            ->get();
+    public function index()
+    {
+        $tikets = Tiket::all()->sortByDesc('status');
 
         return view('admin.tiket', compact('tikets'));
-            }
+    }
 
-
-    // public function __construct()
-    // {
-    //     $this->Tiket = new Tiket();
-    // }
-    // public function index()
-    // {
-    //     $data = [
-    //         'tiket' => $this->Tiket->alldata(),
-    //     ];
-    //     return view('admin.tiket', $data);
-    // }
-
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        if(auth()->user()->tiket()->first()){
+        $count = Paket::where('kuota', '>', 0)->get()->count();
+        if (auth()->user()->tiket()->first()) {
             return Inertia::render('Ticketing3', [
-                'payment' => auth()->user()->tiket()->first()->payments()->first(),
+                'payment' => auth()->user()->tiket()->first()->payment()->first(),
                 'tiket' =>  auth()->user()->tiket()->with('user', 'paket')->first()
             ]);
-        } else {
+        } elseif ($count > 0) {
+            // dd(Paket::where('kuota', '>', 0)->first()->id);
             return Inertia::render('TicketingMain', [
-                'tickets' => Paket::get()
+                'tickets' => Paket::where('kuota', '>', 0)->get(),
+                'error' => null
             ]);
+        } else {
+            return Inertia::render('noTicket');
         }
     }
 
@@ -63,8 +46,6 @@ class TiketController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        // dd($request);
 
         $user_id = $request->user()->id;
 
@@ -74,28 +55,44 @@ class TiketController extends Controller
             'id' => 'required'
         ]);
 
-        // dd($validated);
+        $paket = Paket::find($validated['id']);
 
-        $tiket = Tiket::create([
-            "user_id" => $user_id,
-            "paket_id" => $validated['id'],
-            "line" => $validated['line'],
-            "phone" => $validated['phone']
-        ]);
+        if ($paket->kuota > 0) {
+            $tiket = Tiket::create([
+                "user_id" => $user_id,
+                "paket_id" => $validated['id'],
+                "line" => $validated['line'],
+                "phone" => $validated['phone']
+            ]);
 
-        Payment::create([
-            "tiket_id" => $tiket->id,
-        ]);
+            $payment = Payment::create([
+                "tiket_id" => $tiket->id,
+            ]);
 
-        // dd($tiket);
+            $currentQuota = $paket->fresh()->kuota;
+            if ($currentQuota > 0) {
+                $paket->kuota--;
+                $paket->save();
+            } else {
+                $tiket->delete();
+                $payment->delete();
+                return Inertia::render('TicketingMain', [
+                    'tickets' => Paket::where('kuota', '>', 0)->get(),                 'error' => "Ticket Sold Out :')"
+                ]);
+            }
+        } else {
+            return Inertia::render('TicketingMain', [
+                'tickets' => Paket::where('kuota', '>', 0)->get(),             'error' => "Ticket Sold Out :')"
+            ]);
+        }
 
         return redirect(route('ticketing'));
-
     }
 
-    public function storeBukti(Request $request){
+    public function storeBukti(Request $request)
+    {
 
-        $payment = auth()->user()->tiket()->first()->payments()->first();
+        $payment = auth()->user()->tiket()->first()->payment()->first();
         $tiket = auth()->user()->tiket()->first();
 
         // dd($payment);
@@ -107,7 +104,7 @@ class TiketController extends Controller
 
         // dd($request->files);
 
-        $fileName = time().'.'.$request->file('bukti_pemb')->extension();
+        $fileName = time() . '.' . $request->file('bukti_pemb')->extension();
         $request->file('bukti_pemb')->move(public_path('buktiPembayaran'), $fileName);
 
         $payment->bukti_bayar = $fileName;
@@ -122,17 +119,28 @@ class TiketController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Tiket $tiket)
+    public function delete(Request $request)
     {
-        //
+        $tiket = Tiket::find($request->input('tiket_id'));
+        $tiket->delete();
+
+        return back()->with('alert','Tiket berhasil dihapus.');
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Tiket $tiket)
+    public function edit(Request $request, $id)
     {
-        //
+        $validated = $request->validate([
+            'status' => 'required'
+        ]);
+
+        $tiket = Tiket::find($id);
+        $tiket->status = $request->status;
+        $tiket->save();
+
+        return back();
     }
 
     /**

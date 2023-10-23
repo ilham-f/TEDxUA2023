@@ -1,26 +1,26 @@
-import '../../css/app.css';
+import "../../css/app.css";
 
 import React, { useEffect, useState } from "react";
-import SwiperAnimation from '../../components/swiperAnimaiton';
-import CircularTextAnimation from '../../components/circularTextAnimation';
-import '/resources/css/circleTextAnimation.css';
-import '/resources/css/customScrollbar.css';
-import '/resources/css/bottomNavBar.css'
+import SwiperAnimation from "../../components/swiperAnimaiton";
+import CircularTextAnimation from "../../components/circularTextAnimation";
+import "/resources/css/circleTextAnimation.css";
+import "/resources/css/customScrollbar.css";
+import "/resources/css/bottomNavBar.css";
 import { initTE } from "tw-elements";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 // import SpeakersCarousel from "../../components/speakersCarousel";
 import { Carousel } from "react-responsive-carousel";
-import { Link, Head, router } from '@inertiajs/react';
-import { useForm } from '@inertiajs/react';
-import * as Dialog from '@radix-ui/react-dialog';
+import { Link, Head, router } from "@inertiajs/react";
+import { useForm } from "@inertiajs/react";
+import * as Dialog from "@radix-ui/react-dialog";
 
 export default function mainevent({ auth }) {
-  const [showNavbar, setShowNavbar] = useState(true);
-  const [showCarousel, setShowCarousel] = useState(false);
-//   const isLoggedIn = auth.user; // Check if a user is logged in
-//   const userName = isLoggedIn ? auth.user.name : null;
+    const [showNavbar, setShowNavbar] = useState(true);
+    const [showCarousel, setShowCarousel] = useState(false);
+    //   const isLoggedIn = auth.user; // Check if a user is logged in
+    //   const userName = isLoggedIn ? auth.user.name : null;
 
     // carousel ditampilkan
     useEffect(() => {
@@ -33,53 +33,77 @@ export default function mainevent({ auth }) {
 
     return (
         <>
-
+            <Head title="TEDxUniversitasAirlangga" />
             {/*Banner*/}
             <section>
-                <div className="bg-cover bg-no-repeat min-h-full xl:bg-[url('/assets/bg-main1.jpg')] md:bg-[url('/assets/bg-main1-lg.jpg')] xs:bg-[url('/assets/bg-main1-xs.jpg')]">
-            <div className="bg-cover bg-no-repeat min-h-full xl:bg-[url('/assets/bg-main1.jpg')] md:bg-[url('/public/assets/bg-main1-lg.jpg')] xs:bg-[url('/public/assets/bg-main1-xs.jpg')]">
-            <div className='mx-auto xl:w-[924px] md:w-[768px] xs:w-[300px] xl:pt-[130px] md:pt-[100px] xs:pt-[25px]'>
-                <h1 className="font-canopee xl:text-[150px] md:text-[130px] xs:text-[40px] text-custom11 text-center text-white uppercase">
-                    <span className='block'>IDEAS WORTH</span>
-                    <span className="text-[#b93021]"> SPREAD</span>
-                    <span>ING</span>
-                </h1>
-                <div className='mx-auto text-center xl:py-[50px] md:py-[50px] xs:py-[20px]'>
-                    <button type='button' className='border-[#b93021] hover:bg-[#787276] rounded font-helvetica text-white font-bold xl:px-[10px] xl:py-3 md:px-[10px] md:py-[5px] xs:px-[5px] xs:py-[2px] xl:border-[2px] md:border-[2px] xs:border-[1px] xl:text-[20px] md:text-[18px] xs:text-[8px]'>UPCOMING EVENTS</button>
+                <div className="bg-cover bg-no-repeat min-h-full bg-[url('/assets/bg-main1-lg.jpg')] md:bg-[url('/public/assets/bg-main1-lg.jpg')] xs:bg-[url('/public/assets/bg-main1-lg.jpg')]">
+                    <div className="mx-auto xl:w-[924px] md:w-[768px] xs:w-[300px] xl:pt-[200px] md:pt-[100px] xs:pt-[25px]">
+                        <h1 className="font-canopee xl:text-[150px] md:text-[130px] xs:text-[80px] text-custom11 text-center text-white uppercase drop-shadow-xl">
+                            <span className="block">IDEAS WORTH</span>
+                            <span className="text-[#b93021]"> SPREAD</span>
+                            <span>ING</span>
+                        </h1>
+                        <div className="mx-auto text-center xl:py-[70px] md:py-[70px] xs:py-[30px]">
+                            <a href="#event">
+                                <button
+                                    type="button"
+                                    className="border-[#b93021] hover:bg-[#b93021]/50 rounded font-helvetica text-white font-bold xl:px-[10px] xl:py-3 md:px-[10px] md:py-[5px] xs:px-[5px] xs:py-[2px] xl:border-[2px] md:border-[2px] xs:border-[1px] xl:text-[20px] md:text-[20px] xs:text-[12px]"
+                                >
+                                    UPCOMING EVENTS
+                                </button>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-     </div>
-
                 <CircularTextAnimation />
             </section>
 
             {/*Main Event*/}
-            <section>
+            <section id="event">
                 <div className="bg-cover bg-[#F0EFE5] bg-no-repeat min-h-full xl:py-[50px] md:py-[30px] xs:py-[15px] xl:bg-[url('/assets/bg-main-ev.jpg')] md:bg-[url('/assets/bg-main-ev-md.jpg')] xs:bg-[url('/assets/bg-main-ev-md.jpg')]">
-                        <div className='text-center'>
-                            <h1 className='xl:text-[75px] md:text-[50px] xs:text-[25px] font-capuchetrial'>MAIN EVENT : <br/> <span className='text-[#A4161A]'>TEDx</span>UniversitasAirlangga</h1>
-                            <p className='xl:text-[28px] md:text-[25px] xs:text-[10px] xl:px-[250px] md:px-[50px] xs:px-[40px] font-migra'>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                        </div>
-                        <div className="flex gap-[20px] justify-center font-helvetica xl:py-[30px] md:py-[20px] xs:py-[10px]">
-                            <button className="xl:px-[4px] xl:py-[2px] md:px-[5px] md:py-[1px] md:text-[15px] xs:px-[2px] xs:py-[0px] xs:text-[8px] bg-[#F5F3F4] text-[#A3161A] border-2 border-[#A3161A] rounded-md" onClick={() => router.visit('ticketing')}>RESERVE SPOT</button>
-                            {/* <button className="xl:px-[4px] xl:py-[2px] md:px-[5px] md:py-[1px] md:text-[15px] xs:px-[2px] xs:py-[0px] xs:text-[8px] bg-[#981B1F] rounded-md text-[#F5F3F4]">LEARN MORE</button> */}
-                        </div>
+                    <div className="text-center">
+                        <h1 className="xl:text-[75px] md:text-[50px] xs:text-[25px] font-capuchetrial">
+                            MAIN EVENT : <br />{" "}
+                            <span className="text-[#A4161A]"> TEDx</span>
+                            UniversitasAirlangga{" "}
+                        </h1>
+                        <p className="xl:text-[28px] md:text-[25px] xs:text-[15px] xl:px-[250px] md:px-[50px] xs:px-[40px] font-migra">
+                            "Mastering the 'Upheaval Maze' in Today's World
+                            Adapting to Change and Achieving Success" In our
+                            complex era, akin to a labyrinth of challenges,
+                            navigating change and making wise decisions is
+                            essential. The 'Upheaval Maze' concept highlights
+                            the need to adapt, overcome obstacles, and find
+                            success amidst turmoil. Join our talkshow to explore
+                            these themes of change and adaptation in the modern
+                            world.
+                        </p>
+                    </div>
+                    <div class="flex gap-[20px] justify-center font-helvetica xl:py-[30px] md:py-[20px] xs:py-[10px]">
+                        <button
+                            class="xl:px-[4px] xl:py-[2px] md:px-[5px] md:py-[1px] md:text-[15px] xs:px-[2px] xs:py-[0px] xs:text-[8px] bg-[#F5F3F4] text-[#A3161A] border-2 border-[#A3161A] rounded-md"
+                            hidden
+                        >
+                            RESERVE SPOT
+                        </button>
+                    </div>
                 </div>
             </section>
 
             {/*SubEvent*/}
             <section>
                 <div className="bg-cover bg-no-repeat min-h-full xl:py-[50px] md:py-[30px] xs:py-[15px] xl:bg-[url('/assets/bg-sub-event.jpg')] md:bg-[url('/assets/bg-sub-event.jpg')] xs:bg-[url('/public/assets/bg-sub-event.jpg')]">
-                    <div className='text-center text-[#FFFFFF] '>
-                        <h1 className='xl:text-[75px] md:text-[50px] xs:text-[25px] font-capuchetrial'>SUB EVENT LINE UP</h1>
+                    <div className="text-center text-[#FFFFFF] ">
+                        <h1 className="xl:text-[75px] md:text-[50px] xs:text-[25px] font-capuchetrial">
+                            PRE EVENT LINE UP
+                        </h1>
                     </div>
                     <SwiperAnimation />
                 </div>
             </section>
 
             {/*Speakers*/}
-            <section>
+            <section hidden>
                 <div className="bg-cover bg-no-repeat min-h-full xl:py-[50px] md:py-[30px] xs:py-[15px] bg-[#A4161A]">
                     <img
                         className="absolute xl:w-[500px] md:w-[300px] xs:w-[150px]"
@@ -247,17 +271,24 @@ export default function mainevent({ auth }) {
 
             {/*Ticktets*/}
             <section>
-                    <div className="bg-cover bg-[#F0EFE5] bg-no-repeat min-h-full xl:py-[50px] md:py-[30px] pt-[40px] pb-[90px] xl:bg-[url('/assets/bg-main-ev.jpg')] md:bg-[url('/assets/bg-main-ev-md.jpg')] xs:bg-[url('/assets/bg-main-ev-md.jpg')]">
-                        <div className='text-center'>
-                            <h1 className='xl:text-[75px] md:text-[50px] xs:text-[25px] font-canopee text-[#A4161A]'>GRAB YOUR TICKET</h1>
-                        </div>
-                        <div className="flex justify-center font-helvetica md:mt-[20px] xs:mt-[10px]">
-                            <button className="px-4 py-2 bg-[#981B1F] rounded-md text-[#F5F3F4] xs:text-[10px]" onClick={() => router.visit('ticketing')}>GRAB YOUR TICKET</button>
-                        </div>
+                <div className="bg-cover bg-[#F0EFE5] bg-no-repeat min-h-full xl:py-[50px] md:py-[30px] pt-[40px] pb-[90px] xl:bg-[url('/assets/bg-main-ev.jpg')] md:bg-[url('/assets/bg-main-ev-md.jpg')] xs:bg-[url('/assets/bg-main-ev-md.jpg')]">
+                    <div className="text-center">
+                        <h1 className="xl:text-[75px] md:text-[50px] xs:text-[25px] font-canopee text-[#A4161A]">
+                            GRAB YOUR TICKET
+                        </h1>
                     </div>
+                    <div className="flex justify-center font-helvetica md:mt-[20px] xs:mt-[10px]">
+                        <button
+                            className="px-4 py-2 bg-[#981B1F] rounded-md text-[#F5F3F4] xs:text-[10px]"
+                            onClick={() => router.visit("ticketing")}
+                        >
+                            GRAB YOUR TICKET
+                        </button>
+                    </div>
+                </div>
             </section>
             <Navbar />
             <Footer />
-            </>
+        </>
     );
 }

@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('nama_paket');
             $table->string('detail_paket');
+            $table->integer('kuota')->default(0);
             $table->integer('harga');
+            $table->string('image')->default('');
             $table->timestamps();
         });
     }

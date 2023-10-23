@@ -33,15 +33,7 @@ class Tiket extends Model
 
     public function payment()
     {
-        return $this->hasMany(Payment::class, 'tiket_id', 'id');
-    }
-
-    public static function alldata()
-    {
-        return DB::table('tikets')
-        ->leftjoin('pakets', 'pakets.id', '=', 'tikets.id_paket')
-        ->leftjoin('users', 'users.id', '=', 'tikets.id_user')
-        ->get();
+        return $this->hasMany(Payment::class);
     }
 }
 

@@ -75,7 +75,7 @@ Route::post('/preevent1', [PreeventAnswerController::class, 'store']);
 Route::get('pre-event-1/{questionNumber}', [PreeventQuestionController::class, 'showQuestion']);
 
 //Role Authentication
-Route::group(['middleware' => 'auth'], function() {
+Route::group(['middleware' => 'auth'], function () {
     Route::inertia('/dashboard', 'Dashboard')->name('dashboard');
 
     Route::get("/redirectAuthenticatedUsers", [RedirectAuthenticatedUsersController::class, "home"]);
@@ -84,31 +84,19 @@ Route::group(['middleware' => 'auth'], function() {
     //     Route::inertia('/admin', 'AdminDashboard')->name('adminDashboard');
     // });
 
-    Route::group(['middleware' => 'role:admin'], function() {
+    Route::group(['middleware' => 'role:admin'], function () {
         Route::get('/admin', [AdminController::class, 'index']);
         Route::get('/answers-table', [AdminController::class, 'answer']);
         Route::get('/questions-table', [AdminController::class, 'question']);
-        Route::get('/tiket', [TiketController::class, 'index']);
-
-      // Menampilkan semua pembayaran
-Route::get('/payments', [PaymentController::class, 'index'])->name('payments-index');
-// Menampilkan formulir pembuatan pembayaran
-Route::get('/payments/create', [PaymentController::class, 'create'])->name('payments-create');
-// Menyimpan pembayaran baru
-Route::post('/payments', [PaymentController::class, 'store'])->name('payments-store');
-// Menampilkan pembayaran berdasarkan ID
-Route::get('/payments/{id}', [PaymentController::class, 'show'])->name('payments-show');
-// Menampilkan formulir pembaharuan pembayaran
-Route::get('/payments/{id}/edit', [PaymentController::class, 'edit'])->name('payments-edit');
-// Menyimpan pembaharuan pembayaran
-Route::put('/payments/{id}', [PaymentController::class, 'update'])->name('payments-update');
-// Menghapus pembayaran
-Route::delete('/payments/{id}', [PaymentController::class, 'destroy'])->name('payments-destroy');
-
-
+        // Menampilkan semua pembayaran
+        Route::get('/payments', [PaymentController::class, 'index']);
+        // Edit Status Payment
+        Route::post('/tiket/{id}', [TiketController::class, 'edit']);
+        // Delete Tiket
+        Route::post('/delete-tiket', [TiketController::class, 'delete']);
     });
 
-    Route::group(['middleware' => 'role:user'], function() {
+    Route::group(['middleware' => 'role:user'], function () {
         Route::inertia('/home', 'main');
     });
 });
@@ -132,6 +120,10 @@ Route::get('/quiz-merch', function () {
     return Inertia::render('QuizMerch');
 });
 
+Route::get('/quiz-merch/after', function () {
+    return Inertia::render('QuizMerchAfter');
+});
+
 Route::post('/quiz-merch/after', [MerchQuizController::class, 'submitQuiz']);
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

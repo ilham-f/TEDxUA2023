@@ -42,38 +42,25 @@ export default function Navbar() {
             {showNavbar ? (
                 <div className="grid bg-[#1A1A1A] opacity-75 border-b-4 border-[#b93021] fixed left-0 right-0 top-0 z-50">
                     {/* ...Isi navbar Anda di sini */}
-                    <div className="flex xl:h-[50px] md:h-[25px] xs:h-[10px] xl:mx-[100px] md:mx-[20px] xs:mx-[10px] my-[20px] content-center">
+                    <div className="flex xl:h-[50px] md:h-[25px] xs:h-[10px] xl:mx-[100px] md:mx-[20px] xs:mx-[10px] my-[20px] content-center items-center">
                         {/* Logo Tedx */}
-                        <img
-                            src="/assets/TEDxUniversitasAirlangga.png"
-                            alt=""
-                            className=" xl:max-w-[250px] max-w-[150px] h-max self-center"
-                        />
+                        <Link href="/">
+                            <img
+                                src="/assets/TEDxUniversitasAirlangga.png"
+                                alt=""
+                                className="xl:max-w-[250px] max-w-[150px] self-center"
+                            />
+                        </Link>
+
                         <nav className="flex ml-auto items-center">
                             <ul className="flex xl:flex-row md:flex-row xs:flex-row font-helvetica xl:gap-[30px] md:gap-[25px] xs:gap-[10px] md:text-[12px] xs:text-[5px] font-bold">
                                 <li className="flex items-center">
-                                    <a
+                                    <Link
                                         href="/"
                                         className="text-white hover:text-neutral-500"
                                     >
                                         HOME
-                                    </a>
-                                </li>
-                                <li className="flex items-center">
-                                    <a
-                                        href="/gallery"
-                                        className="text-white hover:text-neutral-500"
-                                    >
-                                        GALLERY
-                                    </a>
-                                </li>
-                                <li className="flex items-center">
-                                    <a
-                                        href="/partnership"
-                                        className="text-white hover:text-neutral-500"
-                                    >
-                                        PARTNERSHIP
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="flex items-center">
                                     <a
@@ -106,32 +93,30 @@ export default function Navbar() {
                                         data-te-dropdown-menu-ref
                                     >
                                         <li>
-                                            <a
+                                            <Link
                                                 className="block w-full whitespace-nowrap bg-transparent px-4 py-2 font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
                                                 href="/ticketing"
                                                 data-te-dropdown-item-ref
                                             >
                                                 Ticketing
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li>
-                                            <a
+                                            <Link
                                                 className="block w-full whitespace-nowrap bg-transparent px-4 py-2 font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
                                                 href="/merch"
                                                 data-te-dropdown-item-ref
                                             >
                                                 Merch
-                                            </a>
+                                            </Link>
                                         </li>
                                     </ul>
                                 </li>
                                 <li className="flex items-center">
                                     {auth.user ? (
-                                        <Link
-                                            href={route("dashboard")}
-                                            className="text-white text-center border-[2px] border-[#b93021] hover:bg-[#b93021] rounded-md p-[10px] md:p-[5px] xs:p-[3px]"
-                                        >
-                                            Profile
+                                        // <button className="text-white text-center border-[2px] border-[#b93021] hover:bg-[#b93021] rounded-md p-[10px] md:p-[5px] xs:p-[3px] mr-2" onClick={handleLogout}>Logout</button>
+                                        <Link href="/logout" method="post" className="text-white text-center border-[2px] border-[#b93021] hover:bg-[#b93021] rounded-md p-[10px] md:p-[5px] xs:p-[3px] mr-2">
+                                            LOGOUT
                                         </Link>
                                     ) : (
                                         <>
@@ -139,22 +124,16 @@ export default function Navbar() {
                                                 href={route("login")}
                                                 className="text-white text-center border-[2px] border-[#b93021] hover:bg-[#b93021] rounded-md p-[10px] md:p-[5px] xs:p-[3px] mr-2"
                                             >
-                                                Login
+                                                LOGIN
                                             </Link>
                                             <Link
                                                 href={route("register")}
                                                 className="text-white text-center border-[2px] border-[#b93021] hover:bg-[#b93021] rounded-md p-[10px] md:p-[5px] xs:p-[3px]"
                                             >
-                                                Register
+                                                REGISTER
                                             </Link>
                                         </>
                                     )}
-                                    {/* <a
-                                        href="/login"
-                                        className="text-white text-center border-[2px] border-[#b93021] hover:bg-[#b93021] rounded-md p-[10px] md:p-[5px] xs:p-[3px]"
-                                    >
-                                        LOGIN
-                                    </a> */}
                                 </li>
                             </ul>
                         </nav>
@@ -162,11 +141,11 @@ export default function Navbar() {
                 </div>
             ) : (
                 <div className="navigation">
-                    <a href="/">
+                    <Link href="/">
                         <div className="menuToggle">
                             <i></i>
                         </div>
-                    </a>
+                    </Link>
                     <div className="menu">
                         <ul>
                             <li>
@@ -177,47 +156,37 @@ export default function Navbar() {
                                    ORDER
                                 </button>
                             </li>
-                            <li>
-                                <a
-                                    href="/partnership"
-                                    className="font-helvetica"
-                                >
-                                    PARTNER
-                                </a>
-                            </li>
-                            {/* <li className="mx-[20px] invisible"></li> */}
-                            <li>
-                                <a href="/gallery" className="font-helvetica">
-                                    GALLERY
-                                </a>
+                            <li className="mx-[10px] invisible">
+
                             </li>
                             {auth.user ? (
                                 <li>
-                                    <a
-                                        href="/dashboard"
+                                    <Link
+                                        href="/logout"
+                                        method="post"
                                         className="font-helvetica"
                                     >
-                                        PROFILE
-                                    </a>
+                                        LOGOUT
+                                    </Link>
                                 </li>
                             ) : (
                                 <>
                                     <li>
-                                        <a
+                                        <Link
                                             href="/login"
                                             className="font-helvetica"
                                         >
                                             LOGIN
-                                        </a>
+                                        </Link>
                                     </li>
-                                    <li>
-                                        <a
+                                    {/* <li>
+                                        <Link
                                             href="/register"
                                             className="font-helvetica"
                                         >
                                             REGISTER
-                                        </a>
-                                    </li>
+                                        </Link>
+                                    </li> */}
                                 </>
                             )}
                         </ul>
@@ -242,14 +211,14 @@ export default function Navbar() {
                                     }
                                 >
                                     <Dialog.Description className="flex flex-col gap-5">
-                                        <a className="text-[#A4161A] bg-white font-canopee xl:text-[125px] md:text-[70px] text-[25px] text-center px-4 py-1 border border-white rounded-lg focus:bg-gray-300"
+                                        <Link className="text-[#A4161A] bg-white font-canopee xl:text-[125px] md:text-[70px] text-[25px] text-center px-4 py-1 border border-white rounded-lg focus:bg-gray-300"
                                         href="/ticketing">
                                             Ticket
-                                        </a>
-                                        <a className="text-[#A4161A] bg-white font-canopee xl:text-[125px] md:text-[70px] text-[25px] text-center px-4 py-1 border border-white rounded-lg focus:bg-gray-300"
+                                        </Link>
+                                        <Link className="text-[#A4161A] bg-white font-canopee xl:text-[125px] md:text-[70px] text-[25px] text-center px-4 py-1 border border-white rounded-lg focus:bg-gray-300"
                                         href="/merch">
                                             Merch
-                                        </a>
+                                        </Link>
 
                                     </Dialog.Description>
                                     <Dialog.Close>

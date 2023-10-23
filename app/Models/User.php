@@ -43,6 +43,6 @@ class User extends Authenticatable
 
     public function tiket(): HasOne
     {
-        return $this->hasOne(Tiket::class, 'user_id', 'id');
+        return $this->hasOne(Tiket::class);
     }
 }

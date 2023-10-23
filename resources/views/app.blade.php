@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title inertia>{{ config('app.name', 'Laravel') }}</title>
+        <link rel="shortcut icon" href="assets/xgrassdesk.png" type="image/x-icon">
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">

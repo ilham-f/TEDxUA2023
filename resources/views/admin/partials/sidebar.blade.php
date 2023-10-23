@@ -13,39 +13,19 @@
     <div class="menu-inner-shadow"></div>
 
     <ul class="menu-inner py-1">
-      <!-- Dashboard -->
-      <li class="menu-header text-uppercase}">
-        <a href="/admin" class="menu-link">
-          <div data-i18n="Analytics">Dashboard</div>
-        </a>
-      </li>
-
-      {{-- <li class="menu-header small text-uppercase">
-        <span class="menu-header-text">Pre-Event 1</span>
-      </li>
-      <li class="menu-item {{ ($title === 'Pre-Event 1 | Jawaban') ? 'active' : '' }}">
-        <a href="/answers-table" class="menu-link">
-            <div data-i18n="Account">Answers</div>
-        </a>
-      </li>
-      <li class="menu-item {{ ($title === 'Pre-Event 1 | Pertanyaan') ? 'active' : '' }}">
-        <a href="/questions-table" class="menu-link">
-            <div data-i18n="Account">Questions</div>
-        </a>
-      </li> --}}
-      <li class="menu-header small text-uppercase">
-        <span class="menu-header-text">Main Event</span>
-      </li>
-      <li class="menu-item">
-        <a href="/tiket" class="menu-link">
-            <div data-i18n="Account">Tickets</div>
-        </a>
-      </li>
-      <li class="menu-item">
-        <a href="/payments" class="menu-link">
-            <div data-i18n="Account">Payments</div>
-        </a>
-      </li>
-
+        <li class="menu-header small text-uppercase">
+          <span class="menu-header-text">Main Event</span>
+        </li>
+        <!-- Dashboard -->
+        <li class="menu-item {{ ($title === 'Dashboard') ? 'active' : '' }}">
+          <a href="/admin" class="menu-link">
+              <div data-i18n="Account">Dashboard</div>
+          </a>
+        </li>
+        <li class="menu-item {{ ($title === 'Payments') ? 'active' : '' }}">
+            <a href="/payments" class="menu-link">
+                <div data-i18n="Account">Payments</div>
+            </a>
+        </li>
     </ul>
   </aside>

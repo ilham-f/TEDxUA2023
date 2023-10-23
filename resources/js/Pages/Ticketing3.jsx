@@ -8,7 +8,7 @@ import { useForm } from "@inertiajs/react";
 import InputError from "@/Components/InputError";
 
 export default function Ticketing3({ tiket, payment }) {
-    console.log(payment);
+    // console.log(payment);
     const options = {
         // weekday: "long",
         year: "numeric",
@@ -22,38 +22,6 @@ export default function Ticketing3({ tiket, payment }) {
             currency: "IDR",
         }).format(value);
 
-    const conditionalComponent = () => {
-        switch (tiket.status) {
-            case 1:
-                return (
-                    <p className="font-canopee text-[20px] md:text-[35px] lg:text-[60px] leading-tight">
-                        <span className="text-[#A4161A]">STATUS :</span>WAITING
-                        FOR PAYMENT
-                    </p>
-                );
-            case 2:
-                return (
-                    <p className="font-canopee text-[20px] md:text-[35px] lg:text-[60px] leading-tight">
-                        <span className="text-[#c27a22]">STATUS :</span>WAITING
-                        VERIFICATION
-                    </p>
-                );
-            case 3:
-                return (
-                    <p className="font-canopee text-[20px] md:text-[35px] lg:text-[60px] leading-tight">
-                        <span className="text-[#28b226]">STATUS :</span>
-                        TICKET VERIFIED
-                    </p>
-                );
-            default:
-                return (
-                    <p className="font-canopee text-[20px] md:text-[35px] lg:text-[60px] leading-tight">
-                        <span className="text-[#A4161A]">STATUS :</span>WAITING
-                        FOR PAYMENT
-                    </p>
-                );
-        }
-    };
 
     const { data, setData, post, processing, errors } = useForm({
         // name: '',
@@ -61,13 +29,17 @@ export default function Ticketing3({ tiket, payment }) {
         bukti_pemb: '',
         id: payment.id
     });
+    
+    const [submitted, setSubmitted] = useState(false);
 
     function submit(e) {
         e.preventDefault();
         post('/payment');
+        setSubmitted(true);
     }
 
-    console.log(data);
+    
+    // console.log(data);
 
     return (
         <>
@@ -78,6 +50,8 @@ export default function Ticketing3({ tiket, payment }) {
                         MY TICKET
                     </p>
                 </div>
+                {(tiket.status !== 3) ? (
+                    <>
                     <div>
                         <label htmlFor="file-input">
                             <div className="bg-white md:w-[700px] lg:w-[1200px] grid px-2 md:px-4 py-5 md:py-12 rounded-3xl md:rounded-[60px] gap-y-5 md:gap-y-12">
@@ -135,27 +109,55 @@ export default function Ticketing3({ tiket, payment }) {
                                 className="sr-only"
                                 onChange={(e) => setData('bukti_pemb', e.target.files[0])}
                             />
-                            {
-                                data.bukti_pemb &&
-                                <>
-                                    <p className="font-canopee text-[15px] md:text-[25px] text-white text-center mb-2">Uploaded File : {data.bukti_pemb.name}</p>
-                                    <InputError message={errors.bukti_pemb} className="mt-2" />
-                                    <button className="font-canopee text-white bg-[#A4161A] px-12 text-[36px] md:text-custom4 lg:text-custom14 border-4 border-white rounded-[96px]" type="submit">
-                                        SUBMIT
-                                    </button>
-                                 </>
-                            }
+                            {(() =>{
+                                if (data.bukti_pemb && !submitted ){
+                                    return (
+                                        <>
+                                            <p className="font-canopee text-[15px] md:text-[25px] text-white text-center mb-2">Uploaded File : {data.bukti_pemb.name}</p>
+                                            <InputError message={errors.bukti_pemb} className="mt-2" />
+                                            <button className="font-canopee text-white bg-[#A4161A] px-12 text-[36px] md:text-custom4 lg:text-custom14 border-4 border-white rounded-[96px]" type="submit">
+                                                SUBMIT
+                                            </button>
+                                         </>
+                                    );
+                                }else{
+                                    return null;
+                                }
+                            })()}
                         </form>
                     </div>
                     </div>
-
-                {/* <div className="">
-
-                </div> */}
+                    </>
+                ) : (
+                    <></>
+                ) }
 
                 <div className="w-[370px] h-[520px] md:w-[700px] md:h-[1000px] lg:w-[1180px] lg:h-[1800px] bg-[url('/assets/ticket-card.png')] bg-contain bg-no-repeat mt-20 drop-shadow-[0_35px_15px_rgba(0,0,0,0.75)]">
                     <div className="border-[3px] md:border-4 border-black px-3 md:px-5 py-[2px] md:py-1 rounded-full w-fit h-fit mt-[87px] md:mt-[165px] lg:mt-[285px] mx-auto">
-                        {conditionalComponent()}
+                    {(() => {
+                        if (tiket.status == 1) {
+                        return (
+                            <p className="font-canopee text-[20px] md:text-[35px] lg:text-[60px] leading-tight">
+                                <span className="text-[#A4161A]">STATUS :</span>WAITING
+                                FOR PAYMENT
+                            </p>
+                        )
+                        } else if (tiket.status == 2) {
+                        return (
+                            <p className="font-canopee text-[15px] md:text-[30px] lg:text-[55px] leading-tight">
+                                <span className="text-[#c27a22]">STATUS :</span>UPLOAD SUCCES, WAITING
+                                VERIFICATION
+                            </p>
+                        )
+                        } else {
+                        return (
+                            <p className="font-canopee text-[20px] md:text-[35px] lg:text-[60px] leading-tight">
+                                <span className="text-[#28b226]">STATUS :</span>
+                                TICKET VERIFIED
+                            </p>
+                        )
+                        }
+                    })()}
                     </div>
                     <div className="w-fit h-fit mt-[50px] md:mt-[90px] lg:mt-[150px] ms-[70px] md:ms-[150px] lg:ms-[300px]">
                         <p className="font-canopee text-[25px] md:text-[50px] lg:text-[80px] leading-tight">

@@ -5,7 +5,7 @@ import InputError from "@/Components/InputError";
 import InputLabel from "@/Components/InputLabel";
 import PrimaryButton from "@/Components/PrimaryButton";
 import TextInput from "@/Components/TextInput";
-import { Head, Link, useForm } from "@inertiajs/react";
+import { Head, Link, useForm, router } from "@inertiajs/react";
 import Input from "../Input";
 import PasswordInput from "../PasswordInput";
 import Footer from "/resources/components/Footer";
@@ -87,17 +87,18 @@ export default function Login({ status, canResetPassword }) {
                         <button
                             className="bg-[#fff] rounded-full text-[#A4161A] text-[16px] md:text-[20px] px-[12px] font-gooddog hover:text-white hover:bg-[#A4161A] transition-all underline"
                             type="button"
+                            onClick={()=>router.visit("/register")}
                         >
                             REGISTER
                         </button>
                     </div>
-                    <div className="absolute bottom-0 left-0 right-0 flex justify-center">
+                    {/* <div className="absolute bottom-0 left-0 right-0 flex justify-center">
                         <img
                             src="/assets/bungaa.png"
                             alt="bunga"
                             className="w-[270px] xs:w-[360px] md:w-[700px] lg:w-[940px] max-w-none"
                         />
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <Footer />

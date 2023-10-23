@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('bukti_bayar')->nullable();
-            $table->foreignId('tiket_id')->constrained();
+            $table->foreignId('tiket_id')->constrained()->onDelete('cascade');
         });
     }
 

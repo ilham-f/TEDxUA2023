@@ -15,8 +15,8 @@ function CircularTextAnimation() {
   return (
     <>
     <div className='flex-col justify-center items-center hidden md:flex'>
-    <div className='circle relative xl:w-[75px] md:w-[75px]  xl:h-[75px] md:h-[75px]'> {/* Menggunakan kelas CSS 'circle' */}
-      <img className=' xl:w-[25px] md:w-[20px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2' src="/assets/arrow-circle.png" alt="circle" />
+    <div className='circle xl:w-[75px] md:w-[75px]  xl:h-[75px] md:h-[75px]'> {/* Menggunakan kelas CSS 'circle' */}
+      <img className='absolute xl:w-[25px] md:w-[20px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2' src="/assets/arrow-circle.png" alt="circle" />
       <div className='text'>{transformedText}</div> {/* Menggunakan kelas CSS 'text' */}
     </div>
   </div>

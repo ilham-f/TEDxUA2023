@@ -9,7 +9,7 @@ class Paket extends Model
 {
     use HasFactory;
 
-    public function tikets()
+    public function tiket()
     {
         return $this->hasMany(Tiket::class, 'tiket_id', 'id');
     }

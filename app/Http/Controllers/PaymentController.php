@@ -14,8 +14,11 @@ class PaymentController extends Controller
 {
     public function index()
     {
-        $payments = Payment::with('tiket')->get();
-        return view('tiket.payment', compact('payments'));
+        $payments = Payment::all();
+        return view('admin.payment', [
+            'payments' => $payments,
+            'title' => 'Payments'
+        ]);
     }
 
     public function create()
@@ -39,9 +42,7 @@ class PaymentController extends Controller
             'message' => 'data sukses dibuat',
             'alert-type' => 'success'
         ]);
-
-
-        }
+    }
 
     public function show($id)
     {

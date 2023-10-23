@@ -4,98 +4,56 @@ function ProdukMerch() {
   const items = [
     {
       id: 1,
-      name: 'Cap Green',
-      price: '50k',
-      imageUrl: '/assets/merch/cap mockup design tedx-Green.png',
+      name: 'Acrylic Pin Pack',
+      price: '25k',
+      imageUrl: '/assets/merch/acrylic.png',
     },
     {
       id: 2,
-      name: 'Iron Patch1',
-      price: '50k',
-      imageUrl: '/assets/merch/iron patch 1 (1).png',
+      name: 'Cap',
+      price: '65k',
+      imageUrl: '/assets/merch/cap.png',
     },
     {
       id: 3,
-      name: 'Iron Patch2',
-      price: '50k',
-      imageUrl: '/assets/merch/iron patch 2 (1).png',
+      name: 'Iron Patch Pack',
+      price: '20k',
+      imageUrl: '/assets/merch/iron.png',
     },
     {
       id: 4,
-      name: 'Cap Maroon',
-      price: '50k',
-      imageUrl: '/assets/merch/cap mockup design tedx- Maroon.png',
+      name: 'Keychain',
+      price: '20k',
+      imageUrl: '/assets/merch/keychain.png',
     },
     {
       id: 5,
-      name: 'Iron Patch3',
-      price: '50k',
-      imageUrl: '/assets/merch/iron patch 3 (1).png',
-    },
-    {
-      id: 6,
-      name: 'Tshirt cream',
-      price: '50k',
-      imageUrl: '/assets/merch/kaos tedx cream.png',
-    },
-    {
-      id: 7,
-      name: 'Tshirt black',
-      price: '50k',
-      imageUrl: '/assets/merch/Kaos TEDX item.png',
-    },
-    {
-      id: 8,
       name: 'Lanyard',
-      price: '50k',
+      price: '20k',
       imageUrl: '/assets/merch/lanyard.png',
     },
     {
-      id: 9,
-      name: 'Tshirt cream',
-      price: '50k',
-      imageUrl: '/assets/merch/kaos tedx cream.png',
+      id: 6,
+      name: 'Sticker Pack',
+      price: '15k',
+      imageUrl: '/assets/merch/sticker.png',
     },
     {
-      id: 10,
-      name: 'Tshirt cream',
-      price: '50k',
-      imageUrl: '/assets/merch/kaos tedx cream.png',
+      id: 7,
+      name: 'Totebag',
+      price: '65k',
+      imageUrl: '/assets/merch/totebag.png',
     },
     {
-      id: 11,
-      name: 'Tshirt cream',
-      price: '50k',
-      imageUrl: '/assets/merch/kaos tedx cream.png',
-    },
-    {
-      id: 12,
-      name: 'Tshirt cream',
-      price: '50k',
-      imageUrl: '/assets/merch/kaos tedx cream.png',
-    },
-    {
-      id: 13,
-      name: 'Tshirt cream',
-      price: '50k',
-      imageUrl: '/assets/merch/kaos tedx cream.png',
-    },
-    {
-      id: 14,
-      name: 'Tshirt cream',
-      price: '50k',
-      imageUrl: '/assets/merch/kaos tedx cream.png',
-    },
-    {
-      id: 15,
-      name: 'Tshirt cream',
-      price: '50k',
-      imageUrl: '/assets/merch/kaos tedx cream.png',
+      id: 8,
+      name: 'T-Shirt',
+      price: '85k',
+      imageUrl: '/assets/merch/tshirt.png',
     },
   ];
 
   return (
-    <div className="grid grid-cols-3 md:gap-16 xs:gap-x-2 xs:gap-y-6 md:grid-rows-2 md:grid-cols-3 md:p-[100px] xs:p-[20px] relative">
+    <div className="grid grid-cols-3 md:gap-16 xs:gap-x-2 xs:gap-y-6 md:grid-rows-2 md:grid-cols-3 md:p-[100px] xs:p-[20px] xs:pb-[75px] relative">
   {items.map((item) => (
     <div key={item.id} className="bg-[#99A252] rounded-lg text-center relative">
       <div className="absolute md:top-[-50px] md:right-[-50px] xs:top-[-20px] xs:right-[-10px]">

@@ -15,24 +15,8 @@ class Payment extends Model
         'tiket_id',
     ];
 
-    public function tikets()
+    public function tiket()
     {
         return $this->belongsTo(Tiket::class, 'tiket_id', 'id');
-    }
-
-    public function pakets(): BelongsTo
-    {
-        return $this->belongsTo(Paket::class, 'id_paket', 'id');
-    }
-
-    public static function alldatapayments()
-    {
-        // Sintaks SQL yang digunakan harus sesuai dengan skema tabel Anda
-        // Jika perlu, sesuaikan sesuai dengan struktur tabel yang sesungguhnya
-        return DB::table('payments')
-            ->leftjoin('tikets', 'tikets.id', '=', 'payments.id_tiket')
-            ->leftjoin('users', 'users.id', '=', 'payments.id_user')
-            ->leftjoin('pakets', 'pakets.id', '=', 'payments.id_paket')
-            ->get();
     }
 }

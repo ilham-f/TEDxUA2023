@@ -5,17 +5,15 @@ import Ticketing3 from './Ticketing3';
 import { useEffect } from 'react';
 import { useForm } from '@inertiajs/react';
 
-export default function TicketingMain({tickets}) {
+export default function TicketingMain({tickets, error}) {
 
     // console.log(tickets);
 
     const [page, setPage] = useState(0);
     const [selectedTicket, setSelectedTicket] = useState(tickets[0]);
+
     console.log(selectedTicket);
-    // console.log(window.localStorage.getItem('ticket'))
     const { data, setData, post, processing, errors } = useForm({
-        // name: '',
-        // email: '',
         phone: '',
         line: '',
         id: ''
@@ -30,9 +28,6 @@ export default function TicketingMain({tickets}) {
         post('/ticketing')
     }
 
-    // console.log(data);
-
-
       useEffect(() => {
         // window.localStorage.setItem('ticket', selectedTicket);
         window.localStorage.setItem('data', data);
@@ -43,7 +38,7 @@ export default function TicketingMain({tickets}) {
           case 0:
             return <Ticketing tickets={tickets} setSelectedTicket={setSelectedTicket} selectedTicket={selectedTicket} page={page} setPage={setPage}/>;
           case 1:
-            return <Ticketing2 page={page} setPage={setPage} data={data} setData={setData} processing={processing} submit={submit}/>;
+            return <Ticketing2 page={page} setPage={setPage} data={data} setData={setData} processing={processing} error={error} submit={submit}/>;
            default:
              return <Ticketing tickets={tickets} setSelectedTicket={setSelectedTicket} selectedTicket={selectedTicket} page={page} setPage={setPage}/>;
         }

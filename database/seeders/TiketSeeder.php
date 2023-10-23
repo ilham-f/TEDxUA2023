@@ -17,17 +17,19 @@ class TiketSeeder extends Seeder
     {
 
         Tiket::create([
-            'id_user' => 1, // Ganti dengan ID User yang sesuai
-            'id_paket' => 1, // Ganti dengan ID Paket yang sesuai
-            'total_harga' => 100, // Harga sesuai kebutuhan
+            'user_id' => 1, // Ganti dengan ID User yang sesuai
+            'paket_id' => 1, // Ganti dengan ID Paket yang sesuai
             'status' => 1, // Status sesuai kebutuhan
+            'line' => 'if',
+            'phone' => '123'
         ]);
 
         Tiket::create([
-            'id_user' => 2, // Ganti dengan ID User yang sesuai
-            'id_paket' => 2, // Ganti dengan ID Paket yang sesuai
-            'total_harga' => 150, // Harga sesuai kebutuhan
+            'user_id' => 1, // Ganti dengan ID User yang sesuai
+            'paket_id' => 1, // Ganti dengan ID Paket yang sesuai
             'status' => 2, // Status sesuai kebutuhan
+            'line' => 'ife',
+            'phone' => '123'
         ]);
 
     }
