@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PaketController;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
@@ -99,6 +100,12 @@ Route::put('/payments/{id}', [PaymentController::class, 'update'])->name('paymen
 // Menghapus pembayaran
 Route::delete('/payments/{id}', [PaymentController::class, 'destroy'])->name('payments-destroy');
 
+    //CRU Paket
+Route::get('/packets', [PaketController::class, 'index'])->name('packets-index');
+Route::get('/packets-create', [PaketController::class, 'create'])->name('packets-create');
+Route::post('/packets-save', [PaketController::class, 'store'])->name('packets-store');
+Route::get('/packets-edit/{id}', [PaketController::class, 'edit'])->name('packets-edit');
+Route::put('/packets-update/{id}', [PaketController::class, 'update'])->name('packets-update');
 
     });
 

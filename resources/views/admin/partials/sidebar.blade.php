@@ -41,6 +41,11 @@
             <div data-i18n="Account">Payments</div>
         </a>
       </li>
+      <li class="menu-item">
+        <a href="{{ route('packets-index') }}" class="menu-link">
+            <div data-i18n="Account">Packets</div>
+        </a>
+      </li>
 
     </ul>
   </aside>
