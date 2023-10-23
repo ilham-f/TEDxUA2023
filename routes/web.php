@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PaketController;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
@@ -88,12 +89,30 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/admin', [AdminController::class, 'index']);
         Route::get('/answers-table', [AdminController::class, 'answer']);
         Route::get('/questions-table', [AdminController::class, 'question']);
-        // Menampilkan semua pembayaran
-        Route::get('/payments', [PaymentController::class, 'index']);
-        // Edit Status Payment
-        Route::post('/tiket/{id}', [TiketController::class, 'edit']);
-        // Delete Tiket
-        Route::post('/delete-tiket', [TiketController::class, 'delete']);
+        Route::get('/tiket', [TiketController::class, 'index']);
+
+      // Menampilkan semua pembayaran
+Route::get('/payments', [PaymentController::class, 'index'])->name('payments-index');
+// Menampilkan formulir pembuatan pembayaran
+Route::get('/payments/create', [PaymentController::class, 'create'])->name('payments-create');
+// Menyimpan pembayaran baru
+Route::post('/payments', [PaymentController::class, 'store'])->name('payments-store');
+// Menampilkan pembayaran berdasarkan ID
+Route::get('/payments/{id}', [PaymentController::class, 'show'])->name('payments-show');
+// Menampilkan formulir pembaharuan pembayaran
+Route::get('/payments/{id}/edit', [PaymentController::class, 'edit'])->name('payments-edit');
+// Menyimpan pembaharuan pembayaran
+Route::put('/payments/{id}', [PaymentController::class, 'update'])->name('payments-update');
+// Menghapus pembayaran
+Route::delete('/payments/{id}', [PaymentController::class, 'destroy'])->name('payments-destroy');
+
+    //CRU Paket
+Route::get('/packets', [PaketController::class, 'index'])->name('packets-index');
+Route::get('/packets-create', [PaketController::class, 'create'])->name('packets-create');
+Route::post('/packets-save', [PaketController::class, 'store'])->name('packets-store');
+Route::get('/packets-edit/{id}', [PaketController::class, 'edit'])->name('packets-edit');
+Route::put('/packets-update/{id}', [PaketController::class, 'update'])->name('packets-update');
+
     });
 
     Route::group(['middleware' => 'role:user'], function () {

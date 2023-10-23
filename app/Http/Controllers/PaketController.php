@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Paket;
-use App\Http\Requests\StorePaketRequest;
-use App\Http\Requests\UpdatePaketRequest;
+use Illuminate\Http\Request;
 
 class PaketController extends Controller
 {
@@ -13,7 +12,8 @@ class PaketController extends Controller
      */
     public function index()
     {
-        //
+        $pakets = Paket::all();
+        return view('admin.paket.data-paket',compact('pakets'));
     }
 
     /**
@@ -21,15 +21,21 @@ class PaketController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.paket.create-paket');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorePaketRequest $request)
+    public function store(Request $request)
     {
-        //
+        $paket = new Paket();
+        $paket->nama_paket = $request->input('nama_paket');
+        $paket->detail_paket = $request->input('detail_paket');
+        $paket->harga = $request->input('harga');
+        $paket->save();
+    
+        return redirect()->route('packets-index');
     }
 
     /**
@@ -43,17 +49,33 @@ class PaketController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Paket $paket)
+
+     public function find($id)
+     {
+         return Paket::where('id', $id)->first();
+     
+     }
+    public function edit($id)
     {
-        //
+        $paket = PaketController::find($id);
+
+        return view('admin.paket.edit-paket', compact('paket'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePaketRequest $request, Paket $paket)
+    public function update(Request $request, $id)
     {
-        //
+        $paket = Paket::find($id);
+    
+    $paket->nama_paket = $request->input('nama_paket');
+    $paket->detail_paket = $request->input('detail_paket');
+    $paket->harga = $request->input('harga');
+    
+    $paket->save();
+    
+    return redirect()->route('packets-index');
     }
 
     /**
