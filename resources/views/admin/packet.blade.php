@@ -89,27 +89,70 @@
     </div>
     <thead>
       <tr>
-        <th scope="col">No.</th>
-        <th scope="col">Nama Paket</th>
-        <th scope="col">Detail Paket</th>
-        <th scope="col">Kuota</th>
-        <th scope="col">Harga</th>
-        <th scope="col">Image</th>
-        <th scope="col">Aksi</th>
+        <td scope="col">No.</td>
+        <td scope="col">Nama Paket</td>
+        <td scope="col">Detail Paket</td>
+        <td scope="col">Kuota</td>
+        <td scope="col">Harga</td>
+        <td scope="col">Image</td>
+        <td scope="col">Aksi</td>
       </tr>
     </thead>
     <tbody>
         <?php $no=1; ?>
         @foreach ($pakets as $paket)
             <tr>
-            <td>{{ $no++ }}</td>
-            <td>{{ $paket->nama_paket}}</td>
-            <td>{{ $paket->detail_paket }}</td>
-            <td>{{ $paket->kuota }}</td>
-            <td>Rp{{ number_format($paket->harga, 2, ',', '.') }}</td>
-            <td>
-                <img src="{{ asset('storage/' . $paket->image) }}" alt="Image" style="max-width: 100px; max-height: 100px;">
-            </td>
+                <td>{{ $no++ }}</td>
+                <td>{{ $paket->nama_paket }}</td>
+                <td>{{ $paket->detail_paket }}</td>
+                <td>{{ $paket->kuota }}</td>
+                <td>Rp{{ number_format($paket->harga, 2, ',', '.') }}</td>
+                <td>
+                    <a href="#" data-toggle="modal" data-target="#largerImageModal{{ $paket->id }}"
+                        data-image="{{ asset('storage/' . $paket->image) }}">
+                        <img src="{{ asset('storage/' . $paket->image) }}" alt="Image" style="max-width: 100px; max-height: 100px;">
+                    </a>
+                </td>
+
+                <div class="modal fade" id="largerImageModal{{ $paket->id }}" tabindex="-1" role="dialog" aria-labelledby="largerImageLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-fullscreen modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="largerImageLabel">Larger Image</h5>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <img id="largerImage{{ $paket->id }}" src="" alt="Larger Image" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <script>
+                // Check if the script has already been executed
+                if (!window.imageLinksInitialized) {
+                    // Declare variables
+                    const largerImageModal{{ $paket->id }} = document.getElementById('largerImageModal{{ $paket->id }}');
+                    const largerImage{{ $paket->id }} = document.getElementById('largerImage{{ $paket->id }}');
+
+                    const imageLinks{{ $paket->id }} = document.querySelectorAll('a[data-toggle="modal"]');
+                    imageLinks{{ $paket->id }}.forEach(link => {
+                        link.addEventListener('click', function(event) {
+                            event.preventDefault();
+
+                            // Get the larger image URL from the data-image attribute
+                            const imageSrc = this.getAttribute('data-image');
+
+                            // Set the larger image source for the modal
+                            largerImage{{ $paket->id }}.src = imageSrc;
+
+                            // Show the larger image modal
+                            $(largerImageModal{{ $paket->id }}).modal('show');
+                        });
+                    });
+                }
+            </script>
             <td>
                 {{-- link untuk melakukan update--}}
                 <div class="d-flex justify">
