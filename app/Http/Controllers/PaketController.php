@@ -13,7 +13,7 @@ class PaketController extends Controller
     public function index()
     {
         $pakets = Paket::all();
-        return view('admin.paket.data-paket',compact('pakets'));
+        return view('admin.packet',compact('pakets'));
     }
 
     /**
@@ -21,7 +21,7 @@ class PaketController extends Controller
      */
     public function create()
     {
-        return view('admin.paket.create-paket');
+
     }
 
     /**
@@ -29,14 +29,24 @@ class PaketController extends Controller
      */
     public function store(Request $request)
     {
-        $paket = new Paket();
-        $paket->nama_paket = $request->input('nama_paket');
-        $paket->detail_paket = $request->input('detail_paket');
-        $paket->harga = $request->input('harga');
-        $paket->save();
-    
-        return redirect()->route('packets-index');
+        $validatedData = $request->validate([
+            'nama_paket' => 'required',
+            'detail_paket' => 'required',
+            'kuota' => 'required|numeric',
+            'harga' => 'required|numeric',
+            'image' => 'image|mimes:jpeg,png,jpg,gif',
+        ]);
+
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('images', 'public');
+            $validatedData['image'] = $imagePath;
+        }
+
+        Paket::create($validatedData);
+
+        return redirect()->route('packets-index')->with('success', 'Paket added successfully');
     }
+
 
     /**
      * Display the specified resource.
@@ -46,37 +56,45 @@ class PaketController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-
-     public function find($id)
-     {
-         return Paket::where('id', $id)->first();
-     
-     }
     public function edit($id)
     {
-        $paket = PaketController::find($id);
-
-        return view('admin.paket.edit-paket', compact('paket'));
+        $paket = $this->find($id);
+        return view('packets.edit', compact('paket'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, $id)
     {
-        $paket = Paket::find($id);
-    
-    $paket->nama_paket = $request->input('nama_paket');
-    $paket->detail_paket = $request->input('detail_paket');
-    $paket->harga = $request->input('harga');
-    
-    $paket->save();
-    
-    return redirect()->route('packets-index');
+        // Validate the request data
+        $validatedData = $request->validate([
+            'nama_paket' => 'required|string',
+            'detail_paket' => 'required',
+            'kuota' => 'required|numeric',
+            'harga' => 'required|numeric',
+            'image' => 'image|mimes:jpeg,png,jpg,gif', // You can adjust image validation rules
+        ]);
+
+        // Find the Paket model by ID
+        $paket = Paket::findOrFail($id);
+
+        // Update the attributes of the Paket using the validated data
+        $paket->nama_paket = $validatedData['nama_paket'];
+        $paket->detail_paket = $validatedData['detail_paket'];
+        $paket->kuota = $validatedData['kuota'];
+        $paket->harga = $validatedData['harga'];
+
+        // Handle image upload if a new image is provided
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('images', 'public'); // Adjust the storage path as needed
+            $paket->image = $imagePath;
+        }
+
+        // Save the changes to the database
+        $paket->save();
+
+        return redirect()->route('packets-index')->with('success', 'Paket updated successfully');
     }
+
+
 
     /**
      * Remove the specified resource from storage.

@@ -22,7 +22,9 @@ class StorepaketRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nama_paket' => 'required|string|max:255',
+            'detail_paket' => 'required|string',
+            'harga' => 'required|numeric',
         ];
     }
 }
