@@ -14,24 +14,20 @@
 
     <ul class="menu-inner py-1">
       <!-- Dashboard -->
-      <li class="menu-header text-uppercase}">
+      <li class="menu-item {{ ($title === 'Dashboard') ? 'active' : '' }}">
         <a href="/admin" class="menu-link">
-          <div data-i18n="Analytics">Dashboard</div>
+            <div data-i18n="Account">Dashboard</div>
         </a>
       </li>
-      <li class="menu-header small text-uppercase">
-        <span class="menu-header-text">Main Event</span>
+      <li class="menu-item {{ ($title === 'Payments') ? 'active' : '' }}">
+          <a href="/payments" class="menu-link">
+              <div data-i18n="Account">Payments</div>
+          </a>
       </li>
-      <li class="menu-item">
-        <a href="/payments" class="menu-link">
-            <div data-i18n="Account">Payments</div>
-        </a>
-      </li>
-      <li class="menu-item">
+      <li class="menu-item {{ ($title === 'Packets') ? 'active' : '' }}">
         <a href="{{ route('packets-index') }}" class="menu-link">
             <div data-i18n="Account">Packets</div>
         </a>
       </li>
-
     </ul>
   </aside>

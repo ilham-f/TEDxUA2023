@@ -51,7 +51,7 @@
                                     <div class="row mb-3">
                                         <div class="col-sm-2"></div>
                                         <div class="col-sm-10">
-                                            <img id="image-preview" src="" alt="Image Preview" style="max-width: 100px; max-height: 100px;">
+                                            <img id="image-preview" src="https://www.its.ac.id/tmesin/wp-content/uploads/sites/22/2022/07/no-image.png" alt="Image Preview" style="max-width: 100px; max-height: 100px;">
                                             <script>
                                                 const imageInput = document.getElementById('image');
                                                 const imagePreview = document.getElementById('image-preview');
@@ -108,10 +108,17 @@
                 <td>{{ $paket->kuota }}</td>
                 <td>Rp{{ number_format($paket->harga, 2, ',', '.') }}</td>
                 <td>
-                    <a href="#" data-toggle="modal" data-target="#largerImageModal{{ $paket->id }}"
-                        data-image="{{ asset('storage/' . $paket->image) }}">
-                        <img src="{{ asset('storage/' . $paket->image) }}" alt="Image" style="max-width: 100px; max-height: 100px;">
-                    </a>
+                    @if ($paket->image)
+                        <a href="#" data-toggle="modal" data-target="#largerImageModal{{ $paket->id }}"
+                            data-image="{{ asset('storage/' . $paket->image) }}">
+                            <img src="{{ asset('storage/' . $paket->image) }}" alt="Image" style="max-width: 100px; max-height: 100px;">
+                        </a>
+                    @else
+                        <a href="#" data-toggle="modal" data-target="#largerImageModal{{ $paket->id }}"
+                            data-image="https://www.its.ac.id/tmesin/wp-content/uploads/sites/22/2022/07/no-image.png">
+                            <img src="https://www.its.ac.id/tmesin/wp-content/uploads/sites/22/2022/07/no-image.png" alt="Image" style="max-width: 100px; max-height: 100px;">
+                        </a>
+                    @endif
                 </td>
 
                 <div class="modal fade" id="largerImageModal{{ $paket->id }}" tabindex="-1" role="dialog" aria-labelledby="largerImageLabel" aria-hidden="true">
@@ -129,7 +136,7 @@
                         </div>
                     </div>
                 </div>
-            <script>
+            {{-- <script>
                 // Check if the script has already been executed
                 if (!window.imageLinksInitialized) {
                     // Declare variables
@@ -152,7 +159,7 @@
                         });
                     });
                 }
-            </script>
+            </script> --}}
             <td>
                 {{-- link untuk melakukan update--}}
                 <div class="d-flex justify">
@@ -202,13 +209,37 @@
 
                                     <label for="image">Ganti Gambar</label>
                                     <div class="form-group">
-                                        <input type="file" name="image" accept="image/*" class="form-control-file" id="image"/>
+                                        <input type="file" name="image" id="ubahimg" accept="image/*" class="form-control" id="image"/>
                                     </div>
                                     <br>
 
                                     <label>Gambar Saat Ini</label>
                                     <div class="form-group">
-                                        <img src="{{ asset('storage/' . $paket->image) }}" alt="Image" style="max-width: 100px; max-height: 100px;">
+                                        @if ($paket->image)
+                                            <img id="ubahimg-preview" src="{{ asset('storage/' . $paket->image) }}" alt="Image" style="max-width: 100px; max-height: 100px;">
+                                        @else
+                                            <img id="ubahimg-preview" src="https://www.its.ac.id/tmesin/wp-content/uploads/sites/22/2022/07/no-image.png" alt="Image" style="max-width: 100px; max-height: 100px;">
+                                        @endif
+                                        <script>
+                                            const ubahimgInput = document.getElementById('ubahimg');
+                                            const ubahimgPreview = document.getElementById('ubahimg-preview');
+
+                                            ubahimgInput.addEventListener('change', function () {
+                                                const file = ubahimgInput.files[0];
+
+                                                if (file) {
+                                                    const reader = new FileReader();
+
+                                                    reader.onload = function (e) {
+                                                        ubahimgPreview.src = e.target.result;
+                                                    };
+
+                                                    reader.readAsDataURL(file);
+                                                } else {
+                                                    ubahimgPreview.src = '';
+                                                }
+                                            });
+                                        </script>
                                     </div>
                                     <br>
                                 </div>

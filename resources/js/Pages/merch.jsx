@@ -67,7 +67,7 @@ export default function Merch() {
     <div className="flex w-full">
       <h1 className="font-capuchetrial text-white xl:text-[125px] lg:text-[100px] md:text-[80px] xs:text-[40px] mx-auto pt-[50px]">OUR PRODUCT</h1>
     </div>
-    <div className="text-center md:py-[30px] xs:py-[15px] ">
+    {/* <div className="text-center md:py-[30px] xs:py-[15px] ">
         <span className="inline-block bg-[#A4161A] rounded-xl text-[#FFFFFF] border-2 border-[#ffffff] ">
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSeoAuJ69u5bm5QDL2ozXuziyarXSYqe7MvMLbgVq4jPe6cFtQ/viewform" target="_blank">
           <button type="button" className="font-capuchetrial xl:text-[35px] lg:text-[35px] xs:text-[30px] md:px-[50px] xs:px-[25px] md:py-[10px] xs:py-[5px]">
@@ -75,7 +75,7 @@ export default function Merch() {
           </button>
           </a>
         </span>
-      </div>
+    </div> */}
 
     <MerchBundleAnimation/>
     <ProductMerch />

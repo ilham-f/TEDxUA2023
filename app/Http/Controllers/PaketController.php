@@ -13,7 +13,8 @@ class PaketController extends Controller
     public function index()
     {
         $pakets = Paket::all();
-        return view('admin.packet',compact('pakets'));
+        $title = 'Packets';
+        return view('admin.packet',compact('pakets','title'));
     }
 
     /**

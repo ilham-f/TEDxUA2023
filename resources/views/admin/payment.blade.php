@@ -48,7 +48,7 @@
                         data-bs-target="#ubah{{ $payment->id }}">
                         <i class="bi bi-pencil-fill">Edit</i>
                     </button>
-                    <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal"
+                    <button type="button" class="btn btn-danger me-2" data-bs-toggle="modal"
                         data-bs-target="#hapus{{ $payment->id }}">
                         <i class="bi bi-trash-fill">Hapus</i>
                     </button>
