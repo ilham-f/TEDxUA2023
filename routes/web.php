@@ -131,7 +131,7 @@ Route::middleware('auth')->group(function () {
 
 //Partnership email
 Route::get('/partnership', [PartnershipController::class, 'showForm'])->name('partnership.form');
-Route::post('/send-partnership-email', [PartnershipController::class, 'sendEmail']);
+Route::post('/send-partnership-email', [PartnershipController::class, 'sendEmail'])->name('partnership.mail');
 
 //Quiz Merch
 Route::get('/quiz-merch', function () {

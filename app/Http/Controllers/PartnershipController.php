@@ -30,9 +30,10 @@ class PartnershipController extends Controller
             'other' => 'required|string',
         ]);
 
+        // dd($data);
 
         // Kirim email menggunakan Mail::to() dan templat email yang sesuai.
-        Mail::to('b.satrya31@gmail.com')->send(new PartnershipEmail($data));
+        Mail::to('partnership.tedxunair2023@gmail.com')->send(new PartnershipEmail($data));
 
         return redirect()->back();
     }
