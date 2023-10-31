@@ -18,7 +18,7 @@ export default function Gallery(){
                     <div className="relative flex w-full justify-end items-center">
                         <img src="/assets/paper.png" alt="" class="w-screen lg:pt-[250px] md:pt-[150px] xs:pt-[75px] md:px-[100px] xs:px-[30px]"/>
                     </div>
-                    <div className="absolute flex items-center xl:top-[400px] xl:right-[225px] lg:top-1/2 lg:right-[225px] md:top-1/2 md:right-[200px] xs:top-1/2 xs:right-[75px]">
+                    <div className="absolute flex items-center xl:top-[400px] xl:right-[250px] lg:top-1/2 lg:right-[225px] md:top-1/2 md:right-[200px] xs:top-1/2 xs:right-[75px]">
                         <h1 class=" font-capuchetrial text-[#A4161A] xl:text-[180px] lg:text-[115px] md:text-[75px] w450:text-[65px] xs:text-[45px]">
                         GALLERY
                         </h1>
@@ -52,7 +52,7 @@ export default function Gallery(){
             <div className="relative flex grid grid-cols-4 xl:px-[200px] lg:px-[150px] md:px-[40px] xs:px-[40px] md:gap-8 xs:gap-2 xl:py-[100px] lg:py-[75px] md:py-[50px] xs:py-[25px]">
                 <div className="bg-white w-full col-span-3 h-full">
                     <div className="relative">
-                        <img src="/assets/potomanusia.png" alt="" className="mx-auto items-center justify-center w-full md:p-[20px] xs:p-[10px]"/>
+                        <img src="/assets/gallery/IMG_8271.JPG" alt="" className="mx-auto items-center justify-center w-full md:p-[20px] xs:p-[10px]"/>
                         <p className="font-gooddog text-center xl:px-[50px] lg:px-[40px] md:px-[30px] xs:px-[10px] xl:pb-[20px] lg:pb-[15px] md:pb-[10px] xs:pb-[5px] xl:text-[30px] lg:text-[24px] md:text-[20px] xs:text-[12px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                     </div>
                 </div>
@@ -61,13 +61,13 @@ export default function Gallery(){
                     </div>
                     <div className="grid grid-rows-3 gap-1">
                         <div className="bg-white w-full h-full md:py-[10px] xs:py-[2px]">
-                        <img src="/assets/potomanusia.png" alt="" className="mx-auto items-center justify-center w-full md:px-[10px] xs:px-[2px] "/>
+                        <img src="/assets/gallery/DSC08308.JPG" alt="" className="mx-auto items-center justify-center w-full md:px-[10px] xs:px-[2px] "/>
                         </div>
                         <div className="bg-white w-full h-full md:py-[10px] xs:py-[2px]">
-                        <img src="/assets/potomanusia.png" alt="" className="mx-auto items-center justify-center w-full md:px-[10px] xs:px-[2px]"/>
+                        <img src="/assets/gallery/IMG_8386.JPG" alt="" className="mx-auto items-center justify-center w-full md:px-[10px] xs:px-[2px]"/>
                         </div>
                         <div className="bg-white w-full h-full md:py-[10px] xs:py-[2px]">
-                        <img src="/assets/potomanusia.png" alt="" className="mx-auto items-center justify-center w-full md:px-[10px] xs:px-[2px]"/>
+                        <img src="/assets/gallery/IMG_8474.JPG" alt="" className="mx-auto items-center justify-center w-full md:px-[10px] xs:px-[2px]"/>
                         </div>
                     </div>
             </div>

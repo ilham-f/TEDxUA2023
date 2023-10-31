@@ -67,24 +67,23 @@ export default function Merch() {
     <div className="flex w-full">
       <h1 className="font-capuchetrial text-white xl:text-[125px] lg:text-[100px] md:text-[80px] xs:text-[40px] mx-auto pt-[50px]">OUR PRODUCT</h1>
     </div>
-    <div className="flex grid grid-cols-2 xl:gap-44 lg:gap-8 md:gap-4 xs:gap-4 md:px-10 xs:px-2">
+    <div className="flex grid grid-cols-2 xl:gap-16 lg:gap-8 md:gap-4 xs:gap-4 xl:px-20 md:px-10 xs:px-2">
       <div className="relative">
-        <img className="w-full" src="/assets/bundle-product1.png" alt="" />
-        <div className="absolute top-0 right-0">
+        <img className="w-full" src="/assets/merch/Bundle D-100.000.png" alt="" />
+        {/* <div className="absolute top-0 right-0">
           <img className="xl:w-[300px] lg:w-[200px] md:w-[180px] xs:w-[100px]" src="/assets/bundle-price.png" alt="" />
           <div className="absolute inset-0 flex items-center justify-center text-black font-extrabold font-migra md:text-[30px] xs:text-[12px]">
             100K
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="text-white xl:text-[35px] lg:text-[25px] md:text-[20px] xs:text-[10px] font-migra font-extrabold">
-        <h1 className="font-capuchetrial lg:text-[75px] md:text-[55px] xs:text-[20px] text-white">Bundling 1</h1>
+        <h1 className="font-capuchetrial lg:text-[75px] md:text-[55px] xs:text-[20px] text-white">Bundling A</h1>
         <h2>apa aja yang kamu dapatkan?</h2>
         <ul>
-          <li>• 1 Totebag</li>
-          <li>• 1 Tumbler</li>
-          <li>• 1 Car</li>
-          <li>• 1 Helicopter</li>
+          <li>• 1 T-shirt</li>
+          <li>• 1 Lanyard</li>
+          <li>• 1 Stiker Set</li>
         </ul>
         <div className="text-center items-center justify-center py-[30px]">
           <span className="inline-block bg-[#A4161A] rounded-full text-[#FFFFFF]">
