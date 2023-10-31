@@ -1,12 +1,18 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PaketController;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\TiketController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\MerchQuizController;
+use App\Http\Controllers\PartnershipController;
 use App\Http\Controllers\PreeventAnswerController;
 use App\Http\Controllers\PreeventQuestionController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\PartnershipController;
-use App\Http\Controllers\MerchQuizController;
+use App\Models\Paket;
+use App\Models\Payment;
 use App\Http\Controllers\Auth\RedirectAuthenticatedUsersController;
 
 /*
@@ -37,13 +43,17 @@ Route::get('/', function () {
     ]);
 })->name('main');
 
-Route::get('/login', function () {
-    return Inertia::render('Login', []);
-})->name('login');
+Route::get('/partnership', function () {
+    return Inertia::render('Partnership', []);
+})->name('partnership');
 
-Route::get('/register', function () {
-    return Inertia::render('Register', []);
-})->name('register');
+// Route::get('/login', function () {
+//     return Inertia::render('Login', []);
+// })->name('login');
+
+// Route::get('/register', function () {
+//     return Inertia::render('Register', []);
+// })->name('register');
 
 Route::get('/merch', function () {
     return Inertia::render('merch', []);
@@ -66,15 +76,35 @@ Route::post('/preevent1', [PreeventAnswerController::class, 'store']);
 Route::get('pre-event-1/{questionNumber}', [PreeventQuestionController::class, 'showQuestion']);
 
 //Role Authentication
-Route::group(['middleware' => 'auth'], function() {
+Route::group(['middleware' => 'auth'], function () {
     Route::inertia('/dashboard', 'Dashboard')->name('dashboard');
 
     Route::get("/redirectAuthenticatedUsers", [RedirectAuthenticatedUsersController::class, "home"]);
 
-    Route::group(['middleware' => 'role:admin'], function() {
-        Route::inertia('/admin', 'AdminDashboard')->name('adminDashboard');
+    // Route::group(['middleware' => 'role:admin'], function() {
+    //     Route::inertia('/admin', 'AdminDashboard')->name('adminDashboard');
+    // });
+
+    Route::group(['middleware' => 'role:admin'], function () {
+        Route::get('/admin', [AdminController::class, 'index']);
+        Route::get('/answers-table', [AdminController::class, 'answer']);
+        Route::get('/questions-table', [AdminController::class, 'question']);
+        Route::get('/tiket', [TiketController::class, 'index']);
+        // Menampilkan semua pembayaran
+        Route::get('/payments', [PaymentController::class, 'index']);
+        // Edit Status Payment
+        Route::post('/tiket/{id}', [TiketController::class, 'edit']);
+        // Delete Tiket
+        Route::post('/delete-tiket', [TiketController::class, 'delete']);
+        //CRU Paket
+        Route::get('/packets', [PaketController::class, 'index'])->name('packets-index');
+        Route::post('/packets-save', [PaketController::class, 'store'])->name('packets-store');
+        Route::get('/packets-edit/{id}', [PaketController::class, 'edit'])->name('packets-edit');
+        Route::put('/packets-update/{id}', [PaketController::class, 'update'])->name('packets-update');
+
     });
-    Route::group(['middleware' => 'role:user'], function() {
+
+    Route::group(['middleware' => 'role:user'], function () {
         Route::inertia('/home', 'main');
     });
 });
@@ -84,16 +114,24 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/ticketing', [TiketController::class, 'create'])->name('ticketing');
+    Route::post('/ticketing', [TiketController::class, 'store']);
+    Route::post('/payment', [TiketController::class, 'storeBukti'])->name('store.bukti');
 });
 
 //Partnership email
 Route::get('/partnership', [PartnershipController::class, 'showForm'])->name('partnership.form');
-Route::post('/send-partnership-email', [PartnershipController::class, 'sendEmail']);
+Route::post('/send-partnership-email', [PartnershipController::class, 'sendEmail'])->name('partnership.mail');
 
 //Quiz Merch
 Route::get('/quiz-merch', function () {
-    return Inertia::render('quizMerch');
+    return Inertia::render('QuizMerch');
 });
+
+Route::get('/quiz-merch/after', function () {
+    return Inertia::render('QuizMerchAfter');
+});
+
 Route::post('/quiz-merch/after', [MerchQuizController::class, 'submitQuiz']);
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

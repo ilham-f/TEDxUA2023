@@ -7,12 +7,12 @@ import Input from './Input';
 export default function Register() {
   return (
     <>
-        <div className="bg-[url('../../../public/assets/bg-grass.jpg')] bg-no-repeat bg-cover pt-10 pb-24 md:pt-44 md:pb-44 grid justify-center px-8 w-full">
+        <div className="bg-[url('../../../public/assets/bg-grass.jpg')] bg-no-repeat bg-cover pt-10 pb-24 w450:pt-44 w450:pb-44 grid justify-center px-8 w-full">
             <div className='mb-2 md:mb-8 relative w-full text-center text-[45px] xs:text-[60px] md:text-[100px] lg:text-[150px]'>
                 <span className='text-[#A4161A] font-capuchetrial'>REGIS</span>
                 <span className='text-[#fff] font-capuchetrial'>TER</span>
             </div>
-            <div className='border-4 rounded-3xl backdrop-blur-[2px] px-4 pt-8 md:px-16 md:pt-10 w-[280px] xs:w-[360px] md:w-[600px] lg:w-[800px]'>
+            <div className='border-4 rounded-3xl backdrop-blur-[2px] px-4 pt-8 md:px-16 md:pt-10 w-[280px] xs:w-[340px] md:w-[600px] lg:w-[800px]'>
                 <img src="/assets/logox1.png" alt="logox1" className='top-0 right-0 xs:top-[-10px] xs:right-[-10px] md:top-[-70px] md:right-[-70px] absolute w-[10px] xs:w-[40px] md:w-[138px]'/>
                 <form className='grid'>
                     {/* <label htmlFor="name" className='mb-3 font-gooddog text-white text-[40px]'>Name</label>
@@ -23,10 +23,10 @@ export default function Register() {
                     <input id='password' type="password" className='mb-3 p-4 rounded-md'/> */}
                     {/* <label htmlFor="confirmpassowrd" className='mb-3 font-gooddog text-white text-[40px]'>Confirm Passowrd</label>
                     <input id='confirmpassowrd' type="password" className='mb-3 p-4 rounded-md'/> */}
-                    <Input label={"Nama"} placeholder={"Nama"} id={"nama"} type={"text"}/>
-                    <Input label={"Email"} placeholder={"Email"} id={"email"} type={"email"}/>
-                    <PasswordInput label={"Password"} placeholder={"Password"} id={"password"}/>
-                    <PasswordInput label={"Confirm Password"} placeholder={"Confirm Password"} id={"confirmpassword"}/>
+                    <Input label={"Nama"} placeholder={"Nama"} id={"nama"} type={"text"} name={"nama"}/>
+                    <Input label={"Email"} placeholder={"Email"} id={"email"} type={"email"} name={"email"}/>
+                    <PasswordInput label={"Password"} placeholder={"Password"} id={"password"} name={"password"}/>
+                    <PasswordInput label={"Confirm Password"} placeholder={"Confirm Password"} id={"confirmpassword"} name={"confirmpassword"}/>
                     <button className='bg-[#A4161A] mt-10 p-1 font-gooddog text-[25px] md:text-[40px] rounded-full text-white hover:bg-white hover:text-[#A4161A] transition-all mx-4'>
                         REGISTER
                     </button>

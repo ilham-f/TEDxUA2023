@@ -14,25 +14,20 @@
 
     <ul class="menu-inner py-1">
       <!-- Dashboard -->
-      <li class="menu-item {{ ($title === 'Pre-Event 1 | Dashboard') ? 'active' : '' }}">
+      <li class="menu-item {{ ($title === 'Dashboard') ? 'active' : '' }}">
         <a href="/admin" class="menu-link">
-          <div data-i18n="Analytics">Dashboard</div>
+            <div data-i18n="Account">Dashboard</div>
         </a>
       </li>
-
-      <li class="menu-header small text-uppercase">
-        <span class="menu-header-text">Pre-Event 1</span>
+      <li class="menu-item {{ ($title === 'Payments') ? 'active' : '' }}">
+          <a href="/payments" class="menu-link">
+              <div data-i18n="Account">Payments</div>
+          </a>
       </li>
-      <li class="menu-item {{ ($title === 'Pre-Event 1 | Jawaban') ? 'active' : '' }}">
-        <a href="/answers-table" class="menu-link">
-            <div data-i18n="Account">Answers</div>
+      <li class="menu-item {{ ($title === 'Packets') ? 'active' : '' }}">
+        <a href="{{ route('packets-index') }}" class="menu-link">
+            <div data-i18n="Account">Packets</div>
         </a>
       </li>
-      <li class="menu-item {{ ($title === 'Pre-Event 1 | Pertanyaan') ? 'active' : '' }}">
-        <a href="/questions-table" class="menu-link">
-            <div data-i18n="Account">Questions</div>
-        </a>
-      </li>
-
     </ul>
   </aside>

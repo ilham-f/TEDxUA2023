@@ -1,13 +1,259 @@
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
 .slide-track {
   animation: scroll 15s infinite;
   /* Ganti ease-in-out menjadi linear */
 }
+.slide-track:hover {
+    animation-play-state: paused;
+}
+.slide-track:focus {
+    animation-play-state: paused;
+}
 
-@keyframes scroll {
+.slide-track-merch {
+  animation: scrollMerch 15s infinite;
+  /* Ganti ease-in-out menjadi linear */
+}
+.slide-track-merch:hover {
+    animation-play-state: paused;
+}
+.slide-track-merch:focus {
+    animation-play-state: paused;
+}
+
+/* @keyframes scroll {
   0%, 100% {
     transform: translateX(0);
   }
   50% {
-    transform: translateX(calc(-250px * 3)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
+    transform: translateX(calc(-220px * 3));
   }
+} */
+
+/* @keyframes scrollMerch {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(calc(-290px * 6));
+  }
+} */
+
+/* Media query for screens smaller than 330px */
+@media screen and (max-width: 330px) {
+    @keyframes scroll {
+        0%, 100% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(calc(-240px * 3)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
+        }
+    }
+
+    @keyframes scrollMerch {
+        0%, 100% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(calc(-300px * 6)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
+        }
+      }
+}
+
+/* Media query for screens between 331px and 360px */
+@media screen and (min-width: 331px) and (max-width: 360px) {
+    @keyframes scroll {
+        0%, 100% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(calc(-230px * 3)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
+        }
+    }
+
+    @keyframes scrollMerch {
+        0%, 100% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(calc(-293px * 6)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
+        }
+      }
+}
+
+/* Media query for screens between 361px and 400px */
+@media screen and (min-width: 361px) and (max-width: 400px) {
+    @keyframes scroll {
+        0%, 100% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(calc(-220px * 3)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
+        }
+    }
+
+    @keyframes scrollMerch {
+        0%, 100% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(calc(-290px * 6)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
+        }
+    }
+}
+
+/* Media query for screens between 401px and 765px */
+@media screen and (min-width: 401px) and (max-width: 765px) {
+    @keyframes scroll {
+        0%, 100% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(calc(-210px * 3)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
+        }
+    }
+
+    @keyframes scrollMerch {
+        0%, 100% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(calc(-281px * 6)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
+        }
+      }
+}
+
+/* Media query for screens between 768px and 800px */
+@media screen and (min-width: 766px) and (max-width: 800px) {
+    @keyframes scroll {
+        0%, 100% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(calc(-220px * 3)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
+        }
+    }
+
+    @keyframes scrollMerch {
+        0%, 100% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(calc(-225px * 6)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
+        }
+    }
+}
+
+/* Media query for screens between 801px and 880px */
+@media screen and (min-width: 801px) and (max-width: 880px) {
+    @keyframes scroll {
+        0%, 100% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(calc(-200px * 3)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
+        }
+    }
+
+    @keyframes scrollMerch {
+        0%, 100% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(calc(-215px * 6)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
+        }
+    }
+}
+
+/* Media query for screens between 768px and 993px */
+@media screen and (min-width: 881px) and (max-width: 992px) {
+    @keyframes scroll {
+        0%, 100% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(calc(-180px * 3)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
+        }
+    }
+
+    @keyframes scrollMerch {
+        0%, 100% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(calc(-205px * 6)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
+        }
+    }
+}
+
+/* Media query for screens between 992px and 1200px */
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+    @keyframes scroll {
+        0%, 100% {
+            transform: translateX(0);
+        }
+        50% {
+            transform: translateX(calc(-180px * 3)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
+        }
+    }
+
+    @keyframes scrollMerch {
+        0%, 100% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(calc(-290px * 6)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
+        }
+    }
+}
+
+/* Media query for screens between 1201px and 1400px */
+@media screen and (min-width: 1201px) and (max-width: 1430px) {
+    @keyframes scroll {
+        0%, 100% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(calc(-150px * 3)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
+        }
+    }
+
+    @keyframes scrollMerch {
+        0%, 100% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(calc(-140px * 6)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
+        }
+    }
+}
+
+/* Media query for screens bigger than 1431px*/
+@media screen and (min-width: 1431px){
+    @keyframes scroll {
+        0%, 100% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(calc(-195px * 3)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
+        }
+    }
+
+    @keyframes scrollMerch {
+        0%, 100% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(calc(-257px * 6)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
+        }
+    }
 }
