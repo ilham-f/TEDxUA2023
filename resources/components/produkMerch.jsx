@@ -4,47 +4,6 @@ function ProdukMerch() {
   const items = [
     {
       id: 1,
-<<<<<<< HEAD
-      name: 'Cap Green',
-      price: '65k',
-      imageUrl: '/assets/merch/cap_65.000.png',
-    },
-    {
-      id: 2,
-      name: 'Iron Patch',
-      price: '20k',
-      imageUrl: '/assets/merch/iron patch pack_20.000.png',
-    },
-    {
-      id: 3,
-      name: 'Key Chain',
-      price: '20k',
-      imageUrl: '/assets/merch/keychain-20.000.png',
-    },
-    {
-      id: 4,
-      name: 'Lanyard',
-      price: '20k',
-      imageUrl: '/assets/merch/lanyard_20.000.png',
-    },
-    {
-      id: 5,
-      name: 'Stiker',
-      price: '15k',
-      imageUrl: '/assets/merch/sticker_15.000.png',
-    },
-    {
-      id: 6,
-      name: 'Totebag',
-      price: '65k',
-      imageUrl: '/assets/merch/totebag-65.000.png',
-    },
-    {
-      id: 7,
-      name: 'T-shirt',
-      price: '85k',
-      imageUrl: '/assets/merch/tshirt-85.000.png',
-=======
       name: 'Acrylic Pin Pack',
       price: '25k',
       imageUrl: '/assets/merch/acrylic.png',
@@ -90,7 +49,6 @@ function ProdukMerch() {
       name: 'T-Shirt',
       price: '85k',
       imageUrl: '/assets/merch/tshirt.png',
->>>>>>> 8de5b0ef953d361b9f766a7e19d0f7decd164bb9
     },
   ];
 
