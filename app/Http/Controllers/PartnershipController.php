@@ -32,8 +32,8 @@ class PartnershipController extends Controller
         // dd($data);
 
         // Kirim email menggunakan Mail::to() dan templat email yang sesuai.
-        Mail::to('reynaldiarya.id@gmail.com')->send(new PartnershipEmail($data));
-        // $sended = Mail::to('mifahrezy11@gmail.com')->send(new PartnershipEmail($data));
+        // Mail::to('partnership.tedxunair2023@gmail.com')->send(new PartnershipEmail($data));
+        Mail::to('mifahrezy11@gmail.com')->send(new PartnershipEmail($data));
 
         return redirect()->back();
     }

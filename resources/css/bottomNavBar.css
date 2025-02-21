@@ -46,7 +46,6 @@
     border: 1px solid #ffffff;
     display: flex; /* Menjadikan elemen .menu flex container */
     align-items: center; /* Tengahkan secara vertikal */
-    justify-content: center; /* Tengahkan secara horizontal */
 }
 
 .menu ul {

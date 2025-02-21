@@ -39,7 +39,7 @@ export default function Gallery(){
                 class="embed-responsive embed-responsive-16by9 relative rounded mx-auto xl:w-[1200px] xl:h-[600px] lg:w-[850px] lg:h-[400px] md:w-[650px] md:h-[350px] w450:w-[400px] w450:h-[200px] xs:w-[310px] xs:h-[180px] overflow-hidden">
                 <iframe
                     class="embed-responsive-item-full w-full h-full"
-                    src="https://www.youtube.com/embed/sJ_5J1rcjqI?si=PU7fLJi_GN5zH4HZ"
+                    src="https://youtube.com/embed/sJ_5J1rcjqI?si=dMTcqVUVkpj2yRPm"
                     frameborder="0"
                     allow="autoplay; fullscreen; picture-in-picture"
                     allowfullscreen>
@@ -52,6 +52,9 @@ export default function Gallery(){
                 <div className="bg-white w-full col-span-3 h-full">
                     <div className="relative">
                         <img src="/assets/gallery1.JPG" alt="" className="mx-auto items-center justify-center w-full md:p-[20px] xs:p-[10px]"/>
+                        {/* <p className="font-gooddog text-center xl:px-[50px] lg:px-[40px] md:px-[30px] xs:px-[10px] xl:pb-[20px] lg:pb-[15px] md:pb-[10px] xs:pb-[5px] xl:text-[30px] lg:text-[24px] md:text-[20px] xs:text-[12px]">
+                            Pendidikan yang Berdansa degan Perubahan
+                        </p> */}
                     </div>
                 </div>
                     <div className="absolute xl:left-[150px] lg:left-[100px] md:left-[20px] xs:left-7 bottom-0">
