@@ -29,5 +29,10 @@
             <div data-i18n="Account">Packets</div>
         </a>
       </li>
+      <li class="menu-item {{ ($title === 'Seating') ? 'active' : '' }}">
+        <a href="{{ route('seating') }}" class="menu-link">
+            <div data-i18n="Account">Seating</div>
+        </a>
+      </li>
     </ul>
   </aside>

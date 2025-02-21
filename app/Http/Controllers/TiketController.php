@@ -143,6 +143,34 @@ class TiketController extends Controller
         return back();
     }
 
+    public function editSeat(Request $request)
+    {
+        $validated = $request->validate([
+            'seat' => 'required',
+            'tiket_id' => 'required'
+        ]);
+        // dd($request);
+
+        if ($request->tiket_id == 0) {
+            $tiket = Tiket::where('seat','=',$request->seat)->first();
+
+            $tiket->seat = 0;
+            $tiket->save();
+        }
+        else{
+            $tiket = Tiket::find($request->tiket_id);
+            $tiketBefore = Tiket::where('seat','=',$request->seat)->first();
+            if ($tiketBefore) {
+                $tiketBefore->seat = 0;
+                $tiketBefore->save();
+            }
+            $tiket->seat = $request->seat;
+            $tiket->save();
+        }
+
+        return back();
+    }
+
     /**
      * Update the specified resource in storage.
      */

@@ -27,7 +27,7 @@ class PartnershipEmail extends Mailable
      */
     public function build()
     {
-        return $this->from($this->data['email'])
+        return $this->from($this->data['email'], $this->data['nama'])
             ->subject('Partnership Email')
             ->view('emails.partnership');
     }

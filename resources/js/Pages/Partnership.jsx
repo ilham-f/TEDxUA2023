@@ -1,7 +1,7 @@
-import React from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import { useForm } from '@inertiajs/react';
+import React from 'react';
 
 export default function Partnership() {
 
@@ -12,7 +12,6 @@ export default function Partnership() {
         phone:'',
         email: '',
         deskripsi: '',
-        why: '',
         other: '',
     });
 
@@ -21,7 +20,6 @@ export default function Partnership() {
 
         post('/send-partnership-email');
     };
-
 
   return (
     <>
@@ -47,8 +45,6 @@ export default function Partnership() {
                     <input required onChange={(e) => {setData('email', e.target.value)}} type="text" id='email' name='email' className='w-full border border-black p-1'/>
                     <label htmlFor="deskripsi" className='font-lastik text-[13px] md:text-base mt-3 inline-block'>Deskripsi Singkat Tentang Kerjasama</label>
                     <textarea required onChange={(e) => {setData('deskripsi', e.target.value)}} name="deskripsi" id="deskripsi" cols="30" rows="10" className='w-full border border-black p-1'></textarea>
-                    <label htmlFor="why" className='font-lastik text-[13px] md:text-base mt-3 inline-block'>Kenapa TEDxUniversitasAirlangga Harus Berpatisipasi Dalam Acara Ini?</label>
-                    <textarea required onChange={(e) => {setData('why', e.target.value)}} name="why" id="why" cols="30" rows="10" className='w-full border border-black p-1'></textarea>
                     <label htmlFor="other" className='font-lastik text-[13px] md:text-base mt-3 inline-block'>Lain - Lain</label>
                     <textarea required onChange={(e) => {setData('other', e.target.value)}} name="other" id="other" cols="30" rows="10" className='w-full border border-black p-1'></textarea>
                     {hasErrors && <p className='text-red-500'>Mohon Ulangi Ada Masalah</p>}

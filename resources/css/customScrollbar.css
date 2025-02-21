@@ -64,7 +64,7 @@
           transform: translateX(0);
         }
         50% {
-          transform: translateX(calc(-300px * 6)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
+          transform: translateX(calc(-345px * 4)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
         }
       }
 }
@@ -85,7 +85,7 @@
           transform: translateX(0);
         }
         50% {
-          transform: translateX(calc(-293px * 6)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
+          transform: translateX(calc(-335px * 4)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
         }
       }
 }
@@ -106,7 +106,7 @@
           transform: translateX(0);
         }
         50% {
-          transform: translateX(calc(-290px * 6)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
+          transform: translateX(calc(-330px * 4)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
         }
     }
 }
@@ -127,7 +127,7 @@
           transform: translateX(0);
         }
         50% {
-          transform: translateX(calc(-281px * 6)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
+          transform: translateX(calc(-320px * 4)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
         }
       }
 }
@@ -148,7 +148,7 @@
           transform: translateX(0);
         }
         50% {
-          transform: translateX(calc(-225px * 6)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
+          transform: translateX(calc(-235px * 4)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
         }
     }
 }
@@ -169,12 +169,12 @@
           transform: translateX(0);
         }
         50% {
-          transform: translateX(calc(-215px * 6)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
+          transform: translateX(calc(-220px * 4)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
         }
     }
 }
 
-/* Media query for screens between 768px and 993px */
+/* Media query for screens between 881px and 992px */
 @media screen and (min-width: 881px) and (max-width: 992px) {
     @keyframes scroll {
         0%, 100% {
@@ -190,7 +190,7 @@
           transform: translateX(0);
         }
         50% {
-          transform: translateX(calc(-205px * 6)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
+          transform: translateX(calc(-205px * 4)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
         }
     }
 }
@@ -211,7 +211,7 @@
           transform: translateX(0);
         }
         50% {
-          transform: translateX(calc(-290px * 6)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
+          transform: translateX(calc(-145px * 4)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
         }
     }
 }
@@ -232,7 +232,7 @@
           transform: translateX(0);
         }
         50% {
-          transform: translateX(calc(-140px * 6)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
+          transform: translateX(calc(-105px * 4)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
         }
     }
 }
@@ -253,7 +253,7 @@
           transform: translateX(0);
         }
         50% {
-          transform: translateX(calc(-257px * 6)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
+          transform: translateX(calc(-247px * 4)); /* Sesuaikan dengan jumlah slide yang Anda miliki */
         }
     }
 }

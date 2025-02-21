@@ -18,6 +18,7 @@ class AdminController extends Controller
             'tikets' => Tiket::where('status','=',3)->get(),
             'early' => Tiket::where('status','=',3)->where('paket_id','=',1)->get(),
             'special' => Tiket::where('status','=',3)->where('paket_id','=',2)->get(),
+            'normal' => Tiket::where('status','=',3)->where('paket_id','=',6)->get(),
             'bundleA' => Tiket::where('status','=',3)->where('paket_id','=',3)->get(),
             'bundleB' => Tiket::where('status','=',3)->where('paket_id','=',4)->get(),
             'bundleC' => Tiket::where('status','=',3)->where('paket_id','=',5)->get(),

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('paket_id')->constrained();
             // $table->integer('total_harga');
             $table->integer('status')->default(1);
+            $table->integer('seat')->default(0);
             $table->string('line');
             $table->string('phone');
             $table->timestamps();

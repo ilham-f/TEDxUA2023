@@ -36,7 +36,7 @@ export default function Ticketing({tickets, setSelectedTicket, selectedTicket, p
                 <div className="bg-[url('/assets/texture-golf.jpg')] bg-cover bg-no-repeat p-7 md:p-0 w-[320px] md:w-[700px] md:h-[350px] lg:w-[1290px] lg:h-[530px] rounded-3xl md:rounded-[72px] mb-10 md:mb-24 items-center flex-col flex md:items-center md:flex-row">
                     <div className="flex flex-wrap content-center justify-center md:w-1/2">
                         <img
-                            src={`/assets/ticketing/${selectedTicket.image}`}
+                            src={`/ticketing/${selectedTicket.image}`}
                             alt="ticket"
                             className="lg:w-[585px] lg:h-[440px] md:w-full md:h-full"
                         />

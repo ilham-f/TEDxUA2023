@@ -102,170 +102,129 @@ export default function mainevent({ auth }) {
                 </div>
             </section>
 
-            {/*Speakers*/}
-            <section hidden>
-                <div className="bg-cover bg-no-repeat min-h-full xl:py-[50px] md:py-[30px] xs:py-[15px] bg-[#A4161A]">
+            {/* Speakers */}
+            <section>
+                <div className="bg-cover bg-no-repeat min-h-full xl:py-[50px] md:py-[30px] xs:py-[20px] bg-[#A4161A]">
                     <img
                         className="absolute xl:w-[500px] md:w-[300px] xs:w-[150px]"
                         src="/assets/x-left.png"
                         alt=""
                     />
-                    <h1 className="xl:text-[75px] md:text-[50px] font-capuchetrial text-center text-[#FFFFFF]">
-                        Prestigious <br /> speakers
+                    <h1 className="xl:text-[75px] md:text-[50px] xs:text-[25px] pb-[20px] font-capuchetrial text-center text-[#FFFFFF]">
+                        Our Speakers
                     </h1>
-                    {showCarousel ? (
-                        <>
-                            <div className="relative">
-                                <div className="absolute xl:w-[500px] md:w-[300px] xs:w-[150px] bottom-0 right-0 z-1">
+                    <>
+                        <div className="grid xl:grid-cols-3 md:grid-cols-3 xs:grid-cols-2 gap-4 xl:px-[200px] md:px-[100px] xs:px-[50px] xl:text-[50px] md:text-[35px] xs:text-[15px]">
+                            <div className="text-center ">
+                                <div className="relative">
                                     <img
-                                        className="w-full h-full object-cover"
-                                        src="/assets/x-right.png"
-                                        alt=""
+                                        src="/assets/speaker1.png"
+                                        alt="Pembicara 1"
+                                        className="w-full h-full object-cover bg-[#D9D9D9]"
                                     />
-                                </div>
-                                <Carousel
-                                    showArrows={true}
-                                    infiniteLoop={true}
-                                    showThumbs={false}
-                                    autoPlay={true}
-                                    interval={5000}
-                                    stopOnHover={true}
-                                    swipeable={true}
-                                >
-                                    <div className="flex justify-center px-[20px]">
-                                        <div className="w-1/2 mr-2">
-                                            <img
-                                                className="w-full h-full object-cover bg-[#D9D9D9]"
-                                                src="/assets/speaker.png"
-                                                alt="Pembicara 1"
-                                            />
-                                            <p className="font-canopee text-white py-2 text-center">
-                                                ELENA
-                                            </p>
-                                        </div>
-                                        <div className="w-1/2 ml-2">
-                                            <img
-                                                className="w-full h-full object-cover bg-[#D9D9D9]"
-                                                src="/assets/speaker.png"
-                                                alt="Pembicara 2"
-                                            />
-                                            <p className="font-canopee text-white py-2 text-center">
-                                                Speaker 2
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className="flex justify-center px-[20px]">
-                                        <div className="w-1/2 mr-2">
-                                            <img
-                                                className="w-full h-full object-cover bg-[#D9D9D9]"
-                                                src="/assets/speaker.png"
-                                                alt="Pembicara 1"
-                                            />
-                                            <p className="font-canopee text-white py-2 text-center">
-                                                ELENA
-                                            </p>
-                                        </div>
-                                        <div className="w-1/2 ml-2">
-                                            <img
-                                                className="w-full h-full object-cover bg-[#D9D9D9]"
-                                                src="/assets/speaker.png"
-                                                alt="Pembicara 2"
-                                            />
-                                            <p className="font-canopee text-white py-2 text-center">
-                                                Speaker 2
-                                            </p>
-                                        </div>
-                                    </div>
-                                </Carousel>
-                            </div>
-                        </>
-                    ) : (
-                        <>
-                            <div className="grid grid-cols-3 gap-4 xl:px-[200px] md:px-[100px] xs:px-[50px] xl:text-[50px] md:text-[35px] xs:text-[15px]">
-                                <div className="text-center ">
-                                    <div className="relative">
-                                        <img
-                                            src="/assets/speaker.png"
-                                            alt="Pembicara 1"
-                                            className="w-full h-full object-cover bg-[#D9D9D9]"
-                                        />
-                                        <p className="absolute bottom-0 left-0 right-0 font-canopee text-white py-2">
-                                            ELENA
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className="text-center ">
-                                    <div className="relative">
-                                        <img
-                                            src="/assets/speaker.png"
-                                            alt="Pembicara 1"
-                                            className="w-full h-full object-cover bg-[#D9D9D9]"
-                                        />
-                                        <p className="absolute bottom-0 left-0 right-0 font-canopee text-white py-2">
-                                            ELENA
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className="text-center ">
-                                    <div className="relative">
-                                        <img
-                                            src="/assets/speaker.png"
-                                            alt="Pembicara 1"
-                                            className="w-full h-full object-cover bg-[#D9D9D9]"
-                                        />
-                                        <p className="absolute bottom-0 left-0 right-0 font-canopee text-white py-2">
-                                            ELENA
-                                        </p>
-                                    </div>
+                                    <p className="absolute bottom-0 left-0 right-0 font-canopee text-[#A4161A] py-2 bg-white">
+                                        Vera Itabiliana H.
+                                    </p>
                                 </div>
                             </div>
-                            <div className="flex justify-end">
-                                <img
-                                    className="absolute xl:w-[500px] md:w-[300px] xs:w-[125px]"
-                                    src="/assets/x-right.png"
-                                    alt=""
-                                />
-                            </div>
-                            <div className="grid grid-cols-3 pt-[15px] gap-4 xl:px-[200px] md:px-[100px] xs:px-[50px] xl:text-[50px] md:text-[35px] xs:text-[15px]">
-                                <div className="text-center ">
-                                    <div className="relative">
-                                        <img
-                                            src="/assets/speaker.png"
-                                            alt="Pembicara 1"
-                                            className="w-full h-full object-cover bg-[#D9D9D9]"
-                                        />
-                                        <p className="absolute bottom-0 left-0 right-0 font-canopee text-white py-2">
-                                            ELENA
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className="text-center ">
-                                    <div className="relative">
-                                        <img
-                                            src="/assets/speaker.png"
-                                            alt="Pembicara 1"
-                                            className="w-full h-full object-cover bg-[#D9D9D9]"
-                                        />
-                                        <p className="absolute bottom-0 left-0 right-0 font-canopee text-white py-2">
-                                            ELENA
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className="text-center ">
-                                    <div className="relative">
-                                        <img
-                                            src="/assets/speaker.png"
-                                            alt="Pembicara 1"
-                                            className="w-full h-full object-cover bg-[#D9D9D9]"
-                                        />
-                                        <p className="absolute bottom-0 left-0 right-0 font-canopee text-white py-2">
-                                            ELENA
-                                        </p>
-                                    </div>
+                            <div className="text-center ">
+                                <div className="relative">
+                                    <img
+                                        src="/assets/speaker2.png"
+                                        alt="Pembicara 1"
+                                        className="w-full h-full object-cover bg-[#D9D9D9]"
+                                    />
+                                    <p className="absolute bottom-0 left-0 right-0 font-canopee text-[#A4161A] py-2 bg-white">
+                                        Enrique Owen
+                                    </p>
                                 </div>
                             </div>
-                        </>
-                    )}
+                            <div className="text-center ">
+                                <div className="relative">
+                                    <img
+                                        src="/assets/speaker3.png"
+                                        alt="Pembicara 1"
+                                        className="w-full h-full object-cover bg-[#D9D9D9]"
+                                    />
+                                    <p className="absolute bottom-0 left-0 right-0 font-canopee text-[#A4161A] py-2 bg-white">
+                                        Bayu Skak
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="text-center ">
+                                <div className="relative">
+                                    <img
+                                        src="/assets/speaker4.png"
+                                        alt="Pembicara 1"
+                                        className="w-full h-full object-cover bg-[#D9D9D9]"
+                                    />
+                                    <p className="absolute bottom-0 left-0 right-0 font-canopee text-[#A4161A] py-2 bg-white">
+                                        Stephen Ng
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="text-center ">
+                                <div className="relative">
+                                    <img
+                                        src="/assets/speaker5.png"
+                                        alt="Pembicara 1"
+                                        className="w-full h-full object-cover bg-[#D9D9D9]"
+                                    />
+                                    <p className="absolute bottom-0 left-0 right-0 font-canopee text-[#A4161A] py-2 bg-white">
+                                        Asisi Suhariyanto
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="text-center ">
+                                <div className="relative">
+                                    <img
+                                        src="/assets/speaker6.png"
+                                        alt="Pembicara 1"
+                                        className="w-full h-full object-cover bg-[#D9D9D9]"
+                                    />
+                                    <p className="absolute bottom-0 left-0 right-0 font-canopee text-[#A4161A] py-2 bg-white">
+                                        Debby Reynata
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </>
+                    <h1 className="xl:text-[75px] md:text-[50px] xs:text-[25px] py-[30px] font-capuchetrial text-center text-[#FFFFFF]">
+                        Student Speakers
+                    </h1>
+                    <>
+                    <div className="flex justify-center">
+                        <div className="grid xl:grid-cols-2 md:grid-cols-2 xs:grid-cols-2 gap-4 xl:px-[200px] md:px-[100px] xs:px-[50px] xl:text-[50px] md:text-[35px] xs:text-[15px]">
+
+                            <div className="text-center">
+                                <div className="relative">
+                                    <img
+                                        src="/assets/speaker7.png"
+                                        alt="Pembicara 1"
+                                        className="w-full h-full object-cover bg-[#D9D9D9]"
+                                    />
+                                    <p className="absolute bottom-0 left-0 right-0 font-canopee text-[#A4161A] py-2 bg-white">
+                                        Nabila Putri S.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className="text-center ">
+                                <div className="relative">
+                                    <img
+                                        src="/assets/speaker8.png"
+                                        alt="Pembicara 1"
+                                        className="w-full h-full object-cover bg-[#D9D9D9]"
+                                    />
+                                    <p className="absolute bottom-0 left-0 right-0 font-canopee text-[#A4161A] py-2 bg-white">
+                                        Afrizal Naufal G.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    </>
                 </div>
             </section>
 
@@ -285,6 +244,21 @@ export default function mainevent({ auth }) {
                             GRAB YOUR TICKET
                         </button>
                     </div>
+                </div>
+            </section>
+
+            {/* Supported By */}
+            <section>
+                <div className="bg-cover bg-[#F0EFE5] bg-no-repeat min-h-full xl:py-[50px] md:py-[30px] xs:pt-[30px] xs:pb-[90px] bg-white">
+                <div className="flex justify-center">
+                    <div>
+                        <img
+                        src="/assets/supported.png"
+                        alt="Centered Image"
+                        className="xl:max-w-[500px] md:max-w-[400px] xs:max-w-[250px] max-w-[250px] self-center"
+                        />
+                    </div>
+                </div>
                 </div>
             </section>
             <Navbar />

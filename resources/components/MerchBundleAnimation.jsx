@@ -12,16 +12,16 @@ function MerchBundleAnimation() {
             <div className="me-5 xl:w-[600px] lg:w-[400px] md:w-[400px] xs:w-[400px]">
               <div className='row flex border-2 border-[#FFFFFF] bg-black/75 rounded-xl p-[10px]'>
               <div className="col relative">
-                <img className="xl:w-[300px] lg:w-[200px] md:w-[200px] xs:w-[200px]" src="/assets/bundle-A.png" alt="" />
+                <img className="xl:w-[300px] lg:w-[200px] md:w-[200px] xs:w-[200px]" src="/assets/Bundle 1.png" alt="" />
               </div>
               <div className="col xl:w-[300px] lg:w-[200px] md:w-[200px] xs:w-[200px] text-white xl:text-[30px] lg:text-[20px] md:text-[20px] xs:text-[20px] font-migra font-extrabold">
                 <h1 className="font-capuchetrial lg:text-[50px] md:text-[40px] xs:text-[30px] text-white">Bundling</h1>
-                <h1 className="font-capuchetrial lg:text-[50px] md:text-[40px] xs:text-[30px] text-white">A</h1>
+                <h1 className="font-capuchetrial lg:text-[50px] md:text-[40px] xs:text-[30px] text-white">1</h1>
                 <h2>What Will You Get?</h2>
                 <ul>
                   <li>• Lanyard</li>
-                  <li>• Keychain</li>
-                  <li>• Sticker Set</li>
+                  <li>• T-Shirt</li>
+                  <li>• Cap</li>
                 </ul>
               </div>
               </div>
@@ -30,15 +30,33 @@ function MerchBundleAnimation() {
             <div className="me-5 xl:w-[600px] lg:w-[400px] md:w-[400px] xs:w-[400px]">
               <div className='row flex border-2 border-[#FFFFFF] bg-black/75 rounded-xl p-[10px]'>
               <div className="col relative">
-                <img className="xl:w-[300px] lg:w-[200px] md:w-[200px] xs:w-[200px]" src="/assets/bundle-B.png" alt="" />
+                <img className="xl:w-[300px] lg:w-[200px] md:w-[200px] xs:w-[200px]" src="/assets/Bundle 2.png" alt="" />
               </div>
               <div className="col xl:w-[300px] lg:w-[200px] md:w-[200px] xs:w-[200px] text-white xl:text-[30px] lg:text-[20px] md:text-[20px] xs:text-[20px] font-migra font-extrabold">
                 <h1 className="font-capuchetrial lg:text-[50px] md:text-[40px] xs:text-[30px] text-white">Bundling</h1>
-                <h1 className="font-capuchetrial lg:text-[50px] md:text-[40px] xs:text-[30px] text-white">B</h1>
+                <h1 className="font-capuchetrial lg:text-[50px] md:text-[40px] xs:text-[30px] text-white">2</h1>
                 <h2>What Will You Get?</h2>
                 <ul>
                   <li>• Iron Patch</li>
                   <li>• Totebag</li>
+                  <br />
+                </ul>
+              </div>
+              </div>
+            </div>
+
+            <div className="me-5 xl:w-[600px] lg:w-[400px] md:w-[400px] xs:w-[400px]">
+              <div className='row flex border-2 border-[#FFFFFF] bg-black/75 rounded-xl p-[10px]'>
+              <div className="col relative">
+                <img className="xl:w-[300px] lg:w-[200px] md:w-[200px] xs:w-[200px]" src="/assets/Bundle 3.png" alt="" />
+              </div>
+              <div className="col xl:w-[300px] lg:w-[200px] md:w-[200px] xs:w-[200px] text-white xl:text-[30px] lg:text-[20px] md:text-[20px] xs:text-[20px] font-migra font-extrabold">
+                <h1 className="font-capuchetrial lg:text-[50px] md:text-[40px] xs:text-[30px] text-white">Bundling</h1>
+                <h1 className="font-capuchetrial lg:text-[50px] md:text-[40px] xs:text-[30px] text-white">3</h1>
+                <h2>What Will You Get?</h2>
+                <ul>
+                  <li>• Sticker Set</li>
+                  <li>• Keychain</li>
                   <li>• Acrylic Pin</li>
                 </ul>
               </div>
@@ -48,47 +66,29 @@ function MerchBundleAnimation() {
             <div className="me-5 xl:w-[600px] lg:w-[400px] md:w-[400px] xs:w-[400px]">
               <div className='row flex border-2 border-[#FFFFFF] bg-black/75 rounded-xl p-[10px]'>
               <div className="col relative">
-                <img className="xl:w-[300px] lg:w-[200px] md:w-[200px] xs:w-[200px]" src="/assets/bundle-C.png" alt="" />
+                <img className="xl:w-[300px] lg:w-[200px] md:w-[200px] xs:w-[200px]" src="/assets/Bundle 4.png" alt="" />
               </div>
               <div className="col xl:w-[300px] lg:w-[200px] md:w-[200px] xs:w-[200px] text-white xl:text-[30px] lg:text-[20px] md:text-[20px] xs:text-[20px] font-migra font-extrabold">
                 <h1 className="font-capuchetrial lg:text-[50px] md:text-[40px] xs:text-[30px] text-white">Bundling</h1>
-                <h1 className="font-capuchetrial lg:text-[50px] md:text-[40px] xs:text-[30px] text-white">C</h1>
+                <h1 className="font-capuchetrial lg:text-[50px] md:text-[40px] xs:text-[30px] text-white">4</h1>
                 <h2>What Will You Get?</h2>
                 <ul>
-                  <li>• Sticker Set</li>
-                  <li>• Keychain</li>
-                  <li>• Iron Patch</li>
-                </ul>
-              </div>
-              </div>
-            </div>
-
-            <div className="me-5 xl:w-[600px] lg:w-[400px] md:w-[400px] xs:w-[400px]">
-              <div className='row flex border-2 border-[#FFFFFF] bg-black/75 rounded-xl p-[10px]'>
-              <div className="col relative">
-                <img className="xl:w-[300px] lg:w-[200px] md:w-[200px] xs:w-[200px]" src="/assets/bundle-D.png" alt="" />
-              </div>
-              <div className="col xl:w-[300px] lg:w-[200px] md:w-[200px] xs:w-[200px] text-white xl:text-[30px] lg:text-[20px] md:text-[20px] xs:text-[20px] font-migra font-extrabold">
-                <h1 className="font-capuchetrial lg:text-[50px] md:text-[40px] xs:text-[30px] text-white">Bundling</h1>
-                <h1 className="font-capuchetrial lg:text-[50px] md:text-[40px] xs:text-[30px] text-white">D</h1>
-                <h2>What Will You Get?</h2>
-                <ul>
-                  <li>• Lanyard</li>
-                  <li>• T-Shirt</li>
+                  <li>• Cap</li>
+                  <li>• Totebag</li>
                   <li>• Sticker Set</li>
                 </ul>
               </div>
               </div>
             </div>
 
-            <div className="xl:w-[600px] lg:w-[400px] md:w-[400px] xs:w-[400px]">
+            {/* <div className="xl:w-[600px] lg:w-[400px] md:w-[400px] xs:w-[400px]">
               <div className='row flex border-2 border-[#FFFFFF] bg-black/75 rounded-xl p-[10px]'>
                 <div className="col relative">
                     <img className="xl:w-[300px] lg:w-[200px] md:w-[200px] xs:w-[200px]" src="/assets/bundle-E.png" alt="" />
                 </div>
                 <div className="col xl:w-[300px] lg:w-[200px] md:w-[200px] xs:w-[200px] text-white xl:text-[30px] lg:text-[20px] md:text-[20px] xs:text-[20px] font-migra font-extrabold">
                     <h1 className="font-capuchetrial lg:text-[50px] md:text-[40px] xs:text-[30px] text-white">Bundling</h1>
-                    <h1 className="font-capuchetrial lg:text-[50px] md:text-[40px] xs:text-[30px] text-white">E</h1>
+                    <h1 className="font-capuchetrial lg:text-[50px] md:text-[40px] xs:text-[30px] text-white">5</h1>
                     <h2>What Will You Get?</h2>
                     <ul>
                         <li>• Cap</li>
@@ -97,7 +97,7 @@ function MerchBundleAnimation() {
                     </ul>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
     </>

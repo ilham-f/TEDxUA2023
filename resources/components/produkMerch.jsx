@@ -4,7 +4,7 @@ function ProdukMerch() {
   const items = [
     {
       id: 1,
-      name: 'Acrylic Pin Pack',
+      name: 'Acrylic Pin',
       price: '25k',
       imageUrl: '/assets/merch/acrylic.png',
     },
@@ -16,7 +16,7 @@ function ProdukMerch() {
     },
     {
       id: 3,
-      name: 'Iron Patch Pack',
+      name: 'Iron Patch',
       price: '20k',
       imageUrl: '/assets/merch/iron.png',
     },
@@ -34,7 +34,7 @@ function ProdukMerch() {
     },
     {
       id: 6,
-      name: 'Sticker Pack',
+      name: 'Sticker Set',
       price: '15k',
       imageUrl: '/assets/merch/sticker.png',
     },
@@ -62,15 +62,17 @@ function ProdukMerch() {
           {item.price}
         </div>
       </div>
-      <div className="items-center justify-end">
+      <div className="flex-col justify-between">
         <img
           src={item.imageUrl}
           alt={item.name}
           className="xl:h-[350px] lg:h-[250px] md:h-[150px] xs:h-[100px] mx-auto w-fit mb-2"
         />
-        <p className="bg-white xl:text-[50px] lg:text-[30px] md:text-[20px] xs:text-[15px] font-capuchetrial font-bold text-black">
-          {item.name}
-        </p>
+        <div className="bg-white xs:h-10 md:h-16 lg:h-18 xl:h-20 flex flex-col items-center justify-center">
+            <p className=" xl:text-[50px] lg:text-[30px] md:text-[20px] xs:text-[15px] font-capuchetrial font-bold text-black">
+            {item.name}
+            </p>
+        </div>
       </div>
     </div>
   ))}

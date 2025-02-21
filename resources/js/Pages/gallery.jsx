@@ -36,10 +36,10 @@ export default function Gallery(){
                 <div className="w-full h-full bg-green-500 bg-opacity-50 lg:pt-36 xs:pt-10">
             <section>
             <div
-                class="embed-responsive embed-responsive-16by9 relative rounded rounded-[25px] mx-auto xl:w-[1200px] xl:h-[600px] lg:w-[850px] lg:h-[400px] md:w-[650px] md:h-[350px] w450:w-[400px] w450:h-[200px] xs:w-[310px] xs:h-[180px] overflow-hidden">
+                class="embed-responsive embed-responsive-16by9 relative rounded mx-auto xl:w-[1200px] xl:h-[600px] lg:w-[850px] lg:h-[400px] md:w-[650px] md:h-[350px] w450:w-[400px] w450:h-[200px] xs:w-[310px] xs:h-[180px] overflow-hidden">
                 <iframe
                     class="embed-responsive-item-full w-full h-full"
-                    src="https://www.youtube.com/embed/vNsi243Oa_g"
+                    src="https://www.youtube.com/embed/sJ_5J1rcjqI?si=PU7fLJi_GN5zH4HZ"
                     frameborder="0"
                     allow="autoplay; fullscreen; picture-in-picture"
                     allowfullscreen>
@@ -47,12 +47,11 @@ export default function Gallery(){
                 </div>
             </section>
 
-            <section>
-            <div className="relative flex grid grid-cols-4 xl:px-[200px] lg:px-[150px] md:px-[40px] xs:px-[40px] md:gap-8 xs:gap-2 xl:py-[100px] lg:py-[75px] md:py-[50px] xs:py-[25px]">
+            <section className="pb-20">
+            <div className="relative grid grid-cols-4 xl:px-[200px] lg:px-[150px] md:px-[40px] xs:px-[40px] md:gap-8 xs:gap-2 xl:py-[100px] lg:py-[75px] md:py-[50px] xs:py-[25px]">
                 <div className="bg-white w-full col-span-3 h-full">
                     <div className="relative">
-                        <img src="/assets/potomanusia.png" alt="" className="mx-auto items-center justify-center w-full md:p-[20px] xs:p-[10px]"/>
-                        <p className="font-gooddog text-center xl:px-[50px] lg:px-[40px] md:px-[30px] xs:px-[10px] xl:pb-[20px] lg:pb-[15px] md:pb-[10px] xs:pb-[5px] xl:text-[30px] lg:text-[24px] md:text-[20px] xs:text-[12px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                        <img src="/assets/gallery1.JPG" alt="" className="mx-auto items-center justify-center w-full md:p-[20px] xs:p-[10px]"/>
                     </div>
                 </div>
                     <div className="absolute xl:left-[150px] lg:left-[100px] md:left-[20px] xs:left-7 bottom-0">
@@ -60,13 +59,13 @@ export default function Gallery(){
                     </div>
                     <div className="grid grid-rows-3 gap-1">
                         <div className="bg-white w-full h-full md:py-[10px] xs:py-[2px]">
-                        <img src="/assets/potomanusia.png" alt="" className="mx-auto items-center justify-center w-full md:px-[10px] xs:px-[2px] "/>
+                        <img src="/assets/gallery2.JPG" alt="" className="mx-auto items-center justify-center w-full md:px-[10px] xs:px-[2px] "/>
                         </div>
                         <div className="bg-white w-full h-full md:py-[10px] xs:py-[2px]">
-                        <img src="/assets/potomanusia.png" alt="" className="mx-auto items-center justify-center w-full md:px-[10px] xs:px-[2px]"/>
+                        <img src="/assets/gallery3.JPG" alt="" className="mx-auto items-center justify-center w-full md:px-[10px] xs:px-[2px]"/>
                         </div>
                         <div className="bg-white w-full h-full md:py-[10px] xs:py-[2px]">
-                        <img src="/assets/potomanusia.png" alt="" className="mx-auto items-center justify-center w-full md:px-[10px] xs:px-[2px]"/>
+                        <img src="/assets/gallery4.JPG" alt="" className="mx-auto items-center justify-center w-full md:px-[10px] xs:px-[2px]"/>
                         </div>
                     </div>
             </div>

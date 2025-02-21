@@ -63,6 +63,22 @@ export default function Navbar() {
                                     </Link>
                                 </li>
                                 <li className="flex items-center">
+                                    <Link
+                                        href="/gallery"
+                                        className="text-white hover:text-neutral-500"
+                                    >
+                                        GALLERY
+                                    </Link>
+                                </li>
+                                <li className="flex items-center">
+                                    <Link
+                                        href="/partnership"
+                                        className="text-white hover:text-neutral-500"
+                                    >
+                                        PARTNERSHIP
+                                    </Link>
+                                </li>
+                                <li className="flex items-center">
                                     <a
                                         className="flex items-center text-white hover:text-neutral-500 hover:ease-in-out focus:text-neutral-700"
                                         href="#"
@@ -95,10 +111,10 @@ export default function Navbar() {
                                         <li>
                                             <Link
                                                 className="block w-full whitespace-nowrap bg-transparent px-4 py-2 font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
-                                                href="/ticketing"
+                                                href="/ticket"
                                                 data-te-dropdown-item-ref
                                             >
-                                                Ticketing
+                                                Ticket
                                             </Link>
                                         </li>
                                         <li>
@@ -147,17 +163,21 @@ export default function Navbar() {
                         </div>
                     </Link>
                     <div className="menu">
-                        <ul>
+                        <ul className="flex flex-row justify-evenly w-full">
                             <li>
-                                {/* <a href="" className="font-helvetica">
-                                    ORDER
-                                </a> */}
                                 <button className="font-helvetica" onClick={() => setModal(!modal)}>
                                    ORDER
                                 </button>
                             </li>
-                            <li className="mx-[10px] invisible">
-
+                            <li>
+                                <a href="/partnership" className="font-helvetica">
+                                    PARTNER
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/gallery" className="font-helvetica">
+                                    GALLERY
+                                </a>
                             </li>
                             {auth.user ? (
                                 <li>
@@ -212,7 +232,7 @@ export default function Navbar() {
                                 >
                                     <Dialog.Description className="flex flex-col gap-5">
                                         <Link className="text-[#A4161A] bg-white font-canopee xl:text-[125px] md:text-[70px] text-[25px] text-center px-4 py-1 border border-white rounded-lg focus:bg-gray-300"
-                                        href="/ticketing">
+                                        href="/ticket">
                                             Ticket
                                         </Link>
                                         <Link className="text-[#A4161A] bg-white font-canopee xl:text-[125px] md:text-[70px] text-[25px] text-center px-4 py-1 border border-white rounded-lg focus:bg-gray-300"

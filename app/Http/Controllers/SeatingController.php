@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Seating;
+use App\Models\Tiket;
 use App\Http\Requests\StoreSeatingRequest;
 use App\Http\Requests\UpdateSeatingRequest;
 
@@ -13,7 +14,11 @@ class SeatingController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.seating',[
+            'title' => 'Seating',
+            'tikets' => Tiket::where('status','=',3)->where('seat','=',0)->get(),
+            'tiketsToCheck' => Tiket::where('status','=',3)->get(),
+        ]);
     }
 
     /**

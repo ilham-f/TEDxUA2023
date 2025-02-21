@@ -11,6 +11,7 @@ use App\Http\Controllers\MerchQuizController;
 use App\Http\Controllers\PartnershipController;
 use App\Http\Controllers\PreeventAnswerController;
 use App\Http\Controllers\PreeventQuestionController;
+use App\Http\Controllers\SeatingController;
 use App\Models\Paket;
 use App\Models\Payment;
 use App\Http\Controllers\Auth\RedirectAuthenticatedUsersController;
@@ -47,13 +48,16 @@ Route::get('/partnership', function () {
     return Inertia::render('Partnership', []);
 })->name('partnership');
 
-// Route::get('/login', function () {
-//     return Inertia::render('Login', []);
-// })->name('login');
 
-// Route::get('/register', function () {
-//     return Inertia::render('Register', []);
-// })->name('register');
+Route::post('/logout', [AuthenticatedSessionController::class, 'destroy']);
+
+Route::get('/login', function () {
+    return Inertia::render('Login', []);
+})->name('login');
+
+Route::get('/register', function () {
+    return Inertia::render('Register', []);
+})->name('register');
 
 Route::get('/merch', function () {
     return Inertia::render('merch', []);
@@ -81,12 +85,10 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get("/redirectAuthenticatedUsers", [RedirectAuthenticatedUsersController::class, "home"]);
 
-    // Route::group(['middleware' => 'role:admin'], function() {
-    //     Route::inertia('/admin', 'AdminDashboard')->name('adminDashboard');
-    // });
-
     Route::group(['middleware' => 'role:admin'], function () {
         Route::get('/admin', [AdminController::class, 'index']);
+        Route::get('/seating', [SeatingController::class, 'index'])->name('seating');
+        Route::post('/edit-seat', [TiketController::class, 'editSeat']);
         Route::get('/answers-table', [AdminController::class, 'answer']);
         Route::get('/questions-table', [AdminController::class, 'question']);
         Route::get('/tiket', [TiketController::class, 'index']);
@@ -114,7 +116,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('/ticketing', [TiketController::class, 'create'])->name('ticketing');
+    Route::get('/ticket', [TiketController::class, 'create'])->name('ticketing');
     Route::post('/ticketing', [TiketController::class, 'store']);
     Route::post('/payment', [TiketController::class, 'storeBukti'])->name('store.bukti');
 });

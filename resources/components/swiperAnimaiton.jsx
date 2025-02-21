@@ -16,7 +16,7 @@ function swiperAnimaiton() {
                         PRE-EVENT 1
                         </h1>
                         <h2 className='text-[#A4161A] font-canopee xl:text-[30px] md:text-[15px] xs:text-[13px]'>
-                        "XPLORER'S QUEST: THE ENIGMA<span className='block'>XPEDITION"</span>
+                        "XPLORER'S QUEST: THE ENIGMA<span className='block'>XPLORATION"</span>
                         </h2>
                         <p className='xl:text-[15px] md:text-[10px] xs:text-[8px] text-white'>
                         Through The Enigma Xploration, TEDxUniversitasAirlangga is unveiling the journey of finding the authentic compass inside us, enduring diverse societal currents, flourishing and actualizing our boundless potential, regarding all the influence that our environment gives to us, especially our family as the root that mainly shapes us for who we are.
@@ -48,8 +48,11 @@ function swiperAnimaiton() {
                         PRE-EVENT 3
                         </h1>
                         <h2 className='text-[#A4161A] font-canopee xl:text-[30px] md:text-[15px] xs:text-[13px]'>
-                            COMING SOON
+                        XPloratorium: Xquisite journey, Curiosity Unbound
                         </h2>
+                        <p className='xl:text-[15px] md:text-[10px] xs:text-[8px] text-white'>
+                        Embark on an Enlightening Odyssey: Discover Your Winning Strategies for Life's Competition through our  Interactive Kiosk and Accessible Zine called XMAGZ
+                        </p>
                     </div>
                 </button>
             </div>

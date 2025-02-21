@@ -25,6 +25,11 @@
                                     <td>{{ count($special) }}</td>
                                 </tr>
                                 <tr>
+                                    <td>Normal Price</td>
+                                    <td>:</td>
+                                    <td>{{ count($normal) }}</td>
+                                </tr>
+                                <tr>
                                     <td>Bundle A</td>
                                     <td>:</td>
                                     <td>{{ count($bundleA) }}</td>
