@@ -17,7 +17,6 @@ class DatabaseSeeder extends Seeder
             PreeventAnswerSeeder::class,
             UserSeeder::class,
             PaketSeeder::class,
-            TiketSeeder::class,
             // PaymentSeeder::class,
         ]);
     }

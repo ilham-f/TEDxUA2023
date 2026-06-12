@@ -3,9 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Tiket extends Model
@@ -18,7 +16,9 @@ class Tiket extends Model
         'user_id',
         'paket_id',
         'line',
-        'phone'
+        'phone',
+        'status',
+        'seat',
     ];
 
     public function user(): BelongsTo
@@ -33,7 +33,7 @@ class Tiket extends Model
 
     public function payment()
     {
-        return $this->hasMany(Payment::class);
+        return $this->hasOne(Payment::class);
     }
 }
 

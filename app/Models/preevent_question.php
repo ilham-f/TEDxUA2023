@@ -10,8 +10,12 @@ class preevent_question extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'questions',
+    ];
+
     public function preevent_answer(): HasMany
     {
-        return $this->hasMany(preevent_answer::class, 'id_quest', 'id');
+        return $this->hasMany(preevent_answer::class, 'preevent_question_id', 'id');
     }
 }

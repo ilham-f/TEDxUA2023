@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\paket;
+use App\Models\Paket;
 use Illuminate\Auth\Access\Response;
 
 class PaketPolicy
@@ -19,7 +19,7 @@ class PaketPolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, paket $paket): bool
+    public function view(User $user, Paket $paket): bool
     {
         //
     }
@@ -35,7 +35,7 @@ class PaketPolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, paket $paket): bool
+    public function update(User $user, Paket $paket): bool
     {
         //
     }
@@ -43,7 +43,7 @@ class PaketPolicy
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, paket $paket): bool
+    public function delete(User $user, Paket $paket): bool
     {
         //
     }
@@ -51,7 +51,7 @@ class PaketPolicy
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, paket $paket): bool
+    public function restore(User $user, Paket $paket): bool
     {
         //
     }
@@ -59,7 +59,7 @@ class PaketPolicy
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, paket $paket): bool
+    public function forceDelete(User $user, Paket $paket): bool
     {
         //
     }

@@ -5,6 +5,7 @@
 /public/storage
 /storage/*.key
 /vendor
+/graphify-out
 .env
 .env.backup
 .env.production

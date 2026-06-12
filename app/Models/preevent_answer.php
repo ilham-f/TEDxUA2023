@@ -4,14 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class preevent_answer extends Model
 {
     use HasFactory;
 
-    public function preevent_question(): HasMany
+    protected $fillable = [
+        'preevent_question_id',
+        'answer',
+    ];
+
+    public function preevent_question(): BelongsTo
     {
-        return $this->hasMany(preevent_question::class, 'id_quest', 'id');
+        return $this->belongsTo(preevent_question::class, 'preevent_question_id', 'id');
     }
 }

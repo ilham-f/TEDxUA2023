@@ -12,8 +12,6 @@ use App\Http\Controllers\PartnershipController;
 use App\Http\Controllers\PreeventAnswerController;
 use App\Http\Controllers\PreeventQuestionController;
 use App\Http\Controllers\SeatingController;
-use App\Models\Paket;
-use App\Models\Payment;
 use App\Http\Controllers\Auth\RedirectAuthenticatedUsersController;
 
 /*
@@ -48,16 +46,6 @@ Route::get('/partnership', function () {
     return Inertia::render('Partnership', []);
 })->name('partnership');
 
-
-Route::post('/logout', [AuthenticatedSessionController::class, 'destroy']);
-
-Route::get('/login', function () {
-    return Inertia::render('Login', []);
-})->name('login');
-
-Route::get('/register', function () {
-    return Inertia::render('Register', []);
-})->name('register');
 
 Route::get('/merch', function () {
     return Inertia::render('merch', []);

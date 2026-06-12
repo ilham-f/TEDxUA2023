@@ -6,7 +6,7 @@ export default function DetailProduk(){
     return (
         <>
             <img src="/assets/acc-detailproduk1.png" alt="" className="absolute z-0" />
-            <div className="lg:px-[100px] lg:py-[50px] md:px-[50px] md:py-[25px] xs:px-[20px] xs:py-[35px] bg-cover bg-no-repeat min-h-full bg-[url('../../../public/assets/bg-detailproduk.jpg')]">
+            <div className="lg:px-[100px] lg:py-[50px] md:px-[50px] md:py-[25px] xs:px-[20px] xs:py-[35px] bg-cover bg-no-repeat min-h-full bg-[url('/assets/bg-detailproduk.jpg')]">
                 <div className="relative z-10 grid grid-cols-4 md:gap-8 xs:gap-2 rounded-lg bg-[#A4161A] w-full h-full p-[25px]">
                     <div className="col-span-4 flex rounded-lg relative mx-auto bg-[#99A252] w-full h-full">
                         <div className="absolute md:top-[75px] md:left-[30px] xs:top-[30px] xs:left-[5px]">

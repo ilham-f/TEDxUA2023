@@ -11,7 +11,7 @@ export default function Preevent1After() {
         <Head title="Pre Event" />
 
         {/* <div className='min-h-screen'> */}
-            <div className="bg-cover bg-no-repeat min-h-screen xl:bg-[url('../../../public/assets/bg4.jpg')] bg-[url('../../../public/assets/bg3.jpg')] xl:pb-[90px]">
+            <div className="bg-cover bg-no-repeat min-h-screen xl:bg-[url('/assets/bg4.jpg')] bg-[url('/assets/bg3.jpg')] xl:pb-[90px]">
                 <div className='grid grid-cols-1 xl:grid-cols-2 justify-items-center xl:justify-items-start xl:ms-[63px]'>
                     <div className='w-[163px] md:w-[232px] xl:w-[452px] h-fit rounded-full bg-[#104F55] px-4 xl:px-7 xl:py-3 py-1 border-white border-2 drop-shadow-custom1 mt-[50px] xl:mt-[67px] xl:col-span-2 z-10 mx-auto'>
                         <img src="/assets/TEDxUniversitasAirlangga.png" className=''/>
@@ -32,7 +32,7 @@ export default function Preevent1After() {
                         </div>
                         {/* <p className='font-canopee text-[47px] xl:text-custom5 text-[#E79B08] text-center mt-[4px] xl:mt-[18px]'>XPLORATION</p> */}
                     </div>
-                    <div className="xl:mt-[80px] xl:ms-[10px] mt-[50px] w-[280px] bg-contain bg-no-repeat lg:w-[640px] lg:h-[679px] md:w-[547px] md:h-[568px] xs:w-[315px] h-[210px] xs:bg-cover md:bg-[url('../../../public/assets/Deskripsi1.png')] bg-[url('../../../public/assets/Deskripsi.png')] flex flex-col items-center z-10">
+                    <div className="xl:mt-[80px] xl:ms-[10px] mt-[50px] w-[280px] bg-contain bg-no-repeat lg:w-[640px] lg:h-[679px] md:w-[547px] md:h-[568px] xs:w-[315px] h-[210px] xs:bg-cover md:bg-[url('/assets/Deskripsi1.png')] bg-[url('/assets/Deskripsi.png')] flex flex-col items-center z-10">
                         <div className='w-[216px] xl:w-[536px] h-[56px] xl:h-[155px] xl:mt-[112px] mt-[35px] md:mt-[90px] mx-[40px] md:w-[412px] md:h-[158px]'>
                             <p className='font-lazymonday xl:text-custom8 text-custom6 md:text-[28px] text-[#104F55] text-center'>Drawing wisdom from the roots of our upbringing—the family—our quest leads us to unravel the enigma of parental influence.</p>
                         </div>
@@ -45,7 +45,7 @@ export default function Preevent1After() {
                     </div> */}
                 </div>
             </div>
-            {/* <div className="bg-cover bg-no-repeat md:bg-[url('../../../public/assets/bg4.jpg')] bg-[url('../../../public/assets/bgmobil2.jpg')] min-h-[224px] pt-[70px] md:pt-[195px] md:pb-[135px]">
+            {/* <div className="bg-cover bg-no-repeat md:bg-[url('/assets/bg4.jpg')] bg-[url('/assets/bgmobil2.jpg')] min-h-[224px] pt-[70px] md:pt-[195px] md:pb-[135px]">
                 <div className='ms-[20px] md:ms-[64px]'>
                     <div className='w-[126px] h-[89px] md:w-[650px] md:h-[388px]'>
                         <p className='font-lazymonday text-custom10 md:text-[90px]'>Watch our teaser and unveil the wonders together with us!</p>

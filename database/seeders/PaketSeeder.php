@@ -17,6 +17,7 @@ class PaketSeeder extends Seeder
         Paket::create([
             'nama_paket'=>'Early Bird',
             'detail_paket'=>'1x Main Event Ticket',
+            'kuota' => 100,
             'harga' => 85000
         ]);
     }

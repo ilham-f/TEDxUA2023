@@ -59,8 +59,13 @@ class PaketController extends Controller
 
     public function edit($id)
     {
-        $paket = $this->find($id);
-        return view('packets.edit', compact('paket'));
+        $paket = Paket::findOrFail($id);
+
+        return view('admin.packet', [
+            'pakets' => Paket::all(),
+            'title' => 'Packets',
+            'editPaket' => $paket,
+        ]);
     }
 
     public function update(Request $request, $id)

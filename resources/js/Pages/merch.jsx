@@ -11,7 +11,7 @@ import MerchBundleAnimation from "../../components/MerchBundleAnimation";
 export default function Merch() {
     return (
         <>
-        <div className="bg-cover bg-no-repeat min-h-full relative xl:bg-[url('../../../assets/bg-merch.jpg')] md:bg-[url('../../../assets/bg-merch.jpg')] xs:bg-[url('../../../assets/bg-merch.jpg')]">
+        <div className="bg-cover bg-no-repeat min-h-full relative xl:bg-[url('/assets/bg-merch.jpg')] md:bg-[url('/assets/bg-merch.jpg')] xs:bg-[url('/assets/bg-merch.jpg')]">
           <div className="flex">
             <div className="absolute flex">
               <img

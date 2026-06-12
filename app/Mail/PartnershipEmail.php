@@ -3,8 +3,8 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Mailables\Address;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
@@ -22,18 +22,13 @@ class PartnershipEmail extends Mailable
         $this->data = $data;
     }
 
-    /**
-     * Get the message envelope.
-     */
-    public function build()
-    {
-        return $this->from($this->data['email'], $this->data['nama'])
-            ->subject('Partnership Email')
-            ->view('emails.partnership');
-    }
     public function envelope(): Envelope
     {
         return new Envelope(
+            from: new Address(config('mail.from.address'), config('mail.from.name')),
+            replyTo: [
+                new Address($this->data['email'], $this->data['nama']),
+            ],
             subject: 'Partnership Email',
         );
     }
